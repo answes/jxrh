@@ -23,7 +23,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane fx:id="view_root" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="1000.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121"
+            prefHeight="855.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
 
     <stylesheets>
@@ -116,7 +116,6 @@
                       style="-fx-background-color: #404040"/>
                 <HBox prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"
                       AnchorPane.topAnchor="0.0">
-
                     <VBox prefWidth="210.0" spacing="6">
                         <HBox  alignment="CENTER_LEFT">
                             <Label style="-fx-text-fill: #00FFFF;-fx-font-size: 16px;-fx-padding: 6 6 0 6">测试商品001
@@ -186,7 +185,6 @@
                         </VBox>
                         <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
                     </VBox>
-                    <VBox style="-fx-background-color: #686868;" prefWidth="1"/>
                     <ListView prefWidth="200" style="-fx-background-color: #00000000"></ListView>
                 </HBox>
 
