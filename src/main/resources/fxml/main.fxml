@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="view_root" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="1000.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+
+    <stylesheets>
+        <URL value="@../css/main.css"/>
+    </stylesheets>
+    <top>
+        <AnchorPane fx:id="top_root" prefHeight="80.0" prefWidth="1200" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="80.0" fitWidth="80.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0"
+                       AnchorPane.topAnchor="10.0">
+                <image>
+                    <Image url="@../image/favicon.png"/>
+                </image>
+            </ImageView>
+
+            <VBox spacing="11.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="170.0"
+                  AnchorPane.topAnchor="20.0">
+                <Label fx:id="logo_tiele" prefWidth="200.0" text="XXX交易所交易中心"/>
+                <Label fx:id="logo_second_title" prefWidth="200.0" text="客服热线： 400-900-283"/>
+            </VBox>
+            <Pane fx:id="top_title" prefHeight="30.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0"
+                  AnchorPane.topAnchor="0.0"/>
+            <HBox AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="系统">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#historyQurey" text="历史查询"/>
+                                <MenuItem mnemonicParsing="false" onAction="#complaints" text="投诉/申述"/>
+                                <MenuItem mnemonicParsing="false" onAction="#addressManege" text="地址管理"/>
+                                <MenuItem mnemonicParsing="false" onAction="#systemSet" text="系统设置"/>
+                                <MenuItem mnemonicParsing="false" onAction="#aboutMe" text="关于"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="资金">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#signed" text="签约申请"/>
+                                <MenuItem mnemonicParsing="false" onAction="#termination" text="签约申请"/>
+                                <MenuItem mnemonicParsing="false" onAction="#outMoney" text="出金"/>
+                                <MenuItem mnemonicParsing="false" onAction="#clientReport" text="客户报表"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="工具">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#calculator" text="计算器"/>
+                                <MenuItem mnemonicParsing="false" onAction="#refresh" text="刷新"/>
+                                <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Button fx:id="bt_scale" onAction="#zoomWindow" text="一">
+                    <HBox.margin>
+                        <Insets left="50.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="bt_zoom" onAction="#scaleWindow" text="口"/>
+                <Button fx:id="bt_close" onAction="#closeWindow" text="X"/>
+            </HBox>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane fx:id="center_root" prefHeight="500.0" prefWidth="Infinity" BorderPane.alignment="CENTER">
+            <VBox style="-fx-background-color: #686868;" prefHeight="1.0" AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0"/>
+            <AnchorPane prefHeight="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0"
+                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                <HBox spacing="4">
+                    <Button fx:id="back" mnemonicParsing="false" text="返回"/>
+                    <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时"/>
+                    <Button fx:id="oneMinute" mnemonicParsing="false" onAction="#oneMinuteKLine" text="1分"/>
+                    <Button fx:id="fiveMinute" mnemonicParsing="false" onAction="#fiveMinuteKLine" text="5分"/>
+                    <Button fx:id="tenMinute" mnemonicParsing="false" onAction="#tenMinuteKLine" text="10分"/>
+                    <Button fx:id="fifteenMinute" mnemonicParsing="false" onAction="#fifteenMinuteKLine" text="15分"/>
+                    <Button fx:id="thrityMinute" mnemonicParsing="false" onAction="#thrityMinuteKLine" text="30分"/>
+                    <Button fx:id="sixtyMinute" mnemonicParsing="false" onAction="#sixtyMinuteKLine" text="60分"/>
+                    <Button fx:id="day" mnemonicParsing="false" onAction="#dayKLine" text="日"/>
+                    <Button fx:id="week" mnemonicParsing="false" onAction="#weekKLine" text="周"/>
+                    <Button fx:id="month" mnemonicParsing="false" onAction="#monthKLine" text="月"/>
+                </HBox>
+                <Button fx:id="to_transaction" onAction="#toTranstion" text="进入交易" AnchorPane.rightAnchor="10.0"/>
+            </AnchorPane>
+            <VBox style="-fx-background-color: #686868;" prefHeight="1" AnchorPane.leftAnchor="0"
+                  AnchorPane.topAnchor="26.0" AnchorPane.rightAnchor="0"></VBox>
+            <AnchorPane fx:id="kView" prefHeight="450.0" visible="true"
+                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                        AnchorPane.topAnchor="25.0">
+                <Pane prefHeight="450.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="0.0"
+                      style="-fx-background-color: #404040"/>
+                <HBox prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+
+                    <VBox prefWidth="210.0" spacing="6">
+                        <HBox  alignment="CENTER_LEFT">
+                            <Label style="-fx-text-fill: #00FFFF;-fx-font-size: 16px;-fx-padding: 6 6 0 6">测试商品001
+                            </Label>
+                        </HBox>
+                        <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
+                        <ListView prefHeight="160" style="-fx-background-color: #212121;">
+
+                        </ListView>
+
+                        <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
+                        <ListView prefHeight="160" style="-fx-background-color: #212121;">
+
+                        </ListView>
+                        <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
+                        <VBox spacing="6" style="-fx-padding: 0 0 6 6 ">
+                            <HBox prefWidth="200.0" spacing="60">
+                                <HBox>
+                                    <Label text="最新价" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                                <HBox>
+                                    <Label text="昨收" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                            </HBox>
+                            <HBox prefWidth="200.0" spacing="60">
+                                <HBox>
+                                    <Label text="涨跌" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                                <HBox>
+                                    <Label text="开盘价" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                            </HBox>
+                            <HBox prefWidth="200.0" spacing="60">
+                                <HBox>
+                                    <Label text="幅度" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                                <HBox>
+                                    <Label text="最高价" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                            </HBox>
+                            <HBox prefWidth="200.0" spacing="60">
+                                <HBox>
+                                    <Label text="现量" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                                <HBox>
+                                    <Label text="最低价" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                            </HBox>
+                            <HBox prefWidth="200.0" spacing="60">
+                                <HBox>
+                                    <Label text="总量" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                                <HBox>
+                                    <Label text="成交额" style="-fx-text-fill: #A9A9A9"/>
+                                    <Label text="0.02" style="-fx-text-fill: #A9A9A9"/>
+                                </HBox>
+                            </HBox>
+                        </VBox>
+                        <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
+                    </VBox>
+                    <VBox style="-fx-background-color: #686868;" prefWidth="1"/>
+                    <ListView prefWidth="200" style="-fx-background-color: #00000000"></ListView>
+                </HBox>
+
+            </AnchorPane>
+            <AnchorPane fx:id="listView" prefHeight="450.0" prefWidth="1200.0" visible="false"
+                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                        AnchorPane.topAnchor="25.0">
+                <Label fx:id="lb_list_title" prefWidth="1200.0" style="-fx-font-fill: #25B3FA" text="木棉唐"
+                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                <GridPane prefHeight="450.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                    <ListView fx:id="lv_list1" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="0"
+                              GridPane.rowIndex="0"/>
+                    <ListView fx:id="lv_list2" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="1"
+                              GridPane.rowIndex="0"/>
+                    <ListView fx:id="lv_list3" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="2"
+                              GridPane.rowIndex="0"/>
+                    <ListView fx:id="lv_list4" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="3"
+                              GridPane.rowIndex="0"/>
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                    </rowConstraints>
+                </GridPane>
+            </AnchorPane>
+            <AnchorPane fx:id="goods_root" prefHeight="450.0" prefWidth="1200.0" visible="false"
+                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                        AnchorPane.topAnchor="25.0">
+                <TableView fx:id="tb_goods" prefHeight="450.0" prefWidth="1200.0" visible="false"
+                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                           AnchorPane.topAnchor="0.0" editable="false">
+                    <columns>
+                        <TableColumn fx:id="commNum" minWidth="80" text="商品代码" editable="false"/>
+                        <TableColumn fx:id="commName" minWidth="80" text="商品名称" editable="false"/>
+                        <TableColumn fx:id="openPrice" minWidth="80" text="开盘价" editable="false"/>
+                        <TableColumn fx:id="maxPrice" minWidth="80" text="最高价" editable="false"/>
+                        <TableColumn fx:id="mixPrice" minWidth="80" text="最低价" editable="false"/>
+                        <TableColumn fx:id="newPrice" minWidth="80" text="最新价" editable="false"/>
+                        <TableColumn fx:id="upDown" minWidth="80" text="涨跌" editable="false"/>
+                        <TableColumn fx:id="extent" minWidth="80" text="幅度%" editable="false"/>
+                        <TableColumn fx:id="yestedayPrice" minWidth="80" text="昨收盘价" editable="false"/>
+                        <TableColumn fx:id="comePrice" minWidth="80" text="买价" editable="false"/>
+                        <TableColumn fx:id="outPrice" minWidth="80" text="卖价" editable="false"/>
+                        <TableColumn fx:id="overNumber" minWidth="80" text="成交量" editable="false"/>
+                        <TableColumn fx:id="overMoney" minWidth="80" text="成交金额" editable="false"/>
+                    </columns>
+                </TableView>
+                <HBox fx:id="good_type" spacing="4" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0"/>
+            </AnchorPane>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <VBox>
+        <VBox style="-fx-background-color: #686868;" prefHeight="1"/>
+        <AnchorPane fx:id="bottom_root" prefHeight="230"/>
+        </VBox>
+    </bottom>
+</BorderPane>

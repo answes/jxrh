@@ -1,0 +1,7 @@
+#exit{
+    -fx-background-color: #00000000;
+}
+.root {
+    -fx-background-image: url("../image/login_bg.jpg");
+}
+
