@@ -1,5 +1,7 @@
 package controller;
 
+import chart.HQApplet;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +12,8 @@ import utils.Constant;
 import utils.ControlledStage;
 import utils.StageController;
 
+import javax.swing.*;
+import java.awt.*;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -35,6 +39,14 @@ public class MainController implements ControlledStage ,Initializable{
     private double yOffset = 0;
     private Date oldDate=new Date();
     private int count = 0;
+
+    JComponent jPanel = new HQApplet(0);
+    SwingNode swingNode = new SwingNode();
+
+    int width  ;
+    int height ;
+    @FXML
+    Pane kline;
     private void init() {
         //记录窗口位置
         top_title.setOnMousePressed(event -> {
@@ -63,13 +75,38 @@ public class MainController implements ControlledStage ,Initializable{
                 count ++;
             }else{
                 if(new Date().getTime()-oldDate.getTime()<1200){
-                   myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
+                    myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
+
+                    swingNode.resize(1000,500);
+                    swingNode.autosize();
+                    jPanel.setSize(new Dimension(
+                            1000,
+                            500));
                 }
                 count = 0;
             }
 
-
         });
+
+        //实例化一个窗口，用于展示Applet
+
+        jPanel.setPreferredSize(new Dimension(
+                (int)kline.getPrefWidth(),
+                (int)kline.getPrefHeight()));
+        jPanel.setFocusable(true);
+        jPanel.setRequestFocusEnabled(true);
+
+
+        SwingUtilities.invokeLater(()->{
+            swingNode.setContent(jPanel);
+        });
+
+        kline.getChildren().add(swingNode);
+
+
+        width = (int)kline.getPrefWidth();
+        height = (int)kline.getPrefHeight();
+
     }
 
     @Override

@@ -56,7 +56,7 @@
                             <Label fx:id="tips1" alignment="CENTER" prefWidth="160" style="-fx-text-fill: #994243"></Label>
                         </VBox>
                     </AnchorPane>
-                <AnchorPane fx:id="next3" visible="false" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPanes.rightAnchor="0">
+                <AnchorPane fx:id="next3" visible="false" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0">
                     <VBox  alignment="CENTER_RIGHT" AnchorPane.topAnchor="80" AnchorPane.leftAnchor="120" spacing="12">
                         <HBox alignment="CENTER_RIGHT" >
                             <Label>真实姓名：</Label>

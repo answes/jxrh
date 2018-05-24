@@ -111,7 +111,7 @@
             <AnchorPane fx:id="kView" prefHeight="450.0" visible="true"
                         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                         AnchorPane.topAnchor="25.0">
-                <Pane prefHeight="450.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0"
+                <Pane  fx:id="kline" prefHeight="450.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0"
                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="0.0"
                       style="-fx-background-color: #404040"/>
                 <HBox prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"
