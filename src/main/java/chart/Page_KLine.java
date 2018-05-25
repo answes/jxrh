@@ -186,7 +186,7 @@ public class Page_KLine extends Page_Main {
         g.setFont(new Font("\u6977\u4F53_GB2312", 1, 26));
         g.setFont(new Font("\u5B8B\u4F53", 0, 16));
         //控制K线绘图区域 new Rectangle(x坐标，y坐标，宽度，高度);
-        rcKLine = new Rectangle(super.m_rc.x - 62, super.m_rc.y + 1 , super.m_rc.width , super.m_rc.height);
+        rcKLine = new Rectangle(super.m_rc.x - 62, super.m_rc.y + 1 , super.m_rc.width + 15 , super.m_rc.height);
         //在指定区域内绘制K线
         draw_KLine.Paint(g, rcKLine, stock);
     }
