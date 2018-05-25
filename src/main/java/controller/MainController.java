@@ -77,11 +77,10 @@ public class MainController implements ControlledStage ,Initializable{
                 if(new Date().getTime()-oldDate.getTime()<1200){
                     myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
 
-                    swingNode.resize(1000,500);
-                    swingNode.autosize();
-                    jPanel.setSize(new Dimension(
-                            1000,
-                            500));
+                    swingNode.setContent(swingNode.getContent());
+                    int width = (int) swingNode.getParent().getBoundsInParent().getWidth();
+                    int height = (int) swingNode.getParent().getBoundsInParent().getHeight();
+                    swingNode.getContent().setPreferredSize(new Dimension(width, height));
                 }
                 count = 0;
             }
@@ -92,7 +91,7 @@ public class MainController implements ControlledStage ,Initializable{
 
         jPanel.setPreferredSize(new Dimension(
                 (int)kline.getPrefWidth(),
-                (int)kline.getPrefHeight()));
+                (int)kline.getPrefHeight() + 50));
         jPanel.setFocusable(true);
         jPanel.setRequestFocusEnabled(true);
 
@@ -102,7 +101,6 @@ public class MainController implements ControlledStage ,Initializable{
         });
 
         kline.getChildren().add(swingNode);
-
 
         width = (int)kline.getPrefWidth();
         height = (int)kline.getPrefHeight();

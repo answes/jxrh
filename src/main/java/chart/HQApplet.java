@@ -528,14 +528,18 @@ public class HQApplet extends JPanel
     void this_componentResized(ComponentEvent e) {
         Dimension d = getSize();
         m_rcMain = new Rectangle(d);
-        m_rcBottom = new Rectangle(d);
-        m_rcMain.height -= 20;
-        m_rcBottom.y = m_rcMain.y + m_rcMain.height;
-        m_rcBottom.height = 20;
+
         if(mainGraph != null)
             mainGraph.m_rc = m_rcMain;
+//        m_rcBottom = new Rectangle(d);
+//        m_rcMain.height -= 20;
+//
+//        if(mainGraph != null)  m_rcBottom.y = m_rcMain.y + m_rcMain.height;
+//        m_rcBottom.height = 20;
+//            mainGraph.m_rc = m_rcMain;
 //        if(bottomGraph != null)
 //            bottomGraph.rc = m_rcBottom;
+
     }
 
     /**
