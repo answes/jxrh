@@ -1,15 +1,20 @@
 package controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import chart.HQApplet;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 import utils.Constant;
 import utils.ControlledStage;
+import utils.DateUtil;
 import utils.StageController;
 
 import javax.swing.*;
@@ -30,7 +35,12 @@ public class MainController implements ControlledStage ,Initializable{
     @FXML
     private AnchorPane bottom_root;
 
+    @FXML
+    private Label timeNow;
+
     private StageController myController;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         init();
@@ -105,6 +115,11 @@ public class MainController implements ControlledStage ,Initializable{
         width = (int)kline.getPrefWidth();
         height = (int)kline.getPrefHeight();
 
+
+        //系统时间显示
+        Timeline timeline =  new Timeline(new KeyFrame(Duration.millis(1000), e ->  timeNow.setText(DateUtil.getNowTime())));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 
     @Override
