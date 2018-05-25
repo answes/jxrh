@@ -134,7 +134,7 @@ public class MainController implements ControlledStage ,Initializable{
         kline.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("WidthNumber:"+newValue.intValue());
+
                 width = newValue.intValue();
                 swingNode.setContent(swingNode.getContent());
                 swingNode.getContent().setPreferredSize(new Dimension(
