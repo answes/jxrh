@@ -108,7 +108,7 @@ public class Draw_MinLine {
      */
     private void DrawGrid(Graphics g, Rectangle rc){
         if(bLarge)
-            g.setFont(new Font("\u5B8B\u4F53", 0, 14));
+            g.setFont(new Font("\u5B8B\u4F53", 0, 12));
         else
             g.setFont(new Font("\u5B8B\u4F53", 0, 12));
         FontMetrics fm = g.getFontMetrics();
@@ -677,7 +677,7 @@ public class Draw_MinLine {
         str = str.substring(0, 2) + ":" + str.substring(2, 4) + ":" + str.substring(4);
         if(m_applet.m_iMinLineInterval == 60)
             str = str.substring(0, 5);
-        x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 1;
+        x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 4;
         g.setColor(HQApplet.rhColor.clEqual);
         g.drawString(str, x, y);
         x = m_rcLabel.x + 1;
@@ -697,7 +697,7 @@ public class Draw_MinLine {
                 g.setColor(HQApplet.rhColor.clDecrease);
             else
                 g.setColor(HQApplet.rhColor.clEqual);
-            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 1;
+            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 4;
             g.drawString(str, x, y);
         }
         x = m_rcLabel.x + 1;
@@ -715,7 +715,7 @@ public class Draw_MinLine {
                 g.setColor(HQApplet.rhColor.clDecrease);
             else
                 g.setColor(HQApplet.rhColor.clEqual);
-            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 1;
+            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 4;
             g.drawString(str, x, y);
         }
         x = m_rcLabel.x + 1;
@@ -732,7 +732,7 @@ public class Draw_MinLine {
                 g.setColor(HQApplet.rhColor.clDecrease);
             else
                 g.setColor(HQApplet.rhColor.clEqual);
-            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 1;
+            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 4;
             g.drawString(str, x, y);
         }
         x = m_rcLabel.x + 1;
@@ -748,7 +748,7 @@ public class Draw_MinLine {
 //                fCurVol = data.totalAmount - ((MinDataVO)m_product.vMinLine.elementAt(m_iPos - 1)).totalAmount;
             str = String.valueOf((int)fCurVol);
             g.setColor(HQApplet.rhColor.clVolume);
-            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 1;
+            x = (m_rcLabel.x + m_rcLabel.width) - fm.stringWidth(str) - 4;
             g.drawString(str, x, y);
         }
 //        x = m_rcLabel.x + 1;

@@ -70,7 +70,7 @@ class Page_MinLine extends Page_Main {
         g.setFont(new Font("\u5B8B\u4F53", 0, 16));
         fm = g.getFontMetrics();
 
-        rcMinLine = new Rectangle(super.m_rc.x, super.m_rc.y, super.m_rc.width - super.m_rc.x, super.m_rc.height);
+        rcMinLine = new Rectangle(super.m_rc.x, super.m_rc.y, super.m_rc.width - super.m_rc.x - 10, super.m_rc.height);
         draw_MinLine.Paint(g, rcMinLine, stock);
     }
 
