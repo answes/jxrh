@@ -3,13 +3,18 @@ package controller;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import chart.HQApplet;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import utils.Constant;
@@ -53,6 +58,9 @@ public class MainController implements ControlledStage ,Initializable{
     JComponent jPanel = new HQApplet(0);
     SwingNode swingNode = new SwingNode();
 
+    @FXML
+    BorderPane view_root;
+
     int width  ;
     int height ;
     @FXML
@@ -85,12 +93,26 @@ public class MainController implements ControlledStage ,Initializable{
                 count ++;
             }else{
                 if(new Date().getTime()-oldDate.getTime()<1200){
-                    myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
+                    boolean maxMin = !myController.getStage(Constant.MAIN_ID).isMaximized();
 
-                    swingNode.setContent(swingNode.getContent());
-                    int width = (int) swingNode.getParent().getBoundsInParent().getWidth();
-                    int height = (int) swingNode.getParent().getBoundsInParent().getHeight();
-                    swingNode.getContent().setPreferredSize(new Dimension(width, height));
+                    myController.getStage(Constant.MAIN_ID).setMaximized(maxMin);
+
+                    System.out.println("maxMin:"+maxMin+","+kline.getPrefWidth()+","+kline.getPrefHeight());
+
+//                    if (maxMin) {
+//
+//                        swingNode.setContent(swingNode.getContent());
+//                        swingNode.getContent().setPreferredSize(new Dimension(
+//                                (int) swingNode.getParent().getBoundsInParent().getWidth(),
+//                                (int) swingNode.getParent().getBoundsInParent().getHeight() - 50));
+//
+//                    }else{
+//                        swingNode.setContent(swingNode.getContent());
+//                        swingNode.getContent().setPreferredSize(new Dimension(
+//                                (int)kline.getPrefWidth(),
+//                                (int)kline.getPrefHeight() + 50));
+//                    }
+
                 }
                 count = 0;
             }
@@ -98,10 +120,10 @@ public class MainController implements ControlledStage ,Initializable{
         });
 
         //实例化一个窗口，用于展示Applet
+//        jPanel.setPreferredSize(new Dimension(
+//                (int)kline.widthProperty().getValue().intValue(),
+//                (int)kline.getBoundsInLocal().getHeight() + 50));
 
-        jPanel.setPreferredSize(new Dimension(
-                (int)kline.getPrefWidth(),
-                (int)kline.getPrefHeight() + 50));
         jPanel.setFocusable(true);
         jPanel.setRequestFocusEnabled(true);
 
@@ -112,8 +134,30 @@ public class MainController implements ControlledStage ,Initializable{
 
         kline.getChildren().add(swingNode);
 
-        width = (int)kline.getPrefWidth();
-        height = (int)kline.getPrefHeight();
+
+        kline.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println("WidthNumber:"+newValue.intValue());
+                width = newValue.intValue();
+                swingNode.setContent(swingNode.getContent());
+                swingNode.getContent().setPreferredSize(new Dimension(
+                        width,height));
+            }
+        });
+
+        kline.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println("HeightNumber:"+newValue.intValue());
+                height = newValue.intValue() - 50;
+                swingNode.setContent(swingNode.getContent());
+                swingNode.getContent().setPreferredSize(new Dimension(
+                        width,height));
+            }
+        });
+
+
 
 
         //系统时间显示

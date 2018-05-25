@@ -27,13 +27,13 @@
         <URL value="@../css/main.css" />
     </stylesheets>
     <top>
-        <AnchorPane fx:id="top_root" prefHeight="131.0" prefWidth="1200" BorderPane.alignment="CENTER">
-            <ImageView fitHeight="80.0" fitWidth="80.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
+        <AnchorPane fx:id="top_root" prefHeight="101.0" style="-fx-background-color: #222222" prefWidth="1200" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="50.0" fitWidth="50.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
                 <image>
                     <Image url="@../image/favicon.png" />
                 </image>
             </ImageView>
-            <VBox spacing="11.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="20.0">
+            <VBox AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="10.0">
                 <Label fx:id="logo_tiele" prefWidth="200.0" text="XXX交易所交易中心" />
                 <Label fx:id="logo_second_title" prefWidth="200.0" text="客服热线： 400-900-283" />
             </VBox>
@@ -99,8 +99,8 @@
         <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER">
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             <AnchorPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
-                <Pane fx:id="kline" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-                <AnchorPane prefHeight="200" style="-fx-background-color: lightslategrey" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" />
+                <Pane fx:id="kline" AnchorPane.bottomAnchor="200"  style="-fx-background-color: #000000" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+                <AnchorPane prefHeight="250" style="-fx-background-color: lightslategrey" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" />
             </AnchorPane>
             <AnchorPane fx:id="listView" prefHeight="450.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <Label fx:id="lb_list_title" prefWidth="1200.0" style="-fx-font-fill: #25B3FA" text="木棉唐" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -144,7 +144,7 @@
     </center>
     <right>
         <HBox prefWidth="220.0" BorderPane.alignment="CENTER">
-            <VBox prefWidth="220.0">
+            <VBox prefWidth="220.0" style="-fx-background-color: #000000;">
                 <HBox alignment="CENTER_LEFT">
                     <Label alignment="CENTER" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 14px;-fx-padding: 6 6 6 6">测试商品001
                     </Label>
@@ -153,72 +153,72 @@
                 <HBox prefHeight="140" prefWidth="220.0">
                     <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="卖" />
                     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" />
-                    <ListView prefWidth="189" style="-fx-background-color: #212121;" />
+                    <ListView prefWidth="189" style="-fx-background-color: #000000;" />
                 </HBox>
                 <VBox prefHeight="1" style="-fx-background-color: #686868;" />
-                <HBox prefHeight="140" prefWidth="220.0">
+                <HBox prefHeight="140" prefWidth="220.0" style="-fx-background-color: #000000;">
                     <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="买" />
                     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" />
-                    <ListView prefWidth="189" style="-fx-background-color: #212121;" />
+                    <ListView prefWidth="189"  style="-fx-background-color: #000000;" />
                 </HBox>
                 <VBox prefHeight="1" style="-fx-background-color: #686868;" />
-                <VBox spacing="6" style="-fx-padding: 6 6 6 6 ">
+                <VBox spacing="6" style="-fx-padding: 6 6 6 6;-fx-background-color: #000000; ">
                     <HBox prefWidth="220.0">
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="最新" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="最新" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="涨幅" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="涨幅" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                     </HBox>
                     <HBox prefWidth="220.0">
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="涨跌" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="涨跌" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="昨收" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
-                        </HBox>
-                    </HBox>
-                    <HBox prefWidth="220.0">
-                        <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="成交" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
-                        </HBox>
-                        <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="开盘" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="昨收" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                     </HBox>
                     <HBox prefWidth="220.0">
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="金额" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="成交" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="最高" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="开盘" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                     </HBox>
                     <HBox prefWidth="220.0">
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="振幅" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="金额" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                         <HBox prefWidth="110" spacing="22">
-                            <Label style="-fx-text-fill: #A9A9A9" text="最低" />
-                            <Label style="-fx-text-fill: #A9A9A9" text="0.02" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="最高" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
+                        </HBox>
+                    </HBox>
+                    <HBox prefWidth="220.0">
+                        <HBox prefWidth="110" spacing="22">
+                            <Label style="-fx-text-fill: #D4D0C8" text="振幅" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
+                        </HBox>
+                        <HBox prefWidth="110" spacing="22">
+                            <Label style="-fx-text-fill: #D4D0C8" text="最低" />
+                            <Label style="-fx-text-fill: #D4D0C8" text="0.02" />
                         </HBox>
                     </HBox>
                 </VBox>
                 <VBox prefHeight="-Infinity" prefWidth="220">
-                    <HBox  prefWidth="220" style="-fx-background-color: #A9A9A9">
-                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">时间</Label>
-                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">价位</Label>
-                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">现手</Label>
+                    <HBox  prefWidth="220" style="-fx-background-color: #000000;-fx-text-fill: #ffffff">
+                        <Label alignment="CENTER"  style="-fx-text-fill: #ffffff" prefHeight="30.0" prefWidth="73">时间</Label>
+                        <Label alignment="CENTER"  style="-fx-text-fill: #ffffff" prefHeight="30.0" prefWidth="73">价位</Label>
+                        <Label alignment="CENTER"  style="-fx-text-fill: #ffffff" prefHeight="30.0" prefWidth="73">现手</Label>
                     </HBox>
                     <ListView prefWidth="-NaN"/>
                 </VBox>
