@@ -120,9 +120,6 @@ public class MainController implements ControlledStage ,Initializable{
         });
 
         //实例化一个窗口，用于展示Applet
-//        jPanel.setPreferredSize(new Dimension(
-//                (int)kline.widthProperty().getValue().intValue(),
-//                (int)kline.getBoundsInLocal().getHeight() + 50));
 
         jPanel.setFocusable(true);
         jPanel.setRequestFocusEnabled(true);
