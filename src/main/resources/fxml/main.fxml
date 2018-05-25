@@ -95,8 +95,10 @@
             <VBox prefHeight="1" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="130" />
         </AnchorPane>
     </top>
+
+
     <center>
-        <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000000">
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             <AnchorPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
                 <Pane fx:id="kline" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
@@ -142,24 +144,25 @@
             </AnchorPane>
         </AnchorPane>
     </center>
+
     <right>
-        <HBox prefWidth="220.0" BorderPane.alignment="CENTER">
+        <HBox prefWidth="220.0" BorderPane.alignment="CENTER" style="-fx-background-color: #000000">
             <VBox prefWidth="220.0">
                 <HBox alignment="CENTER_LEFT">
-                    <Label alignment="CENTER" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 14px;-fx-padding: 6 6 6 6">测试商品001
+                    <Label fx:id="cus" alignment="CENTER" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 14px;-fx-padding: 6 6 6 6">测试商品001
                     </Label>
                 </HBox>
                 <VBox prefHeight="1" style="-fx-background-color: #686868;" />
                 <HBox prefHeight="140" prefWidth="220.0">
                     <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="卖" />
                     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" />
-                    <ListView prefWidth="189" style="-fx-background-color: #212121;" />
+                    <ListView prefWidth="189" style="-fx-background-color: #000000;" />
                 </HBox>
                 <VBox prefHeight="1" style="-fx-background-color: #686868;" />
                 <HBox prefHeight="140" prefWidth="220.0">
                     <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="买" />
                     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" />
-                    <ListView prefWidth="189" style="-fx-background-color: #212121;" />
+                    <ListView prefWidth="189" style="-fx-background-color: #000000;" />
                 </HBox>
                 <VBox prefHeight="1" style="-fx-background-color: #686868;" />
                 <VBox spacing="6" style="-fx-padding: 6 6 6 6 ">
@@ -225,6 +228,7 @@
             </VBox>
         </HBox>
     </right>
+
     <bottom>
         <VBox prefHeight="1" style="-fx-background-color: #686868;" />
             <AnchorPane prefHeight="30" style="-fx-background-color: #383838">
@@ -240,4 +244,5 @@
                 </HBox>
             </AnchorPane>
     </bottom>
+
 </BorderPane>
