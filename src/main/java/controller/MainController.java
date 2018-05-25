@@ -1,5 +1,6 @@
 package controller;
 
+import controller.bottom.NewsController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import chart.HQApplet;
@@ -9,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Label;
@@ -24,6 +26,7 @@ import utils.StageController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -44,6 +47,7 @@ public class MainController implements ControlledStage ,Initializable{
     private Label timeNow;
 
     private StageController myController;
+    private NewsController newsController;
 
 
     @Override
@@ -160,6 +164,20 @@ public class MainController implements ControlledStage ,Initializable{
         Timeline timeline =  new Timeline(new KeyFrame(Duration.millis(1000), e ->  timeNow.setText(DateUtil.getNowTime())));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+        AnchorPane loader = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/news.fxml"));
+        try {
+            loader = fxmlLoader.load();
+            //这个是我把获取MainBottomController添加到这个Controller的底下布局，你不用管
+            bottom_root.getChildren().add(loader);
+            //获取MainBottomController
+            newsController = fxmlLoader.getController();
+            //执行获取MainBottomController更新的方法,以后tableview 点击的时候就可以调用这个方法来更新第二个Controller的数据了
+            newsController.initDate();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

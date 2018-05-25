@@ -7,4 +7,6 @@ package controller.bottom;
  * @Modificd :
  */
 public class NewsController {
+    public void initDate() {
+    }
 }

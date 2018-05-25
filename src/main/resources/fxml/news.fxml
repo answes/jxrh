@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.bottom.NewsController"
-            prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<AnchorPane prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.NewsController">
+    <stylesheets>
+        <URL value="@../css/news.css"></URL>
+    </stylesheets>
+    <children>
+        <HBox>
+            <TitledPane animated="false" collapsible="false" text="系统公告">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
+                </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" text="产品资讯">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
+                </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" text="新闻速递">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
+                </content>
+            </TitledPane>
+        </HBox>
+    </children>
 </AnchorPane>
