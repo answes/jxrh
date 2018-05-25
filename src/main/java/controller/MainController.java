@@ -119,7 +119,6 @@ public class MainController implements ControlledStage ,Initializable{
 
         });
 
-        //实例化一个窗口，用于展示Applet
 
         jPanel.setFocusable(true);
         jPanel.setRequestFocusEnabled(true);
