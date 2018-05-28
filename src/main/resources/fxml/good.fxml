@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.center.GoodController"
+            prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0.0" >
+    <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+    <AnchorPane fx:id="goods_root" visible="true" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+        <TableView fx:id="tb_goods" editable="false" visible="true" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="commNum" editable="false" minWidth="80" text="商品代码"/>
+                <TableColumn fx:id="commName" editable="false" minWidth="80" text="商品名称"/>
+                <TableColumn fx:id="openPrice" editable="false" minWidth="80" text="开盘价"/>
+                <TableColumn fx:id="maxPrice" editable="false" minWidth="80" text="最高价"/>
+                <TableColumn fx:id="mixPrice" editable="false" minWidth="80" text="最低价"/>
+                <TableColumn fx:id="newPrice" editable="false" minWidth="80" text="最新价"/>
+                <TableColumn fx:id="upDown" editable="false" minWidth="80" text="涨跌"/>
+                <TableColumn fx:id="extent" editable="false" minWidth="80" text="幅度%"/>
+                <TableColumn fx:id="yestedayPrice" editable="false" minWidth="80" text="昨收盘价"/>
+                <TableColumn fx:id="comePrice" editable="false" minWidth="80" text="买价"/>
+                <TableColumn fx:id="outPrice" editable="false" minWidth="80" text="卖价"/>
+                <TableColumn fx:id="overNumber" editable="false" minWidth="80" text="成交量"/>
+                <TableColumn fx:id="overMoney" editable="false" minWidth="80" text="成交金额"/>
+            </columns>
+        </TableView>
+        <HBox fx:id="good_type" spacing="4" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0"/>
+    </AnchorPane>
+    <AnchorPane fx:id="bottom_root" prefHeight="200" style="-fx-background-color: lightslategrey"
+                AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+</AnchorPane>

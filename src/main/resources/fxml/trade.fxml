@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.center.TradeController"
+            fx:id="view_root"
+            prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0.0" >
+    <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+    <AnchorPane fx:id="kline_root"  AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221" AnchorPane.topAnchor="0">
+        <Pane fx:id="kline"  AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+        <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #484848;-fx-border-style: solid;-fx-border-width: 1px 0 0 0;-fx-border-color: #88A4BE">
+            <HBox spacing="1" fx:id="Indicator" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="1">
+                <Button fx:id="MACD" textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="DMA" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="KDJ" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="DMI" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="OBV" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="BOLL" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="SAR" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="TRIX" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="BRAR" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="VR" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="EMV" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="WR" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="ROC" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="RSI" onAction="#MACD"/>
+                <Button textAlignment="CENTER" text="MIKE" onAction="#MACD"/>
+            </HBox>
+        </AnchorPane>
+    </AnchorPane>
+    <AnchorPane fx:id="bottom_root" prefHeight="200" style="-fx-background-color: lightslategrey"
+                AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221"/>
+    <HBox fx:id="rightBox"  prefWidth="220.0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="1" AnchorPane.bottomAnchor="0"  style="-fx-background-color: #000000">
+        <VBox prefWidth="220.0">
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="cus" alignment="CENTER" prefWidth="220.0"
+                       style="-fx-text-fill: #00FFFF;-fx-font-size: 14px;-fx-padding: 6 6 6 6">测试商品001
+                </Label>
+            </HBox>
+            <VBox prefHeight="1" style="-fx-background-color: #686868;"/>
+            <HBox prefHeight="140" prefWidth="220.0">
+                <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="卖"/>
+                <VBox prefWidth="1" style="-fx-background-color: #A9A9A9"/>
+                <ListView prefWidth="189" style="-fx-background-color: #000000;"/>
+            </HBox>
+            <VBox prefHeight="1" style="-fx-background-color: #686868;"/>
+            <HBox prefHeight="140" prefWidth="220.0">
+                <Label alignment="CENTER" prefHeight="140" prefWidth="30" style="-fx-text-fill: white" text="买"/>
+                <VBox prefWidth="1" style="-fx-background-color: #A9A9A9"/>
+                <ListView prefWidth="189" style="-fx-background-color: #000000;"/>
+            </HBox>
+            <VBox prefHeight="1" style="-fx-background-color: #686868;"/>
+            <VBox spacing="6" style="-fx-padding: 6 6 6 6 ">
+                <HBox prefWidth="220.0">
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="最新"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="涨幅"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                </HBox>
+                <HBox prefWidth="220.0">
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="涨跌"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="昨收"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                </HBox>
+                <HBox prefWidth="220.0">
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="成交"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="开盘"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                </HBox>
+                <HBox prefWidth="220.0">
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="金额"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="最高"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                </HBox>
+                <HBox prefWidth="220.0">
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="振幅"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                    <HBox prefWidth="110" spacing="22">
+                        <Label style="-fx-text-fill: #A9A9A9" text="最低"/>
+                        <Label style="-fx-text-fill: #A9A9A9" text="0.02"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+            <VBox prefHeight="-Infinity" prefWidth="220">
+                <HBox prefWidth="220" style="-fx-background-color: #A9A9A9">
+                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">时间</Label>
+                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">价位</Label>
+                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="73">现手</Label>
+                </HBox>
+                <ListView prefWidth="-NaN"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</AnchorPane>
