@@ -78,7 +78,7 @@
             <VBox prefHeight="1" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="104" />
             <AnchorPane prefHeight="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105">
                 <HBox spacing="4">
-                    <Button fx:id="back" mnemonicParsing="false" text="返回" />
+                    <Button fx:id="back" mnemonicParsing="false" text="返回" onAction="#back" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
                     <Button fx:id="oneMinute" mnemonicParsing="false" onAction="#oneMinuteKLine" text="1分" />
                     <Button fx:id="fiveMinute" mnemonicParsing="false" onAction="#fiveMinuteKLine" text="5分" />
@@ -101,7 +101,7 @@
         <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000000">
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             <AnchorPane AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
-                <Pane fx:id="kline" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+                <Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             </AnchorPane>
             <AnchorPane fx:id="listView" prefHeight="450.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <Label fx:id="lb_list_title" prefWidth="1200.0" style="-fx-font-fill: #25B3FA" text="木棉唐" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -121,8 +121,8 @@
                     </rowConstraints>
                 </GridPane>
             </AnchorPane>
-            <AnchorPane fx:id="goods_root" prefHeight="450.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                <TableView fx:id="tb_goods" editable="false" prefHeight="450.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="goods_root"  visible="true" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                <TableView fx:id="tb_goods" editable="false"  visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                     <columns>
                         <TableColumn fx:id="commNum" editable="false" minWidth="80" text="商品代码" />
                         <TableColumn fx:id="commName" editable="false" minWidth="80" text="商品名称" />
