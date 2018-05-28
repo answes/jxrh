@@ -1,6 +1,7 @@
 package controller;
 
 import bean.Goods;
+import chart.Draw_KLine;
 import controller.bottom.NewsController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -260,9 +261,6 @@ public class MainController implements ControlledStage ,Initializable{
             }
         });
 
-
-
-
         //系统时间显示
         Timeline timeline =  new Timeline(new KeyFrame(Duration.millis(1000), e ->  timeNow.setText(DateUtil.getNowTime())));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -290,7 +288,7 @@ public class MainController implements ControlledStage ,Initializable{
 
         swingNode.setContent(swingNode.getContent());
         swingNode.getContent().setPreferredSize(new Dimension(
-                width, height));
+                width, height + 40));
 
         kline.setVisible(false);
         new Thread(new Runnable() {
@@ -372,33 +370,47 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void fenshiKLine(ActionEvent event) {
+        jPanel.showPageMinLine();
     }
 
     public void oneMinuteKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[0]);
     }
 
     public void fiveMinuteKLine(ActionEvent event) {
-    }
-
-    public void tenMinuteKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[1]);
     }
 
     public void fifteenMinuteKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[2]);
     }
 
     public void thrityMinuteKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[3]);
     }
 
     public void sixtyMinuteKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[4]);
     }
 
     public void dayKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[5]);
     }
 
     public void weekKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[6]);
     }
 
     public void monthKLine(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[7]);
     }
 
     public void homeClick(MouseEvent event) {
@@ -427,6 +439,74 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void MACD(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("MACD");
+    }
+    public void DMA(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("DMA");
+    }
+    public void DMI(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("DMI");
 
     }
+    public void OBV(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("OBV");
+
+    }
+    public void KDJ(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("KDJ");
+
+    }
+    public void BOLL(ActionEvent event) {
+        showKline();
+        jPanel.getPageMain().changeIndicator("BOLL");
+
+    }
+    public void SAR(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("SAR");
+
+    }
+    public void TRIX(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("TRIX");
+
+    }
+    public void BRAR(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("BRAR");
+
+    }
+    public void VR(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("VR");
+
+    }
+    public void EMV(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("EMV");
+
+    }
+    public void WR(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("W%R");
+
+    }
+    public void ROC(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("ROC");
+
+    }
+    public void RSI(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("RSI");
+
+    }
+    public void MIKE(ActionEvent event) {
+        jPanel.getPageMain().changeIndicator("MIKE");
+
+    }
+
+    private void showKline(){
+        if(jPanel.iCurrentPage == 1){
+            jPanel.showPageKLine();
+        }
+    }
+
 }

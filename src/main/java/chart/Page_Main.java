@@ -15,7 +15,7 @@ import java.awt.event.KeyEvent;
 // Referenced classes of package gnnt.MEBS.HQApplet:
 //            MenuListener, HQApplet, CodeTable
 
-abstract class Page_Main extends MenuListener {
+public abstract class Page_Main extends MenuListener {
 
     boolean stopFlag;
     protected Rectangle m_rc;
@@ -39,7 +39,7 @@ abstract class Page_Main extends MenuListener {
 
     }
 
-    public  void changeIndicator(String type){
+    public   void changeIndicator(String type){
 
     }
 
@@ -63,6 +63,8 @@ abstract class Page_Main extends MenuListener {
     }
 
     abstract void processMenuEvent(PopupMenu popupmenu, int i, int j);
+
+
 
     protected void processCommonMenuEvent(PopupMenu popupMenu, ActionListener listener) {
         MenuItem menuHistory = new MenuItem(super.m_applet.getShowString("History") + "  F7");

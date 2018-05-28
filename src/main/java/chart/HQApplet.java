@@ -46,7 +46,7 @@ public class HQApplet extends JPanel
     static final int PAGE_BILL = 4;
     static final int PAGE_MARKETSTATUS = 5;
     static final int PAGE_HISTORY = 6;
-    int iCurrentPage;
+    public int iCurrentPage;
     public String strCurrentCode;
     String marketId;
     String indexMainCode;
@@ -99,7 +99,9 @@ public class HQApplet extends JPanel
     public static void main(String args[]) {
 
     }
-
+    public Page_Main getPageMain(){
+        return mainGraph;
+    }
     ProductData GetProductData(String code) {
         for(int i = 0; i < vProductData.size(); i++)
             if(((ProductData)vProductData.elementAt(i)).sCode.equals(code))
@@ -434,7 +436,7 @@ public class HQApplet extends JPanel
      * @param bIgnoreStatus
      */
     void ChangeStock(boolean bUp, boolean bIgnoreStatus) {
-        System.out.println("<----ChangeStock----->");
+//        System.out.println("<----ChangeStock----->");
         int iIndex = -1;
         for(int i = 0; i < m_codeList.size(); i++) {
             if(!strCurrentCode.equals(m_codeList.elementAt(i)))
@@ -675,7 +677,7 @@ public class HQApplet extends JPanel
     /**
      * 显示分时线
      */
-    void showPageMinLine() {
+   public void showPageMinLine() {
         mainGraph = new Page_MinLine(m_rcMain, this);
         iCurrentPage = 1;
         repaint();
@@ -684,7 +686,7 @@ public class HQApplet extends JPanel
     /**
      * 显示K线
      */
-    void showPageKLine() {
+    public void showPageKLine() {
         mainGraph = new Page_KLine(m_rcMain, this);
         iCurrentPage = 2;
         repaint();
@@ -724,7 +726,6 @@ public class HQApplet extends JPanel
         }
         catch(Exception exception) { }
         if(mainGraph != null) {
-            mainGraph.changeCycle("123");
             Graphics myG = m_img.getGraphics();
             if(myG != null) {
                 myG.clearRect(0, 0, m_rcMain.width, m_rcMain.height);
@@ -737,7 +738,7 @@ public class HQApplet extends JPanel
     }
 
     public void EndPaint() {
-        System.out.println("结束绘图");
+//        System.out.println("结束绘图");
         if(!m_bEndPaint) {
             getGraphics().setPaintMode();
             getGraphics().drawImage(m_img, m_rcMain.x, m_rcMain.y, this);

@@ -52,7 +52,7 @@ public class Page_KLine extends Page_Main {
     public Page_KLine(Rectangle _rc, HQApplet applet) {
         super(_rc, applet);
         marketId = applet.marketId;
-        System.out.println("Rectangle:"+ _rc.getWidth() +":"+_rc.getHeight());
+
         AskForDataOnce();
         super.m_applet.iCurrentPage = 2;
         // 绘制k线图
@@ -117,7 +117,7 @@ public class Page_KLine extends Page_Main {
      * 获取日线数据
      */
     private void GetKLine(Packet_HttpRequest request) {
-        System.out.println("Page_KLine-->GetDayLine");
+
         try {
             //数据请求连接
             //获取到的K线数据
@@ -165,11 +165,11 @@ public class Page_KLine extends Page_Main {
         if(stock != null)
             //设置市场Id
             marketId = stock.id;
-            if(1 == super.m_applet.m_iKLineCycle || 2 == super.m_applet.m_iKLineCycle || 3 == super.m_applet.m_iKLineCycle) {
-                if(stock.dayKLine != null)
-                    return;
-            } else if(stock.min5KLine != null)
-                return;
+//            if(1 == super.m_applet.m_iKLineCycle || 2 == super.m_applet.m_iKLineCycle || 3 == super.m_applet.m_iKLineCycle) {
+//                if(stock.dayKLine != null)
+//                    return;
+//            } else if(stock.min5KLine != null)
+//                return;
         Packet_HttpRequest request = new Packet_HttpRequest();
         request.sCode = super.m_applet.strCurrentCode;
         if(1 == super.m_applet.m_iKLineCycle || 2 == super.m_applet.m_iKLineCycle || 3 == super.m_applet.m_iKLineCycle)
@@ -181,7 +181,7 @@ public class Page_KLine extends Page_Main {
 
 
     void Paint(Graphics g) {
-        System.out.println("Page_KLine--->Paint");
+
         ProductData stock = super.m_applet.GetProductData(super.m_applet.strCurrentCode);
         g.setFont(new Font("\u6977\u4F53_GB2312", 1, 26));
         g.setFont(new Font("\u5B8B\u4F53", 0, 16));
@@ -361,8 +361,14 @@ public class Page_KLine extends Page_Main {
     @Override
     public void changeCycle(String cycle){
         lineType = cycle;
-        System.out.println(this.getClass().getName()+":"+cycle);
+
         switch(cycle){
+            //一分钟线
+            case "oneminutes":
+                super.m_applet.m_iKLineCycle = 1;
+                AskForKLine();
+                super.m_applet.repaint();
+                break;
             //日线
             case "oneday":
                 super.m_applet.m_iKLineCycle = 1;

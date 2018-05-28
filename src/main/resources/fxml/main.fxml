@@ -78,11 +78,10 @@
             <VBox prefHeight="1" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="104" />
             <AnchorPane prefHeight="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105">
                 <HBox spacing="4">
-                    <Button fx:id="back" mnemonicParsing="false" text="返回" onAction="#back" />
+                    <Button fx:id="back"  mnemonicParsing="false" text="返回" onAction="#back" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
                     <Button fx:id="oneMinute" mnemonicParsing="false" onAction="#oneMinuteKLine" text="1分" />
                     <Button fx:id="fiveMinute" mnemonicParsing="false" onAction="#fiveMinuteKLine" text="5分" />
-                    <Button fx:id="tenMinute" mnemonicParsing="false" onAction="#tenMinuteKLine" text="10分" />
                     <Button fx:id="fifteenMinute" mnemonicParsing="false" onAction="#fifteenMinuteKLine" text="15分" />
                     <Button fx:id="thrityMinute" mnemonicParsing="false" onAction="#thrityMinuteKLine" text="30分" />
                     <Button fx:id="sixtyMinute" mnemonicParsing="false" onAction="#sixtyMinuteKLine" text="60分" />
@@ -102,15 +101,23 @@
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             <AnchorPane fx:id="kline_root" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
                 <Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-                <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-                    <HBox spacing="1" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="1">
+                <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #484848">
+                    <HBox spacing="1" fx:id="Indicator" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="1">
+                        <Button textAlignment="CENTER" text="DMA" onAction="#DMA"/>
                         <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="KDJ" onAction="#KDJ"/>
+                        <Button textAlignment="CENTER" text="DMI" onAction="#DMI"/>
+                        <Button textAlignment="CENTER" text="OBV" onAction="#OBV"/>
+                        <Button textAlignment="CENTER" text="BOLL" onAction="#BOLL"/>
+                        <Button textAlignment="CENTER" text="SAR" onAction="#SAR"/>
+                        <Button textAlignment="CENTER" text="TRIX" onAction="#TRIX"/>
+                        <Button textAlignment="CENTER" text="BRAR" onAction="#BRAR"/>
+                        <Button textAlignment="CENTER" text="VR" onAction="#VR"/>
+                        <Button textAlignment="CENTER" text="EMV" onAction="#EMV"/>
+                        <Button textAlignment="CENTER" text="WR" onAction="#WR"/>
+                        <Button textAlignment="CENTER" text="ROC" onAction="#ROC"/>
+                        <Button textAlignment="CENTER" text="RSI" onAction="#RSI"/>
+                        <Button textAlignment="CENTER" text="MIKE" onAction="#MIKE"/>
                     </HBox>
                 </AnchorPane>
             </AnchorPane>

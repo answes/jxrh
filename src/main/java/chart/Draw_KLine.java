@@ -22,7 +22,7 @@ import java.util.Vector;
 
 public class Draw_KLine {
 
-    private static int cache_m_VirtualRatio = 18;
+    private static int cache_m_VirtualRatio = 16;
 
 
     boolean outOfArea = false;
@@ -31,7 +31,6 @@ public class Draw_KLine {
      */
     Page_KLine parent;
     /**
-     *
      * 日线
      */
     static final int CYCLE_DAY = 1;
@@ -74,9 +73,19 @@ public class Draw_KLine {
     private Rectangle m_rcLabel;
     int m_iPrecision;
 
+    public final static String[] indicators = {
+            "oneminutes",
+            "fiveminutes",
+            "fifteenminutes",
+            "thirtyminutes",
+            "onehours",
+            "oneday",
+            "sevenday",
+            "onemonth"
+    };
+
 
     public Draw_KLine(Page_KLine _parent) {
-        System.out.println("<----Draw_KLine---->");
 
         m_rcPane = new Rectangle[3];
         m_indicator = new IndicatorBase[3];
@@ -97,9 +106,10 @@ public class Draw_KLine {
         m_product = product;
         if(product != null)
             m_iPrecision = ((MenuListener) (parent)).m_applet.GetPrecision(m_product.sCode);
+
         MakeCycleData();
         GetScreen(g, rc);
-        DrawCycle(g);
+
         if(m_rcPane[0].width < 0)
             return;
         // 绘制时间
@@ -147,7 +157,7 @@ public class Draw_KLine {
         else
             m_rcLabel = new Rectangle(rc.width - 65 + 1, rc.y + iHeight, 70 - 1, iHeight * 18);
 
-        System.out.println("m_rcLabel:"+m_rcLabel.x);
+
     }
 
     /**
@@ -243,10 +253,10 @@ public class Draw_KLine {
     private void MakeCycleData() {
         if(m_product == null)
             return;
-        if(1 == ((MenuListener) (parent)).m_applet.m_iKLineCycle || 2 == ((MenuListener) (parent)).m_applet.m_iKLineCycle || 3 == ((MenuListener) (parent)).m_applet.m_iKLineCycle)
+//        if(1 == ((MenuListener) (parent)).m_applet.m_iKLineCycle || 2 == ((MenuListener) (parent)).m_applet.m_iKLineCycle || 3 == ((MenuListener) (parent)).m_applet.m_iKLineCycle)
             MakeTodayDayLine();
-        else
-            MakeToday5MinLine();
+//        else
+//            MakeToday5MinLine();
         if(m_kData == null)
             return;
         switch(((MenuListener) (parent)).m_applet.m_iKLineCycle) {
@@ -543,6 +553,7 @@ public class Draw_KLine {
 
     }
 
+
     private long GetCurrentDateTime(long date, int iMin) {
         int iIndex = Common.GetTimeIndexFromTime((int)(date % 10000L), ((MenuListener) (parent)).m_applet.m_timeRange);
         iIndex = ((iIndex + 1) / iMin + 1) * iMin - 1;
@@ -747,7 +758,7 @@ public class Draw_KLine {
      * @return
      */
     private boolean ChangePos(boolean bIsLeft) {
-        System.out.println("ChangePos:"+bIsLeft);
+//        System.out.println("ChangePos:"+bIsLeft);
         boolean bNeedRepaint = false;
         if(m_kData.length == 0)
             return bNeedRepaint;
@@ -873,7 +884,7 @@ public class Draw_KLine {
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Date"), x, y);
         y += fm.getHeight();
         String str = String.valueOf(m_kData[iIndex].date);
-        System.out.println("提示时间："+str);
+//        System.out.println("提示时间："+str);
 //        switch(((MenuListener) (parent)).m_applet.m_iKLineCycle) {
 //        case 1: // '\001'
 //        case 2: // '\002'
@@ -1023,7 +1034,7 @@ public class Draw_KLine {
      * 创建右键指标菜单
      */
     void CreateIndicator() {
-        System.out.println("<----CreateIndicator---->："+((MenuListener) (parent)).m_applet.m_strIndicator);
+//        System.out.println("<----CreateIndicator---->："+((MenuListener) (parent)).m_applet.m_strIndicator);
         int iPrecision = ((MenuListener) (parent)).m_applet.GetPrecision(((MenuListener) (parent)).m_applet.strCurrentCode);
         if(((MenuListener) (parent)).m_applet.m_strIndicator.equals("ASI"))
             m_indicator[2] = new ASI(m_pos, iPrecision);
@@ -1100,7 +1111,7 @@ public class Draw_KLine {
      * @param bDown 是向下切换
      */
     void ChangeIndicator(boolean bDown) {
-        System.out.println("<----ChangeIndicator---->");
+//        System.out.println("<----ChangeIndicator---->");
         int iCur = -1;
         for(int i = 0; i < IndicatorBase.INDICATOR_NAME.length; i++) {
             if(!IndicatorBase.INDICATOR_NAME[i][0].equals(((MenuListener) (parent)).m_applet.m_strIndicator))

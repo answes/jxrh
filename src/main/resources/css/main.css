@@ -264,3 +264,12 @@ buttom start
 .menu:hover {
     -fx-background-color: linear-gradient(#404040, #686868);
 }
+
+#Indicator .button{
+    -fx-background-color: 000;
+    -fx-text-fill: #dddddd;
+    -fx-font-size: 10px;
+    -fx-spacing: 0 2px;
+    -fx-max-height: 12px;
+    -fx-cursor: hand;
+}
