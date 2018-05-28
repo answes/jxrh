@@ -105,7 +105,7 @@ public class Draw_KLine {
     void Paint(Graphics g, Rectangle rc, ProductData product) {
         m_product = product;
         if(product != null)
-            m_iPrecision = ((MenuListener) (parent)).m_applet.GetPrecision(m_product.sCode);
+            m_iPrecision = 2;//((MenuListener) (parent)).m_applet.GetPrecision(m_product.sCode);
 
         MakeCycleData();
         GetScreen(g, rc);

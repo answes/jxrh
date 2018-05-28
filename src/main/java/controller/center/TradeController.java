@@ -1,5 +1,6 @@
 package controller.center;
 
+import chart.Draw_KLine;
 import chart.HQApplet;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -243,6 +244,10 @@ public class TradeController implements Initializable {
 
     }
 
+    public void showMinLine() {
+        jPanel.showPageMinLine();
+    }
+
     private void showKline(){
         if(jPanel.iCurrentPage == 1){
             jPanel.showPageKLine();
@@ -259,4 +264,9 @@ public class TradeController implements Initializable {
         button.setStyle(activedCss);
     }
 
+    public void cycle(int i) {
+
+        showKline();
+        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[i]);
+    }
 }

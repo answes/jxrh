@@ -216,47 +216,39 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void fenshiKLine(ActionEvent event) {
-//        jPanel.showPageMinLine();
+        tradeController.showMinLine();
     }
 
     public void oneMinuteKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[0]);
+        tradeController.cycle(0);
     }
 
     public void fiveMinuteKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[1]);
+        tradeController.cycle(1);
     }
 
     public void fifteenMinuteKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[2]);
+        tradeController.cycle(2);
     }
 
     public void thrityMinuteKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[3]);
+        tradeController.cycle(3);
     }
 
     public void sixtyMinuteKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[4]);
+        tradeController.cycle(4);
     }
 
     public void dayKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[5]);
+        tradeController.cycle(5);
     }
 
     public void weekKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[6]);
+        tradeController.cycle(6);
     }
 
     public void monthKLine(ActionEvent event) {
-//        showKline();
-//        jPanel.getPageMain().changeCycle(Draw_KLine.indicators[7]);
+        tradeController.cycle(7);
     }
 
     public void homeClick(MouseEvent event) {

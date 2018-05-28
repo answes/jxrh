@@ -110,7 +110,7 @@
     </top>
 
     <center>
-        <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #ffa770">
+        <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000">
             <!--<VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->
             <!--<AnchorPane fx:id="kline_root" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">-->
                 <!--<Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->

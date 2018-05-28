@@ -177,7 +177,7 @@ public abstract class IndicatorBase {
         }
 
         float max = (float)(int)(m_max / minUnit / (unit / minUnit)) * unit;
-//        System.out.println("区域最大值："+max+",间隔值："+unit);
+
         for(float value = max; value <= m_max && value >= m_min;) {
             int y = (int)((float)top + ((m_max - value) * (float)(m_rc.height - fm.getHeight())) / (m_max - m_min));
             if(y < top + fm.getHeight() || y > m_rc.y + m_rc.height) {
