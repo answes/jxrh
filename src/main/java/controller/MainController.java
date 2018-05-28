@@ -15,7 +15,6 @@ import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Bounds;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -33,7 +32,6 @@ import utils.StageController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Event;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
@@ -52,6 +50,8 @@ public class MainController implements ControlledStage ,Initializable{
     private AnchorPane bottom_root;
     @FXML
     private AnchorPane goods_root;
+    @FXML
+    private AnchorPane kline_root;
     @FXML
     private TableView<Goods> tb_goods;
     /**
@@ -123,6 +123,7 @@ public class MainController implements ControlledStage ,Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         init();
         initGood();
+        kline_root.setVisible(false);
         kline.setVisible(false);
 
     }
@@ -179,6 +180,7 @@ public class MainController implements ControlledStage ,Initializable{
     private void setRowOnTwoClick(Goods commodity) {
         goods_root.setVisible(false);
         tb_goods.setVisible(false);
+        kline_root.setVisible(true);
         kline.setVisible(true);
     }
 
@@ -420,6 +422,11 @@ public class MainController implements ControlledStage ,Initializable{
     public void back(ActionEvent event) {
         goods_root.setVisible(true);
         tb_goods.setVisible(true);
+        kline_root.setVisible(false);
         kline.setVisible(false);
+    }
+
+    public void MACD(ActionEvent event) {
+
     }
 }
