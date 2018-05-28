@@ -195,15 +195,7 @@ class Page_MinLine extends Page_Main {
 
     }
 
-    @Override
-    void changeCycle(String cycle) {
 
-    }
-
-    @Override
-    void changeIndicator(String type) {
-
-    }
 
     boolean MouseLeftClicked(int x, int y) {
         if(rcMinLine != null && rcMinLine.contains(x, y) && draw_MinLine != null)

@@ -357,10 +357,11 @@ public class Page_KLine extends Page_Main {
      * 修改K线周期，
      * @param cycle
      */
-    @Override
-    void changeCycle(String cycle){
-        lineType = cycle;
 
+    @Override
+    public void changeCycle(String cycle){
+        lineType = cycle;
+        System.out.println(this.getClass().getName()+":"+cycle);
         switch(cycle){
             //日线
             case "oneday":
@@ -413,7 +414,7 @@ public class Page_KLine extends Page_Main {
      * @param type 指标类型
      */
     @Override
-    void changeIndicator(String type){
+    public void changeIndicator(String type){
         super.m_applet.m_strIndicator = type;
         draw_KLine.CreateIndicator();
         super.m_applet.repaint();

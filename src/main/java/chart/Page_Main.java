@@ -35,9 +35,13 @@ abstract class Page_Main extends MenuListener {
 
     abstract boolean KeyPressed(KeyEvent keyevent);
 
-    abstract void changeCycle(String cycle);
+    public  void changeCycle(String cycle){
 
-    abstract void changeIndicator(String type);
+    }
+
+    public  void changeIndicator(String type){
+
+    }
 
     void AskForDataOnTimer() {
     }

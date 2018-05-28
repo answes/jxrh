@@ -100,7 +100,7 @@
     <center>
         <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000000">
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-            <AnchorPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
+            <AnchorPane style="-fx-background-color: #000000" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
                 <Pane fx:id="kline" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
                 <AnchorPane fx:id="bottom_root" prefHeight="200" style="-fx-background-color: lightslategrey" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" />
             </AnchorPane>
@@ -146,7 +146,7 @@
     </center>
 
     <right>
-        <HBox prefWidth="220.0" BorderPane.alignment="CENTER" style="-fx-background-color: #000000">
+        <HBox fx:id="rightBox" prefWidth="220.0" BorderPane.alignment="CENTER" style="-fx-background-color: #000000">
             <VBox prefWidth="220.0">
                 <HBox alignment="CENTER_LEFT">
                     <Label fx:id="cus" alignment="CENTER" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 14px;-fx-padding: 6 6 6 6">测试商品001

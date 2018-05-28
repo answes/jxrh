@@ -64,7 +64,7 @@ public class HQApplet extends JPanel
     Vector vProductData;
     private Rectangle m_rcMain;
     private Rectangle m_rcBottom;
-    Page_Main mainGraph;
+    public Page_Main mainGraph;
 //    Page_Bottom bottomGraph;
     public static RHColor rhColor = null;
     String strSocketIP;
@@ -715,6 +715,7 @@ public class HQApplet extends JPanel
     //init--start--paint--stop--destroy
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         if(m_rcMain == null)
             return;
         m_bEndPaint = false;
@@ -723,6 +724,7 @@ public class HQApplet extends JPanel
         }
         catch(Exception exception) { }
         if(mainGraph != null) {
+            mainGraph.changeCycle("123");
             Graphics myG = m_img.getGraphics();
             if(myG != null) {
                 myG.clearRect(0, 0, m_rcMain.width, m_rcMain.height);

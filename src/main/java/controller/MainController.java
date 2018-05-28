@@ -8,15 +8,17 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingNode;
-import javafx.event.ActionEvent;
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import utils.Constant;
@@ -26,6 +28,7 @@ import utils.StageController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Event;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
@@ -46,9 +49,11 @@ public class MainController implements ControlledStage ,Initializable{
     @FXML
     private Label timeNow;
 
+    @FXML
+    private javafx.scene.control.Button to_transaction;
+
     private StageController myController;
     private NewsController newsController;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,11 +64,14 @@ public class MainController implements ControlledStage ,Initializable{
     private Date oldDate=new Date();
     private int count = 0;
 
-    JComponent jPanel = new HQApplet(0);
+    HQApplet jPanel = new HQApplet(0);
     SwingNode swingNode = new SwingNode();
 
     @FXML
     BorderPane view_root;
+
+    @FXML
+    HBox rightBox;
 
     int width  ;
     int height ;
@@ -98,62 +106,50 @@ public class MainController implements ControlledStage ,Initializable{
             }else{
                 if(new Date().getTime()-oldDate.getTime()<1200){
                     boolean maxMin = !myController.getStage(Constant.MAIN_ID).isMaximized();
-
                     myController.getStage(Constant.MAIN_ID).setMaximized(maxMin);
-
-                    System.out.println("maxMin:"+maxMin+","+kline.getPrefWidth()+","+kline.getPrefHeight());
-
-//                    if (maxMin) {
-//
-//                        swingNode.setContent(swingNode.getContent());
-//                        swingNode.getContent().setPreferredSize(new Dimension(
-//                                (int) swingNode.getParent().getBoundsInParent().getWidth(),
-//                                (int) swingNode.getParent().getBoundsInParent().getHeight() - 50));
-//
-//                    }else{
-//                        swingNode.setContent(swingNode.getContent());
-//                        swingNode.getContent().setPreferredSize(new Dimension(
-//                                (int)kline.getPrefWidth(),
-//                                (int)kline.getPrefHeight() + 50));
-//                    }
-
                 }
                 count = 0;
             }
 
         });
 
-
-        jPanel.setFocusable(true);
-        jPanel.setRequestFocusEnabled(true);
-
-
         SwingUtilities.invokeLater(()->{
+            jPanel.setFocusable(true);
             swingNode.setContent(jPanel);
+            kline.getChildren().add(swingNode);
         });
-
-        kline.getChildren().add(swingNode);
-
 
         kline.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
                 width = newValue.intValue();
-                swingNode.setContent(swingNode.getContent());
-                swingNode.getContent().setPreferredSize(new Dimension(
-                        width,height));
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        repaintPanel();
+
+                    }
+                });
             }
         });
+
 
         kline.heightProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("HeightNumber:"+newValue.intValue());
+
                 height = newValue.intValue() - 50;
-                swingNode.setContent(swingNode.getContent());
-                swingNode.getContent().setPreferredSize(new Dimension(
-                        width,height));
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        repaintPanel();
+
+                    }
+                });
+
             }
         });
 
@@ -178,6 +174,30 @@ public class MainController implements ControlledStage ,Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 重绘
+     */
+    private void repaintPanel() {
+
+        swingNode.setContent(swingNode.getContent());
+        swingNode.getContent().setPreferredSize(new Dimension(
+                width, height));
+
+        kline.setVisible(false);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(300);
+                    kline.setVisible(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
 
     @Override
