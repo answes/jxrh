@@ -100,26 +100,19 @@
     <center>
         <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000000">
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-            <AnchorPane AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
-                <Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-            </AnchorPane>
-            <AnchorPane fx:id="listView" prefHeight="450.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                <Label fx:id="lb_list_title" prefWidth="1200.0" style="-fx-font-fill: #25B3FA" text="木棉唐" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                <GridPane prefHeight="450.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
-                    <ListView fx:id="lv_list1" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <ListView fx:id="lv_list2" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <ListView fx:id="lv_list3" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                    <ListView fx:id="lv_list4" prefHeight="450.0" prefWidth="300.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-                    <columnConstraints>
-                        <ColumnConstraints />
-                        <ColumnConstraints />
-                        <ColumnConstraints />
-                        <ColumnConstraints />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints />
-                    </rowConstraints>
-                </GridPane>
+            <AnchorPane fx:id="kline_root" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
+                <Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+                <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                    <HBox spacing="1" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="1">
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
+                    </HBox>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane fx:id="goods_root"  visible="true" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                 <TableView fx:id="tb_goods" editable="false"  visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
