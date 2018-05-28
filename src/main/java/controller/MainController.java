@@ -1,43 +1,23 @@
 package controller;
 
-import bean.Goods;
-import chart.Draw_KLine;
-import controller.bottom.NewsController;
 import controller.center.GoodController;
+import controller.center.NewCenterController;
 import controller.center.TradeController;
-import controller.right.RightController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import chart.HQApplet;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.embed.swing.SwingNode;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import utils.Constant;
 import utils.ControlledStage;
 import utils.DateUtil;
 import utils.StageController;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -68,6 +48,7 @@ public class MainController implements ControlledStage ,Initializable{
     private StageController myController;
     private GoodController goodController;
     private TradeController tradeController;
+    private NewCenterController newCenterController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -118,8 +99,22 @@ public class MainController implements ControlledStage ,Initializable{
         Timeline timeline =  new Timeline(new KeyFrame(Duration.millis(1000), e ->  timeNow.setText(DateUtil.getNowTime())));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+        initNews();
         initTrade();
         initCenter();
+    }
+
+    private void initNews() {
+        AnchorPane newsLoader = null;
+        FXMLLoader newsLoaderFx = new FXMLLoader(getClass().getClassLoader().getResource("fxml/new_center.fxml"));
+        try {
+            newsLoader = newsLoaderFx.load();
+            center_root.getChildren().add(newsLoader);
+            newCenterController = newsLoaderFx.getController();
+            newCenterController.setRootVisible(false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initTrade() {
@@ -269,11 +264,13 @@ public class MainController implements ControlledStage ,Initializable{
     public void toTranstion(ActionEvent event) {
         goodController.setRootVisible(false);
         tradeController.setRootVisible(true);
+        newCenterController.setRootVisible(false);
     }
 
     public void back(ActionEvent event) {
         goodController.setRootVisible(true);
         tradeController.setRootVisible(false);
+        newCenterController.setRootVisible(false);
     }
 
     /**
@@ -283,6 +280,7 @@ public class MainController implements ControlledStage ,Initializable{
     public void hot(ActionEvent event) {
         goodController.setRootVisible(true);
         tradeController.setRootVisible(false);
+        newCenterController.setRootVisible(false);
     }
 
     /**
@@ -292,6 +290,7 @@ public class MainController implements ControlledStage ,Initializable{
     public void data(ActionEvent event) {
         goodController.setRootVisible(true);
         tradeController.setRootVisible(false);
+        newCenterController.setRootVisible(false);
     }
 
     /**
@@ -299,8 +298,9 @@ public class MainController implements ControlledStage ,Initializable{
      * @param event
      */
     public void news(ActionEvent event) {
-        goodController.setRootVisible(true);
+        goodController.setRootVisible(false);
         tradeController.setRootVisible(false);
+        newCenterController.setRootVisible(true);
     }
 
 

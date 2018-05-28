@@ -7,11 +7,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +30,8 @@ public class GoodController implements Initializable {
     private AnchorPane goods_root;
     @FXML
     private TableView<Goods> tb_goods;
+    @FXML
+    private HBox good_type;
     /**
      * tableview Column
      */
@@ -60,6 +64,34 @@ public class GoodController implements Initializable {
     @FXML
     private AnchorPane bottom_root;
 
+    private String normalCss ="-fx-background-color: #484848;" +
+                    "-fx-background-radius: 0px;" +
+                    "-fx-text-fill: #dddddd;" +
+                    "-fx-font-size: 12px;" +
+                    "-fx-min-width: 40px;" +
+                    "-fx-start-margin: 0;" +
+                    "-fx-pref-height: 12px;" +
+                    "-fx-end-margin: 0;" +
+                    "-fx-border-color: #808080;" +
+                    "-fx-border-width:0 1px 0 0;" +
+                    "-fx-border-style: solid;" +
+                    "-fx-cursor: hand;";
+
+    private String activedCss ="-fx-background-color: #D4D0C8;" +
+                    "-fx-text-fill: #FF0000;" +
+                    "-fx-font-size: 12px;" +
+                    "-fx-border-width:0 1px 0 0;" +
+                    "-fx-start-margin: 0;" +
+                    "-fx-end-margin: 0;" +
+                    "-fx-border-style: solid;" +
+                    "-fx-border-color: #808080;" +
+                    "-fx-border-radius: 0px;" +
+                    "-fx-background-radius: 0px;" +
+                    "-fx-cursor: hand;" +
+                    "-fx-fill-height: true;" +
+                    "-fx-pref-height: 12px;" +
+                    "-fx-max-height: 12px;";
+
     private NewsController newsController;
     private TradeController tradeController;
 
@@ -76,6 +108,7 @@ public class GoodController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         init();
         initGood();
+        initGoodBottom();
     }
 
     public void setTradeController(TradeController tradeController){
@@ -87,6 +120,31 @@ public class GoodController implements Initializable {
             goods_root.setVisible(true);
         }else {
             goods_root.setVisible(false);
+        }
+    }
+
+    @FXML
+    private void initGoodBottom() {
+        ObservableList<Button> buttons = FXCollections.observableArrayList();
+        for (int i = 0; i < 5; i++) {
+            Button button = new Button("海香所" + i);
+            if(i==0){
+                button.setStyle(activedCss);
+            }else {
+                button.setStyle(normalCss);
+            }
+            good_type.getChildren().add(button);
+            buttons.add(button);
+            button.setOnAction(event -> {
+                buttons.forEach(b ->
+                        b.setStyle(normalCss)
+                );
+                button.setStyle(activedCss);
+                if(datas.isEmpty()){
+                    return;
+                }
+                datas.remove(1);
+            });
         }
     }
 
