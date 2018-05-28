@@ -7,19 +7,31 @@ top
 }
 
 #hot{
-    -fx-background-color: #C67161;
-    -fx-background-radius: 0px;
-    -fx-background-radius: 1px;
+    -fx-background-color: linear-gradient(to bottom,#CA7464,#9C483C);
+    -fx-background-radius: 2px;
+    -fx-border-radius: 2px;
+    -fx-border-style: solid;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #D79386;
+    -fx-padding: 4px 8px;
 }
 #news{
-    -fx-background-color: #839A68;
-    -fx-background-radius: 0px;
-    -fx-background-radius: 1px;
+    -fx-background-color: linear-gradient(to bottom,#889F6C,#5E754B);
+    -fx-background-radius: 2px;
+    -fx-border-radius: 2px;
+    -fx-border-style: solid;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #A1B38B;
+    -fx-padding: 4px 8px;
 }
 #data{
-    -fx-background-color: #D2A84C;
-    -fx-background-radius: 0px;
-    -fx-background-radius: 1px;
+    -fx-background-color: linear-gradient(to bottom,#D5AD4F,#BA8134);
+    -fx-background-radius: 2px;
+    -fx-border-radius: 2px;
+    -fx-border-style: solid;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #DEBF74;
+    -fx-padding: 4px 8px;
 }
 
 #hot:hover,#news:hover,#data:hover{
@@ -324,8 +336,6 @@ buttom start
 #newest .label{
     -fx-font-size: 14px;
     -fx-pref-width: 55px;
-    -fx-padding: 0 2px;
     -fx-text-fill: #D4D0C8;
-    -fx-label-padding: 0px;
 }
 

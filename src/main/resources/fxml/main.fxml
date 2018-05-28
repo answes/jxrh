@@ -26,10 +26,10 @@
         <AnchorPane fx:id="top_root" prefHeight="110.0" BorderPane.alignment="CENTER" AnchorPane.bottomAnchor="0.0"
                     AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <AnchorPane AnchorPane.bottomAnchor="26.0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
-                        AnchorPane.rightAnchor="0">
+                        AnchorPane.rightAnchor="0" style="-fx-border-color: #262626;-fx-border-style: solid;-fx-border-width: 0 0 1 0">
                 <Label fx:id="top_title" prefHeight="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                      AnchorPane.topAnchor="0.0" style="-fx-background-color: black;-fx-font-size: 18px" alignment="CENTER" text="锦绣融和交易系统" textFill="azure" />
-                <MenuBar AnchorPane.leftAnchor="0" AnchorPane.topAnchor="7" style="-fx-background-color: black" prefHeight="30">
+                      AnchorPane.topAnchor="0.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);-fx-font-size: 18px" alignment="CENTER" text="锦绣融和交易系统" textFill="azure" />
+                <MenuBar AnchorPane.leftAnchor="0" AnchorPane.topAnchor="7" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" prefHeight="30">
                     <menus>
                         <Menu mnemonicParsing="false" text="板块">
                             <items>
@@ -71,13 +71,13 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <HBox AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0"  prefHeight="30.0" style="-fx-background-color: black" >
+                <HBox AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0"  prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" >
                     <Button fx:id="bt_scale" onAction="#zoomWindow" text="一"/>
                     <Button fx:id="bt_zoom" onAction="#scaleWindow" text="口"/>
                     <Button fx:id="bt_close" onAction="#closeWindow" text="X"/>
                 </HBox>
             </AnchorPane>
-            <HBox  spacing="8" AnchorPane.topAnchor="39" style="-fx-background-color: #242424" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" prefHeight="45" alignment="CENTER_LEFT">
+            <HBox  spacing="8" AnchorPane.topAnchor="39" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818); -fx-border-width: 1 0 1 0;-fx-border-color: #000;-fx-border-style: solid" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" prefHeight="40" alignment="CENTER_LEFT">
                 <Button text="热点导航" fx:id="hot" onAction="#hot">
                     <HBox.margin>
                         <Insets left="3"/>
@@ -86,10 +86,8 @@
                 <Button text="行情数据" fx:id="data" onAction="#data"/>
                 <Button text="新闻数据" fx:id="news" onAction="#news"/>
             </HBox>
-            <VBox prefHeight="1" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0"
-                  AnchorPane.rightAnchor="0" AnchorPane.topAnchor="84"/>
             <AnchorPane prefHeight="25.0"  AnchorPane.leftAnchor="5.0"
-                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86">
+                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86" style="-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid">
                 <HBox spacing="4">
                     <Button fx:id="back"  mnemonicParsing="false" text="返回" onAction="#back" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
@@ -104,8 +102,6 @@
                 </HBox>
                 <Button fx:id="to_transaction" onAction="#toTranstion" text="进入交易" AnchorPane.rightAnchor="10.0"/>
             </AnchorPane>
-            <VBox prefHeight="1" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0"
-                  AnchorPane.rightAnchor="0" AnchorPane.topAnchor="110"/>
         </AnchorPane>
     </top>
 
