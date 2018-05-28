@@ -192,7 +192,7 @@ public class KLine extends IndicatorBase {
      * ����
      */
     public void DrawCursor(Graphics g, int iPos) {
-        System.out.println(getClass().getName()+"<----DrawCursor---->192");
+
         int iIndex = super.m_pos.m_Begin + iPos;
         int y = (int)((float)(super.m_rc.y + super.m_iTextH) + ((super.m_max - super.m_kData[iIndex].closePrice) * (float)(super.m_rc.height - super.m_iTextH)) / (super.m_max - super.m_min));
         g.drawLine(super.m_rc.x, y, super.m_rc.x + super.m_rc.width, y);

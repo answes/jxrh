@@ -47,6 +47,9 @@ public class Draw_MinLine {
     Rectangle m_rcLabel;
     private int m_iProductType;
     boolean outOfArea = false;
+
+    private int drawY;
+
     public Draw_MinLine(HQApplet applet, boolean _bLarge) {
         System.out.println("<----Draw_MinLine---->");
         m_iTotalMinNum = 0;
@@ -606,6 +609,8 @@ public class Draw_MinLine {
     }
 
     boolean MouseLeftClicked(int x, int y) {
+        drawY = y;
+
         if(m_rcPrice == null || m_rcVolume == null) {
             outOfArea = true;
             return false;
@@ -631,7 +636,6 @@ public class Draw_MinLine {
 
 
     boolean MouseDragged(int x, int y) {
-        System.out.println(x+","+y);
         return MouseLeftClicked(x, y);
     }
 
@@ -642,12 +646,22 @@ public class Draw_MinLine {
         if(m_iPos >= 0 && m_iPos <= m_iMinLineNum - 1) {
             int x = GetXFromMinLineIndex(m_iPos);
             g.drawLine(x, m_rcPrice.y + 1, x, (m_rcVolume.y + m_rcVolume.height) - 1);
+            if(drawY >= m_rcPrice.y && drawY <= m_rcPrice.getHeight() + m_rcPrice.y){
+                g.drawLine(m_rcPrice.x, drawY, m_rcPrice.width + 55 - 2, drawY );
+            }
         }
         if(iNewPos >= 0 && iNewPos <= m_iMinLineNum - 1) {
             m_iPos = iNewPos;
             int x = GetXFromMinLineIndex(m_iPos);
             g.drawLine(x, m_rcPrice.y + 1, x, (m_rcVolume.y + m_rcVolume.height) - 1);
+
+            if(drawY >= m_rcPrice.y && drawY <= m_rcPrice.getHeight() + m_rcPrice.y){
+                g.drawLine(m_rcPrice.x, drawY, m_rcPrice.width + 55 - 2, drawY );
+            }
+
         }
+
+
         g.setPaintMode();
     }
 
