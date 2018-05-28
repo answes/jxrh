@@ -47,7 +47,7 @@ import java.util.*;
  */
 public class MainController implements ControlledStage ,Initializable{
     @FXML
-    private Pane top_title;
+    private Label top_title;
     @FXML
     private AnchorPane bottom_root;
     @FXML
@@ -492,6 +492,27 @@ public class MainController implements ControlledStage ,Initializable{
         resetIndicator(event);
         jPanel.getPageMain().changeIndicator("DMI");
 
+    }
+
+    /**
+     * 热点导航
+     * @param event
+     */
+    public void hot(ActionEvent event) {
+    }
+
+    /**
+     * 行情数据
+     * @param event
+     */
+    public void data(ActionEvent event) {
+    }
+
+    /**
+     * 新闻资讯
+     * @param event
+     */
+    public void news(ActionEvent event) {
     }
     public void OBV(ActionEvent event) {
         showKline();

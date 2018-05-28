@@ -6,14 +6,27 @@ top
     -fx-background-color:linear-gradient(#212121, #212121);
 }
 
-
-#logo_tiele{
-    -fx-text-fill: white;
-    -fx-font-size: 16px;
+#hot{
+    -fx-background-color: #C67161;
+    -fx-background-radius: 0px;
+    -fx-background-radius: 1px;
 }
-#logo_second_title{
-    -fx-text-fill: white;
-    -fx-font-size: 16px;
+#news{
+    -fx-background-color: #839A68;
+    -fx-background-radius: 0px;
+    -fx-background-radius: 1px;
+}
+#data{
+    -fx-background-color: #D2A84C;
+    -fx-background-radius: 0px;
+    -fx-background-radius: 1px;
+}
+
+#hot:hover,#news:hover,#data:hover{
+    /*
+    这个是遮罩
+     */
+    -fx-opacity: 0.6;
 }
 
 #bt_top_zijin{
