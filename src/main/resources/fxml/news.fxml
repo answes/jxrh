@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.AnchorPane?>
-
-<?import javafx.scene.layout.HBox?>
 <?import java.net.URL?>
-<AnchorPane prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.NewsController">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.NewsController">
     <stylesheets>
-        <URL value="@../css/news.css"></URL>
+        <URL value="@../css/news.css" />
     </stylesheets>
-    <children>
-        <HBox>
-            <TitledPane animated="false" collapsible="false" text="系统公告">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
-                </content>
-            </TitledPane>
-            <TitledPane animated="false" collapsible="false" text="产品资讯">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
-                </content>
-            </TitledPane>
-            <TitledPane animated="false" collapsible="false" text="新闻速递">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="250.0"/>
-                </content>
-            </TitledPane>
-        </HBox>
-    </children>
+    <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <VBox prefHeight="200" prefWidth="400">
+            <HBox style="-fx-background-color:#272627;">
+                <Label alignment="CENTER" prefHeight="30" prefWidth="90" style="-fx-background-color: #5287AE;-fx-text-fill: white;" text="系统公告" />
+            </HBox>
+            <HBox prefHeight="170" prefWidth="400">
+                <Label alignment="CENTER" prefHeight="170" prefWidth="30" style="-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 8" text="系统公告" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView prefWidth="370" style="-fx-background-color: #2A2A2A" />
+            </HBox>
+        </VBox>
+        <VBox prefHeight="200" prefWidth="400">
+            <HBox style="-fx-background-color:#272627;">
+                <Label alignment="CENTER" prefHeight="30" prefWidth="90" style="-fx-background-color: #5287AE;-fx-text-fill: white;" text="产品资讯" />
+            </HBox>
+            <HBox prefHeight="170" prefWidth="400">
+                <Label alignment="CENTER" prefHeight="170" prefWidth="30" style="-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 8" text="系统公告" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView prefWidth="370" style="-fx-background-color: #2A2A2A"/>
+            </HBox>
+        </VBox>
+        <VBox prefHeight="200" prefWidth="400">
+            <HBox style="-fx-background-color:#272627;">
+                <Label alignment="CENTER" prefHeight="30" prefWidth="90" style="-fx-background-color: #5287AE;-fx-text-fill: white;" text="新闻速递" />
+            </HBox>
+            <HBox prefHeight="170" prefWidth="400">
+                <Label alignment="CENTER" prefHeight="170" prefWidth="30" style="-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 8" text="滚动新闻" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView prefWidth="370" style="-fx-background-color: #2A2A2A"/>
+            </HBox>
+        </VBox>
+    </HBox>
 </AnchorPane>
