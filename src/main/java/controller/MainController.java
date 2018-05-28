@@ -16,7 +16,9 @@ import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
@@ -35,8 +37,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * @Author : bigshark
@@ -87,6 +88,42 @@ public class MainController implements ControlledStage ,Initializable{
 
     @FXML
     private Label timeNow;
+    @FXML
+    HBox Indicator;
+    @FXML
+    Button MACD;
+
+    private String normalCss =
+            "-fx-background-color: #484848;"+
+            "-fx-background-radius: 0px;" +
+            "-fx-text-fill: #dddddd;" +
+            "-fx-font-size: 10px;" +
+            "-fx-padding: 1px 4px;"+
+            "-fx-min-width: 40px;"+
+            "-fx-start-margin: 0;" +
+            "-fx-pref-height: 12px;" +
+            "-fx-end-margin: 0;" +
+            "-fx-border-color: #808080;"+
+            "-fx-border-width:0 1px 0 0;" +
+            "-fx-border-style: solid;" +
+            "-fx-cursor: hand;";
+
+    private String activedCss =
+            "-fx-background-color: #D4D0C8;" +
+            "-fx-text-fill: #FF0000;" +
+            "-fx-font-size: 10px;" +
+            "-fx-padding: 1px 4px;"+
+            "-fx-border-width:0 1px 0 0;" +
+            "-fx-start-margin: 0;" +
+            "-fx-end-margin: 0;" +
+            "-fx-border-style: solid;" +
+            "-fx-border-color: #808080;" +
+            "-fx-border-radius: 0px;" +
+            "-fx-background-radius: 0px;" +
+            "-fx-cursor: hand;"+
+            "-fx-fill-height: true;"+
+            "-fx-pref-height: 12px;"+
+            "-fx-max-height: 12px;";
 
     @FXML
     private javafx.scene.control.Button to_transaction;
@@ -225,6 +262,8 @@ public class MainController implements ControlledStage ,Initializable{
             jPanel.setFocusable(true);
             swingNode.setContent(jPanel);
             kline.getChildren().add(swingNode);
+
+            MACD.setStyle(activedCss);
         });
 
         kline.widthProperty().addListener(new ChangeListener<Number>() {
@@ -440,65 +479,80 @@ public class MainController implements ControlledStage ,Initializable{
 
     public void MACD(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("MACD");
     }
     public void DMA(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("DMA");
     }
     public void DMI(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("DMI");
 
     }
     public void OBV(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("OBV");
 
     }
     public void KDJ(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("KDJ");
 
     }
     public void BOLL(ActionEvent event) {
         showKline();
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("BOLL");
 
     }
     public void SAR(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("SAR");
 
     }
     public void TRIX(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("TRIX");
 
     }
     public void BRAR(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("BRAR");
 
     }
     public void VR(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("VR");
 
     }
     public void EMV(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("EMV");
 
     }
     public void WR(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("W%R");
 
     }
     public void ROC(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("ROC");
 
     }
     public void RSI(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("RSI");
 
     }
     public void MIKE(ActionEvent event) {
+        resetIndicator(event);
         jPanel.getPageMain().changeIndicator("MIKE");
 
     }
@@ -507,6 +561,16 @@ public class MainController implements ControlledStage ,Initializable{
         if(jPanel.iCurrentPage == 1){
             jPanel.showPageKLine();
         }
+    }
+
+    private void resetIndicator(ActionEvent event){
+        java.util.List<Node> nodeList = Indicator.getChildren();
+
+        for(Node n : nodeList){
+            n.setStyle(normalCss);
+        }
+        Button button = (Button)event.getSource();
+        button.setStyle(activedCss);
     }
 
 }

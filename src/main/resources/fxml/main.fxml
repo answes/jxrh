@@ -101,10 +101,10 @@
             <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
             <AnchorPane fx:id="kline_root" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">
                 <Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-                <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #484848">
+                <AnchorPane fx:id="klineType" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #484848;-fx-border-style: solid;-fx-border-width: 1px 0 0 0;-fx-border-color: #88A4BE">
                     <HBox spacing="1" fx:id="Indicator" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="1">
+                        <Button fx:id="MACD" textAlignment="CENTER" text="MACD" onAction="#MACD"/>
                         <Button textAlignment="CENTER" text="DMA" onAction="#DMA"/>
-                        <Button textAlignment="CENTER" text="MACD" onAction="#MACD"/>
                         <Button textAlignment="CENTER" text="KDJ" onAction="#KDJ"/>
                         <Button textAlignment="CENTER" text="DMI" onAction="#DMI"/>
                         <Button textAlignment="CENTER" text="OBV" onAction="#OBV"/>

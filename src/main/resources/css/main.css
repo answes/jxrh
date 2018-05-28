@@ -266,10 +266,35 @@ buttom start
 }
 
 #Indicator .button{
-    -fx-background-color: 000;
+    -fx-background-color: #484848;
     -fx-text-fill: #dddddd;
     -fx-font-size: 10px;
-    -fx-spacing: 0 2px;
-    -fx-max-height: 12px;
     -fx-cursor: hand;
+    -fx-start-margin: 0;
+    -fx-end-margin: 0;
+    -fx-padding: 1px 4px;
+    -fx-min-width: 40px;
+    -fx-border-width:0 1px 0 0;
+    -fx-border-style: solid;
+    -fx-border-color: #808080;
+    -fx-background-radius: 0px;
+    -fx-pref-height: 1em;
+    -fx-max-height: 1em;
+    -fx-fill-height: true;
+}
+#Indicator .button:hover{
+    -fx-background-color: #D4D0C8;
+    -fx-text-fill: #FF0000;
+    -fx-font-size: 10px;
+    -fx-cursor: hand;
+    -fx-start-margin: 0;
+    -fx-end-margin: 0;
+    -fx-padding: 1px 4px;
+    -fx-border-width:0 1px 0 0;
+    -fx-border-style: solid;
+    -fx-border-color: #808080;
+    -fx-background-radius: 0px;
+    -fx-pref-height: 12px;
+    -fx-max-height: 12px;
+    -fx-fill-height: true;
 }
