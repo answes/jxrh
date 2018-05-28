@@ -331,7 +331,6 @@ buttom start
 #tb_goods .table-column{
     -fx-padding: 0px 0px;
     -fx-border-width: 0px;
-    -fx-text-fill: #FFFFC0;
 }
 #newest .label{
     -fx-font-size: 14px;
