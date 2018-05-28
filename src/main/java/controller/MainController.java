@@ -1,5 +1,6 @@
 package controller;
 
+import bean.Goods;
 import controller.bottom.NewsController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -15,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -45,6 +47,10 @@ public class MainController implements ControlledStage ,Initializable{
     private Pane top_title;
     @FXML
     private AnchorPane bottom_root;
+    @FXML
+    private AnchorPane goods_root;
+    @FXML
+    private TableView<Goods> tb_goods;
 
     @FXML
     private Label timeNow;
