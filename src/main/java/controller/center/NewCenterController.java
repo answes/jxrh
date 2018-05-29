@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,7 +21,7 @@ import java.util.ResourceBundle;
  * @Date : Create in 17:37 2018/05/28
  * @Modificd :
  */
-public class NewCenterController implements Initializable {
+public class NewCenterController implements  Initializable {
     @FXML
     private AnchorPane news_root;
     @FXML
@@ -28,8 +29,8 @@ public class NewCenterController implements Initializable {
     @FXML
     private NewsPupWindow newsPupWindow;
 
-    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:0","新闻标题不想说什么"),new News(2L,"2018-05-05 00:00:0","新闻标题不想说什么")
-    ,new News(3L,"2018-05-05 00:00:0","新闻标题不想说什么"),new News(4L,"2018-05-05 00:00:0","新闻标题不想说什么"),new News(5L,"2018-05-05 00:00:0","新闻标题不想说什么"));
+    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(2L,"2018-05-05 00:00:00","新闻标题不想说什么")
+    ,new News(3L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(4L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(5L,"2018-05-05 00:00:00","新闻标题不想说什么"));
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,10 +46,11 @@ public class NewCenterController implements Initializable {
                     if(newsPupWindow!=null){
                         newsPupWindow.setData(new_val);
                     }else{
-                        newsPupWindow = new NewsPupWindow(new_val);
+                        newsPupWindow = new NewsPupWindow(list,new_val);
                     }
                 });
     }
+
 
     public void setRootVisible(boolean rootVisible) {
     if(rootVisible){

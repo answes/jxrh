@@ -1,7 +1,8 @@
 package controller.pup;
 
 import bean.News;
-import javafx.fxml.FXML;
+import controller.pup.controller.NewsPupController;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,13 +18,16 @@ import java.io.IOException;
  * @Modificd :
  */
 public class NewsPupWindow {
+
     Stage stage;
 
-    public NewsPupWindow(News news){
+    Parent root = null;
+    NewsPupController newsPupController;
+
+    public NewsPupWindow(ObservableList<News> list,News news){
         stage = new Stage();
         stage.setTitle(news.getTilte()+news.getId());
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/news_pup.fxml"));
-        Parent root = null;
         try
         {
             root = loader.load();
@@ -31,14 +35,18 @@ public class NewsPupWindow {
         {
             e.printStackTrace();
         }
+        newsPupController = loader.getController();
+        newsPupController.setData(list,news);
+        //设置模态 使得前面的窗口不可编辑
+        stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(root);
+        stage.setIconified(false);
         stage.setScene(scene);
-        stage.setAlwaysOnTop(true);
-        stage.show();
-
+        stage.showAndWait();
     }
 
     public void setData(News news){
         stage.setTitle(news.getTilte()+news.getId());
+        newsPupController.setData(null,news);
     }
 }

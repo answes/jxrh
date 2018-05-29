@@ -18,7 +18,7 @@
             </HBox>
             <HBox prefHeight="172" prefWidth="400">
                 <Label alignment="CENTER" prefHeight="172" prefWidth="24" style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="系统公告" wrapText="true" HBox.hgrow="ALWAYS" />
-                <ListView prefWidth="376" style="-fx-background-color: #2A2A2A" />
+                <ListView fx:id="lvBulletin" prefWidth="376" style="-fx-background-color: #2A2A2A" />
             </HBox>
         </VBox>
         <VBox prefHeight="200" prefWidth="400">
@@ -27,7 +27,7 @@
             </HBox>
             <HBox prefHeight="172" prefWidth="400">
                 <Label alignment="CENTER" prefHeight="172" prefWidth="24" style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="系统公告" wrapText="true" HBox.hgrow="ALWAYS" />
-                <ListView prefWidth="376" style="-fx-background-color: #2A2A2A"/>
+                <ListView fx:id="lvInfo" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
             </HBox>
         </VBox>
         <VBox prefHeight="200" prefWidth="400">
@@ -36,7 +36,7 @@
             </HBox>
             <HBox prefHeight="172" prefWidth="400">
                 <Label alignment="CENTER" prefHeight="172" prefWidth="24" style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="滚动新闻" wrapText="true" HBox.hgrow="ALWAYS" />
-                <ListView prefWidth="376" style="-fx-background-color: #2A2A2A"/>
+                <ListView fx:id="lvNews" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
             </HBox>
         </VBox>
     </HBox>

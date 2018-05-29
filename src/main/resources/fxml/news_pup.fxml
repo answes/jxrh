@@ -9,13 +9,14 @@
 <?import javafx.scene.web.WebView?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="600.0" prefWidth="800.0"
+            fx:controller="controller.pup.controller.NewsPupController">
 
-    <AnchorPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" prefWidth="230">
-        <ListView AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" style="-fx-background-color: #404040" />
+    <AnchorPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" prefWidth="200">
+        <ListView fx:id="lvNews" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" style="-fx-background-color: #404040" />
     </AnchorPane>
-    <AnchorPane AnchorPane.leftAnchor="232" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" style="-fx-background-color: #A9A9A9">
-        <WebView />
+    <AnchorPane  AnchorPane.leftAnchor="200" AnchorPane.bottomAnchor="1" AnchorPane.topAnchor="1" AnchorPane.rightAnchor="1" style="-fx-border-color: #404040;-fx-border-width: 1">
+        <WebView fx:id="wvWeb" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" />
     </AnchorPane>
 
 </AnchorPane>

@@ -39,6 +39,8 @@ public class MainController implements ControlledStage ,Initializable{
     private Label timeNow;
     @FXML
     private javafx.scene.control.Button to_transaction;
+    @FXML
+    private AnchorPane trade;
 
     private double xOffset = 0;
     private double yOffset = 0;
@@ -132,6 +134,7 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     private void initCenter() {
+        trade.managedProperty().bind(trade.visibleProperty());
         AnchorPane goodLoader = null;
         FXMLLoader goodLoaderFx = new FXMLLoader(getClass().getClassLoader().getResource("fxml/good.fxml"));
         try {
@@ -278,6 +281,7 @@ public class MainController implements ControlledStage ,Initializable{
      * @param event
      */
     public void hot(ActionEvent event) {
+        trade.setVisible(true);
         goodController.setRootVisible(true);
         tradeController.setRootVisible(false);
         newCenterController.setRootVisible(false);
@@ -288,6 +292,7 @@ public class MainController implements ControlledStage ,Initializable{
      * @param event
      */
     public void data(ActionEvent event) {
+        trade.setVisible(true);
         goodController.setRootVisible(true);
         tradeController.setRootVisible(false);
         newCenterController.setRootVisible(false);
@@ -298,6 +303,7 @@ public class MainController implements ControlledStage ,Initializable{
      * @param event
      */
     public void news(ActionEvent event) {
+        trade.setVisible(false);
         goodController.setRootVisible(false);
         tradeController.setRootVisible(false);
         newCenterController.setRootVisible(true);
