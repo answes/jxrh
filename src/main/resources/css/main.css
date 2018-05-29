@@ -302,7 +302,7 @@ buttom start
     -fx-padding: 0 0 2 0;
 }
 
-#Indicator .button,#good_type .button{
+#Indicator .button{
     -fx-background-color: #484848;
     -fx-background-repeat: repeat;
     -fx-background-size: auto;
@@ -321,7 +321,7 @@ buttom start
     -fx-max-height: 1em;
     -fx-fill-height: true;
 }
-#Indicator .button:hover,#good_type .button:hover{
+#Indicator .button:hover{
     -fx-background-color: #D4D0C8;
     -fx-background-repeat: repeat;
     -fx-background-size: auto;

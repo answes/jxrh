@@ -13,7 +13,7 @@
     </stylesheets>
     <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-border-style: solid;-fx-border-color: #000;-fx-border-width: 1 0 0 0 ">
         <VBox prefHeight="200" prefWidth="400">
-            <HBox style="-fx-background-color:#272627;">
+            <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
                 <Label alignment="CENTER" prefHeight="28" prefWidth="90" style="-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="系统公告" />
             </HBox>
             <HBox prefHeight="172" prefWidth="400">
@@ -22,7 +22,7 @@
             </HBox>
         </VBox>
         <VBox prefHeight="200" prefWidth="400">
-            <HBox style="-fx-background-color:#272627;">
+            <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
                 <Label alignment="CENTER" prefHeight="28" prefWidth="90" style="-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="产品资讯" />
             </HBox>
             <HBox prefHeight="172" prefWidth="400">
@@ -31,7 +31,7 @@
             </HBox>
         </VBox>
         <VBox prefHeight="200" prefWidth="400">
-            <HBox style="-fx-background-color:#272627;">
+            <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
                 <Label alignment="CENTER" prefHeight="28" prefWidth="90" style="-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="新闻速递" />
             </HBox>
             <HBox prefHeight="172" prefWidth="400">

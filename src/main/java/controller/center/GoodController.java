@@ -5,6 +5,8 @@ import chart.domain.TradeMaketEntity;
 import chart.util.StringUtil;
 import controller.bottom.NewsController;
 import controller.common.Contants;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -185,7 +187,7 @@ public class GoodController implements Initializable {
             //最新价
             goods.setNewPrice(entities.get(i).getNewest().getClosePrice().doubleValue());
             //涨跌
-            goods.setUpDown(Double.parseDouble(StringUtil.keepDecimal(entities.get(i).getNewest().getClosePrice().subtract(entities.get(i).getNewest().getOpenPrice()),null)));
+            goods.setUpDown(StringUtil.keepDecimal(entities.get(i).getNewest().getClosePrice().subtract(entities.get(i).getNewest().getOpenPrice()),null));
             //涨跌幅
 
             //最高价
@@ -211,13 +213,17 @@ public class GoodController implements Initializable {
     private void initGood() {
         getGood();
 
-        commNum.setCellValueFactory(data ->  data.getValue().commNumProperty());
+        commNum.setCellValueFactory(data -> data.getValue().commNumProperty());
         commNum.setCellFactory(column -> new TableCell<Goods,String>(){
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
                 setFont(Font.font("宋体"));
-                setText(item);
+                if(item != null && !empty) {
+                    setText(item);
+                }else{
+                    setText(null);
+                }
             }
         });
         commName.setCellValueFactory(data -> data.getValue().commNameProperty());
@@ -231,7 +237,7 @@ public class GoodController implements Initializable {
         });
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
         newPrice.setCellValueFactory(data -> data.getValue().newPriceProperty().asString());
-        upDown.setCellValueFactory(data -> data.getValue().upDownProperty().asString());
+        upDown.setCellValueFactory(data -> data.getValue().upDownProperty());
         extent.setCellValueFactory(data -> data.getValue().extentProperty().asString());
         maxPrice.setCellValueFactory(data -> data.getValue().maxPriceProperty().asString());
         mixPrice.setCellValueFactory(data -> data.getValue().mixPriceProperty().asString());

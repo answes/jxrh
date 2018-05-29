@@ -6,11 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.net.URL?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controller.center.GoodController"
             fx:id="goods_root"
             prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0.0" >
+    <stylesheets>
+        <URL value="@../css/good.css" />
+    </stylesheets>
     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
     <AnchorPane AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0.0"
                 AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
@@ -32,7 +36,7 @@
                 <TableColumn style="-fx-font-family: '宋体';-fx-pref-height: 22;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="overMoney" editable="false" minWidth="Infinity" text="成交金额"/>
             </columns>
         </TableView>
-        <HBox fx:id="good_type" spacing="4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0" style="-fx-padding: 0;-fx-background-color: #484848;-fx-border-style: solid;-fx-border-color: #88A4BE;-fx-border-width: 1 0 0 0 "/>
+        <HBox fx:id="good_type" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0" style="-fx-padding: 0;-fx-background-color: #484848;-fx-border-style: solid;-fx-border-color: #88A4BE;-fx-border-width: 1 0 0 0 "/>
     </AnchorPane>
     <AnchorPane fx:id="bottom_root" prefHeight="200" style="-fx-background-color: lightslategrey"
                 AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>

@@ -1,0 +1,12 @@
+#lvNews .list-cell{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-pref-height: 24px;
+    -fx-padding: 0;
+}
+#lvNews .list-cell .label{
+    -fx-text-fill: #000;
+}
+.anchor-pane{
+    -fx-border-width: 0;
+}

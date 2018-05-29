@@ -8,13 +8,13 @@ import javafx.beans.property.*;
  * @Date : Create in 9:43 2018/05/28
  * @Modificd :
  */
-public class Goods {
+public class Goods extends SimpleObjectProperty{
     private StringProperty commNum;
     private StringProperty commName;
     private DoubleProperty openPrice;
     private IntegerProperty comeNumber;
     private DoubleProperty newPrice;
-    private DoubleProperty upDown;
+    private StringProperty upDown;
     private DoubleProperty extent;  //  幅度
     private DoubleProperty maxPrice;
     private DoubleProperty mixPrice;
@@ -29,7 +29,7 @@ public class Goods {
         this.commName =new SimpleStringProperty( );
         this.openPrice =new SimpleDoubleProperty( );
         this.newPrice =new SimpleDoubleProperty( );
-        this.upDown = new SimpleDoubleProperty();
+        this.upDown = new SimpleStringProperty();
         this.extent = new SimpleDoubleProperty();
         this.maxPrice =new SimpleDoubleProperty( );
         this.mixPrice = new SimpleDoubleProperty();
@@ -57,6 +57,18 @@ public class Goods {
 //        this.overMoney = new SimpleDoubleProperty(overMoney);
 //    }
 
+
+    public String getUpDown() {
+        return upDown.get();
+    }
+
+    public StringProperty upDownProperty() {
+        return upDown;
+    }
+
+    public void setUpDown(String upDown) {
+        this.upDown.set(upDown);
+    }
 
     public int getComeNumber() {
         return comeNumber.get();
@@ -119,17 +131,7 @@ public class Goods {
     }
 
 
-    public double getUpDown() {
-        return upDown.get();
-    }
 
-    public DoubleProperty upDownProperty() {
-        return upDown;
-    }
-
-    public void setUpDown(double upDown) {
-        this.upDown.set(upDown);
-    }
 
     public double getExtent() {
         return extent.get();
