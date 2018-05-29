@@ -11,6 +11,6 @@
         <HBox.margin>
             <Insets left="4.0" right="12.0" />
         </HBox.margin></Label>
-    <Label fx:id="title"  alignment="CENTER_LEFT" prefHeight="30" style="-fx-font-size: 12px" text="新闻标题:门中惊醒梦中人" textFill="#C9992D" />
+    <Label fx:id="title" alignment="CENTER_LEFT" prefHeight="30" style="-fx-font-size: 12px" text="新闻标题:门中惊醒梦中人" textFill="#C9992D" />
     </HBox>
 </AnchorPane>

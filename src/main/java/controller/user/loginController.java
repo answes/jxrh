@@ -62,7 +62,9 @@ public class loginController implements ControlledStage,Initializable {
     }
 
     public void login(Event event){
-        myController.setStage(Constant.MAIN_ID,Constant.LOGIN_ID);
+
+        myController.setStage(Constant.ADVICE_ID,Constant.LOGIN_ID);
+
     }
 
     public void register(Event event){
