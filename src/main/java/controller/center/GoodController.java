@@ -20,6 +20,7 @@ import javafx.scene.text.Font;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -101,15 +102,6 @@ public class GoodController implements Initializable {
     private NewsController newsController;
     private TradeController tradeController;
 
-
-//    private final ObservableList<Goods> datas = FXCollections.observableArrayList(new Goods(1, "80008", "人参糖", 12.0, 10.3, 30, 0.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-//            , new Goods(2, "80008", "芝麻糖", 12.0, 10.3, 20, 1.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-//            , new Goods(3, "80009", "百度糖", 22.0, 20.3, 30, 2.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-//            , new Goods(4, "80010", "不知糖", 32.0, 30.3, 40, 3.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-//            , new Goods(5, "80011", "砂糖糖", 42.0, 40.3, 50, 4.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-//            , new Goods(6, "80012", "人参糖", 52.0, 50.3, 60, 5.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00));
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         init();
@@ -133,24 +125,29 @@ public class GoodController implements Initializable {
     private void initGoodBottom() {
         ObservableList<Button> buttons = FXCollections.observableArrayList();
         for (int i = 0; i < 5; i++) {
-            Button button = new Button("海香所" + i);
-            if(i==0){
-                button.setStyle(activedCss);
-            }else {
-                button.setStyle(normalCss);
-            }
-            good_type.getChildren().add(button);
-            buttons.add(button);
-            button.setOnAction(event -> {
-                buttons.forEach(b ->
-                        b.setStyle(normalCss)
-                );
-                button.setStyle(activedCss);
+            try {
+                Button button = new Button(new String("商品".getBytes(),"utf-8"));
+                if(i==0){
+                    button.setStyle(activedCss);
+                }else {
+                    button.setStyle(normalCss);
+                }
+                good_type.getChildren().add(button);
+                buttons.add(button);
+                button.setOnAction(event -> {
+                    buttons.forEach(b ->
+                            b.setStyle(normalCss)
+                    );
+                    button.setStyle(activedCss);
 //                if(datas.isEmpty()){
 //                    return;
 //                }
 //                datas.remove(1);
-            });
+                });
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
