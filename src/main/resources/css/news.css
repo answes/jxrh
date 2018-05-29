@@ -4,6 +4,6 @@
     -fx-font-size: 12px;
     -fx-padding: 0px;
 }
-#lvBulletin .list-cell:even,#lvNews .list-cell:even{
+#lvBulletin .list-cell:odd,#lvNews .list-cell:odd{
     -fx-background-color: #000;
 }
