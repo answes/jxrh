@@ -13,7 +13,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #D79386;
-    -fx-padding: 4px 8px;
+    -fx-padding: 2px 8px;
 }
 #news{
     -fx-background-color: linear-gradient(to bottom,#889F6C,#5E754B);
@@ -22,7 +22,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #A1B38B;
-    -fx-padding: 4px 8px;
+    -fx-padding: 2px 8px;
 }
 #data{
     -fx-background-color: linear-gradient(to bottom,#D5AD4F,#BA8134);
@@ -31,7 +31,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #DEBF74;
-    -fx-padding: 4px 8px;
+    -fx-padding: 2px 8px;
 }
 
 #hot:hover,#news:hover,#data:hover{
@@ -338,3 +338,9 @@ buttom start
     -fx-text-fill: #D4D0C8;
 }
 
+#klineCycle{
+    -fx-padding: 3 0 0 0 ;
+}
+#klineCycle .button{
+    -fx-text-fill: #E4C6C6;
+}

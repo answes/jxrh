@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -15,21 +14,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="view_root" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="855.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+<BorderPane fx:id="view_root" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="855.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
 
     <stylesheets>
-        <URL value="@../css/main.css"/>
+        <URL value="@../css/main.css" />
     </stylesheets>
     <top>
-        <AnchorPane fx:id="top_root" prefHeight="110.0" BorderPane.alignment="CENTER" AnchorPane.bottomAnchor="0.0"
-                    AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-            <AnchorPane AnchorPane.bottomAnchor="26.0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
-                        AnchorPane.rightAnchor="0" style="-fx-border-color: #262626;-fx-border-style: solid;-fx-border-width: 0 0 1 0">
-                <Label fx:id="top_title" prefHeight="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                      AnchorPane.topAnchor="0.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);-fx-font-size: 18px" alignment="CENTER" text="锦绣融和交易系统" textFill="azure" />
-                <MenuBar AnchorPane.leftAnchor="0" AnchorPane.topAnchor="7" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" prefHeight="30">
+        <AnchorPane fx:id="top_root" prefHeight="110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" BorderPane.alignment="CENTER">
+            <AnchorPane style="-fx-border-color: #262626;-fx-border-style: solid;-fx-border-width: 0 0 1 0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                <Label fx:id="top_title" alignment="CENTER" prefHeight="38.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);-fx-font-size: 18px" text="锦绣融和交易系统" textFill="azure" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <MenuBar prefHeight="30" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="7">
                     <menus>
                         <Menu mnemonicParsing="false" text="板块">
                             <items>
@@ -71,42 +65,43 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <HBox AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0"  prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" >
-                    <Button fx:id="bt_scale" onAction="#zoomWindow" text="一"/>
-                    <Button fx:id="bt_zoom" onAction="#scaleWindow" text="口"/>
-                    <Button fx:id="bt_close" onAction="#closeWindow" text="X"/>
+                <HBox prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+                    <Button fx:id="bt_scale" onAction="#zoomWindow" text="一" />
+                    <Button fx:id="bt_zoom" onAction="#scaleWindow" text="口" />
+                    <Button fx:id="bt_close" onAction="#closeWindow" text="X" />
                 </HBox>
             </AnchorPane>
-            <HBox  spacing="8" AnchorPane.topAnchor="39" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818); -fx-border-width: 1 0 1 0;-fx-border-color: #000;-fx-border-style: solid" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" prefHeight="40" alignment="CENTER_LEFT">
-                <Button text="热点导航" fx:id="hot" onAction="#hot">
+            <HBox alignment="CENTER_LEFT" prefHeight="40" spacing="8" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818); -fx-border-width: 1 0 1 0;-fx-border-color: #000;-fx-border-style: solid" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="39">
+                <Button fx:id="hot" onAction="#hot" text="热点导航">
                     <HBox.margin>
-                        <Insets left="3"/>
+                        <Insets left="4"/>
                     </HBox.margin>
                 </Button>
-                <Button text="行情数据" fx:id="data" onAction="#data"/>
-                <Button text="新闻数据" fx:id="news" onAction="#news"/>
+                <Button fx:id="data" onAction="#data" text="行情数据" >
+                </Button>
+                <Button fx:id="news" onAction="#news" text="新闻数据">
+                </Button>
             </HBox>
-            <AnchorPane prefHeight="25.0"  AnchorPane.leftAnchor="5.0"
-                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86" style="-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid">
-                <HBox spacing="4">
-                    <Button fx:id="back"  mnemonicParsing="false" text="返回" onAction="#back" />
+            <AnchorPane prefHeight="31.0" style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80">
+                <HBox fx:id="klineCycle">
+                    <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="返回" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
                     <Button fx:id="oneMinute" mnemonicParsing="false" onAction="#oneMinuteKLine" text="1分" />
                     <Button fx:id="fiveMinute" mnemonicParsing="false" onAction="#fiveMinuteKLine" text="5分" />
                     <Button fx:id="fifteenMinute" mnemonicParsing="false" onAction="#fifteenMinuteKLine" text="15分" />
                     <Button fx:id="thrityMinute" mnemonicParsing="false" onAction="#thrityMinuteKLine" text="30分" />
                     <Button fx:id="sixtyMinute" mnemonicParsing="false" onAction="#sixtyMinuteKLine" text="60分" />
-                    <Button fx:id="day" mnemonicParsing="false" onAction="#dayKLine" text="日" />
-                    <Button fx:id="week" mnemonicParsing="false" onAction="#weekKLine" text="周" />
-                    <Button fx:id="month" mnemonicParsing="false" onAction="#monthKLine" text="月" />
+                    <Button fx:id="day" mnemonicParsing="false" onAction="#dayKLine" text="日线" />
+                    <Button fx:id="week" mnemonicParsing="false" onAction="#weekKLine" text="周线" />
+                    <Button fx:id="month" mnemonicParsing="false" onAction="#monthKLine" text="月线" />
                 </HBox>
-                <Button fx:id="to_transaction" onAction="#toTranstion" text="进入交易" AnchorPane.rightAnchor="10.0"/>
+                <Button fx:id="to_transaction"  onAction="#toTranstion" text="进入交易" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
             </AnchorPane>
         </AnchorPane>
     </top>
 
     <center>
-        <AnchorPane fx:id="center_root" prefWidth="Infinity" BorderPane.alignment="CENTER"  style="-fx-background-color: #000">
+        <AnchorPane fx:id="center_root" prefWidth="Infinity" style="-fx-background-color: #000" BorderPane.alignment="CENTER">
             <!--<VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->
             <!--<AnchorPane fx:id="kline_root" visible="false" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="0">-->
                 <!--<Pane fx:id="kline" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->
@@ -157,24 +152,22 @@
         </AnchorPane>
     </center>
 
-    <right >
-        <AnchorPane fx:id="right_root"  BorderPane.alignment="CENTER"  style="-fx-background-color: #000000"/>
+    <right>
+        <AnchorPane fx:id="right_root" style="-fx-background-color: #000000" BorderPane.alignment="CENTER" />
     </right>
 
     <bottom>
-        <VBox prefHeight="1" style="-fx-background-color: #686868;"/>
+        <VBox prefHeight="1" style="-fx-background-color: #686868;" />
         <AnchorPane prefHeight="30" style="-fx-background-color: #383838">
-            <ImageView fitHeight="18.0" fitWidth="18.0" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5"
-                       AnchorPane.topAnchor="5">
-                <Image url="@../image/unlock.png"/>
+            <ImageView fitHeight="18.0" fitWidth="18.0" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.topAnchor="5">
+                <Image url="@../image/unlock.png" />
             </ImageView>
-            <Label alignment="CENTER" prefHeight="30" style="-fx-text-fill: #A9A9A9" text="投资有风险，入行需谨慎"
-                   AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="60"/>
+            <Label alignment="CENTER" prefHeight="30" style="-fx-text-fill: #A9A9A9" text="投资有风险，入行需谨慎" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="60" />
             <HBox alignment="CENTER" prefHeight="30" spacing="8" AnchorPane.rightAnchor="4">
                 <ImageView fitHeight="18" fitWidth="18">
-                    <Image url="@../image/xinhao.png"/>
+                    <Image url="@../image/xinhao.png" />
                 </ImageView>
-                <Label fx:id="timeNow" style="-fx-text-fill: #A9A9A9"/>
+                <Label fx:id="timeNow" style="-fx-text-fill: #A9A9A9" />
             </HBox>
         </AnchorPane>
     </bottom>
