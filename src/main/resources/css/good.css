@@ -38,6 +38,39 @@
 .table-view .column-header .label{
     -fx-font-size: 15px;
 }
+.table-view .column-header#openPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#maxPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#mixPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#newPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#upDown .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#extent .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#yestedayPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#comePrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#outPrice .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#overNumber .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#overMoney .label{
+    -fx-alignment: center-right;
+}
 .table-row-cell .cell,.table-row-cell .cell .label {
     -fx-text-fill: #FF0000;
     -fx-font-weight: 300;

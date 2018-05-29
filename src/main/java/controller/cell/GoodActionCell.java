@@ -20,8 +20,8 @@ import javafx.stage.Stage;
  */
 public class GoodActionCell extends TableCell<Goods, String> {
     // a button for adding a new person.
-    final Button addButton       = new Button("%E6%97%A5");
-    final Button removeButton       = new Button("%E5%88%86");
+    final Button addButton       = new Button("日");
+    final Button removeButton       = new Button("分");
     final HBox hBox = new HBox();
     // pads and centers the add button in the cell.
     final StackPane paddedButton = new StackPane();
@@ -36,19 +36,20 @@ public class GoodActionCell extends TableCell<Goods, String> {
             "-fx-border-width: 0 1 0 0;"+
             "-fx-border-style: solid;"+
             "-fx-border-color: #000;" +
-            "-fx-background-radius: 1;"+
-            "-fx-padding: 1";
+            "-fx-background-radius: 1;" +
+            "-fx-font-weight:bold;"+
+            "-fx-padding:1 2";
 
     /**
      * AddPersonCell constructor
      * @param table the table to which a new person can be added.
      */
     public GoodActionCell(GoodsActionCellOnClick goodsActionCellOnClick) {
-
         addButton.setStyle(css);
         removeButton.setStyle(css);
         hBox.getChildren().add(addButton);
         hBox.getChildren().add(removeButton);
+        hBox.setStyle("-fx-alignment: center");
         hBox.setPadding(new Insets(3,0,0,0));
 
         addButton.setOnAction(new EventHandler<ActionEvent>() {

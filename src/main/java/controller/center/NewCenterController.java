@@ -29,8 +29,8 @@ public class NewCenterController implements  Initializable {
     @FXML
     private NewsPupWindow newsPupWindow;
 
-    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(2L,"2018-05-05 00:00:00","新闻标题不想说什么")
-    ,new News(3L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(4L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(5L,"2018-05-05 00:00:00","新闻标题不想说什么"));
+    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进"),new News(2L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进")
+    ,new News(3L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进"),new News(4L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进"),new News(5L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进"));
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
