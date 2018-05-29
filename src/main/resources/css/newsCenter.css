@@ -2,3 +2,14 @@
     -fx-background-color: black;
     -fx-cell-hover-color: #9db4c5;
 }
+.list-cell{
+    -fx-background-color: #000;
+    -fx-text-fill: #C9992D;
+    -fx-pref-height: 24px;
+    -fx-padding: 4px 0;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.list-cell:hover{
+    -fx-background-color: #404040;
+}

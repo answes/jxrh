@@ -14,11 +14,11 @@
         <URL value="@../css/newsCenter.css" />
     </stylesheets>
     <AnchorPane prefWidth="200" style="-fx-background-color: #1C1C1C" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
-        <VBox minHeight="100" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-            <VBox minHeight="100" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <VBox AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <VBox minHeight="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                 <Label alignment="CENTER" prefHeight="28.0" prefWidth="200" style="-fx-border-style: solid;-fx-border-width: 1 0 1 0;-fx-border-color: #494848 #494848 #000 #494848;-fx-background-color:linear-gradient(to bottom,#2D2C2C,#202021);-fx-text-fill: #FFB10B;-fx-font-size: 14px;-fx-font-weight: bold" text="新闻资讯" />
             </VBox>
-            <VBox minHeight="100" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <VBox minHeight="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                 <Label alignment="CENTER" prefHeight="28.0" prefWidth="200" style="-fx-border-style: solid;-fx-border-width: 1 0 1 0;-fx-border-color:  #494848 #494848 #000 #494848;-fx-background-color:linear-gradient(to bottom,#2D2C2C, #202021);-fx-text-fill: #FFB10B;-fx-font-size: 14px;-fx-font-weight: bold" text="交易决策" />
             </VBox>
         </VBox>
@@ -31,6 +31,6 @@
             </HBox.margin></Label>
             <Label prefHeight="30" prefWidth="120" alignment="CENTER_LEFT" text="新闻标题" textFill="white" style="-fx-font-size: 14px"/>
         </HBox>
-        <ListView fx:id="lv_news"  AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+        <ListView fx:id="lv_news"  style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="28" />
     </AnchorPane>
 </AnchorPane>

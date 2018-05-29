@@ -17,8 +17,8 @@
         <TableView fx:id="tb_goods" editable="false" visible="true" AnchorPane.bottomAnchor="0.0"
                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
             <columns>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="commNum" editable="false" minWidth="80" text="商品代码"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="commName" editable="false" minWidth="80" text="商品名称"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-alignment: center-left" fx:id="commNum" editable="false" minWidth="80" text="商品代码"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-alignment: center-left" fx:id="commName" editable="false" minWidth="80" text="商品名称"/>
                 <TableColumn style="-fx-pref-height: 18;" fx:id="openPrice" editable="false" minWidth="80" text="开盘价"/>
                 <TableColumn style="-fx-pref-height: 18;" fx:id="maxPrice" editable="false" minWidth="80" text="最高价"/>
                 <TableColumn style="-fx-pref-height: 18;" fx:id="mixPrice" editable="false" minWidth="80" text="最低价"/>

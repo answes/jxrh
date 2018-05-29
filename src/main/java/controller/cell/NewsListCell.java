@@ -3,6 +3,8 @@ package controller.cell;
 import bean.News;
 import controller.cell.controller.NewsListCellController;
 import javafx.scene.control.ListCell;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 
 /**
  * @Author : bigshark

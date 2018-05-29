@@ -13,7 +13,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #D79386;
-    -fx-padding: 2px 8px;
+    -fx-padding: 3px 8px;
 }
 #news{
     -fx-background-color: linear-gradient(to bottom,#889F6C,#5E754B);
@@ -22,7 +22,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #A1B38B;
-    -fx-padding: 2px 8px;
+    -fx-padding: 3px 8px;
 }
 #data{
     -fx-background-color: linear-gradient(to bottom,#D5AD4F,#BA8134);
@@ -31,7 +31,7 @@ top
     -fx-border-style: solid;
     -fx-border-width: 1 0 0 0;
     -fx-border-color: #DEBF74;
-    -fx-padding: 2px 8px;
+    -fx-padding: 3px 8px;
 }
 
 #hot:hover,#news:hover,#data:hover{
@@ -290,7 +290,7 @@ buttom start
     -fx-background-color: linear-gradient(#404040, #686868);
 }
 
-#Indicator .button{
+#Indicator .button,#good_type .button{
     -fx-background-color: #484848;
     -fx-background-repeat: repeat;
     -fx-background-size: auto;
@@ -309,7 +309,7 @@ buttom start
     -fx-max-height: 1em;
     -fx-fill-height: true;
 }
-#Indicator .button:hover{
+#Indicator .button:hover,#good_type .button:hover{
     -fx-background-color: #D4D0C8;
     -fx-background-repeat: repeat;
     -fx-background-size: auto;
@@ -339,8 +339,15 @@ buttom start
 }
 
 #klineCycle{
-    -fx-padding: 3 0 0 0 ;
-}
+      -fx-padding: 0 0 0 0 ;
+  }
 #klineCycle .button{
     -fx-text-fill: #E4C6C6;
+    -fx-spacing: 0;
+    -fx-pref-height: 18px;
+}
+
+.anchor-pane .button{
+    -fx-spacing: 0;
+    -fx-pref-height: 18px;
 }

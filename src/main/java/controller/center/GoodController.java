@@ -1,7 +1,10 @@
 package controller.center;
 
 import bean.Goods;
+import chart.domain.TradeMaketEntity;
+import chart.util.StringUtil;
 import controller.bottom.NewsController;
+import controller.common.Contants;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,6 +20,7 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -96,12 +100,12 @@ public class GoodController implements Initializable {
     private TradeController tradeController;
 
 
-    private final ObservableList<Goods> datas = FXCollections.observableArrayList(new Goods(1, "80008", "人参糖", 12.0, 10.3, 30, 0.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-            , new Goods(2, "80008", "芝麻糖", 12.0, 10.3, 20, 1.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-            , new Goods(3, "80009", "百度糖", 22.0, 20.3, 30, 2.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-            , new Goods(4, "80010", "不知糖", 32.0, 30.3, 40, 3.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-            , new Goods(5, "80011", "砂糖糖", 42.0, 40.3, 50, 4.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
-            , new Goods(6, "80012", "人参糖", 52.0, 50.3, 60, 5.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00));
+//    private final ObservableList<Goods> datas = FXCollections.observableArrayList(new Goods(1, "80008", "人参糖", 12.0, 10.3, 30, 0.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
+//            , new Goods(2, "80008", "芝麻糖", 12.0, 10.3, 20, 1.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
+//            , new Goods(3, "80009", "百度糖", 22.0, 20.3, 30, 2.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
+//            , new Goods(4, "80010", "不知糖", 32.0, 30.3, 40, 3.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
+//            , new Goods(5, "80011", "砂糖糖", 42.0, 40.3, 50, 4.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00)
+//            , new Goods(6, "80012", "人参糖", 52.0, 50.3, 60, 5.12, 0.03, 35.0, 9.5, 20.3, 25.5, 56, 25.6, 33, 80, 23.1, 22.3, 10000, 0.00, 0.00, 0.00));
 
 
     @Override
@@ -140,10 +144,10 @@ public class GoodController implements Initializable {
                         b.setStyle(normalCss)
                 );
                 button.setStyle(activedCss);
-                if(datas.isEmpty()){
-                    return;
-                }
-                datas.remove(1);
+//                if(datas.isEmpty()){
+//                    return;
+//                }
+//                datas.remove(1);
             });
         }
     }
@@ -164,9 +168,63 @@ public class GoodController implements Initializable {
         }
     }
 
+
+    private void getGood(){
+        List<TradeMaketEntity> entities = Contants.getMarketList();
+        ObservableList<Goods> markets = FXCollections.observableArrayList();
+
+        for(int i = 0;i < entities.size();i++){
+            Goods goods = new Goods();
+//            goods.setNumber(i);
+            //商品编号 600001
+            goods.setCommNum(entities.get(i).getTradeMarket().getName());
+            //商品名称
+            goods.setCommName(entities.get(i).getTradeMarket().getTitle());
+            //开盘价
+            goods.setOpenPrice(entities.get(i).getNewest().getOpenPrice().doubleValue());
+            //最新价
+            goods.setNewPrice(entities.get(i).getNewest().getClosePrice().doubleValue());
+            //成交量
+//            goods.setCount(entities.get(i).getNewest().getTotalNum().intValue());
+            //涨跌
+            goods.setUpDown(Double.parseDouble(StringUtil.keepDecimal(entities.get(i).getNewest().getClosePrice().subtract(entities.get(i).getNewest().getOpenPrice()),null)));
+            //涨跌幅
+
+            //最高价
+            goods.setMaxPrice(entities.get(i).getNewest().getMaxPrice().doubleValue());
+            //最低价
+            goods.setMaxPrice(entities.get(i).getNewest().getMinPrice().doubleValue());
+            //昨日收盘价
+            goods.setYestedayPrice(entities.get(i).getTradeMarket().getClosePrice().doubleValue());
+            //
+            goods.setComePrice(entities.get(i).getBuyOne());
+            goods.setOutPrice(entities.get(i).getSellOne());
+            goods.setOverMoney(entities.get(i).getNewest().getTotalPrice().doubleValue());
+            goods.setOverNumber(entities.get(i).getNewest().getTotalNum().intValue());
+
+            markets.add(goods);
+
+
+        }
+
+        tb_goods.setItems(markets);
+    }
+
     private void initGood() {
-        tb_goods.setItems(datas);
-        commNum.setCellValueFactory(data -> data.getValue().commNumProperty());
+
+
+        getGood();
+
+        commNum.setCellValueFactory(data -> {
+//            if(data.getValue().commNumProperty().getValue().equals("600001")){
+//                commNum.setStyle("-fx-text-fill:red;");
+//                System.out.println("編碼："+data.getValue().commNumProperty().getValue()+":red");
+//            }else{
+//                commNum.setStyle("-fx-text-fill:#fff;");
+//                System.out.println("編碼："+data.getValue().commNumProperty().getValue()+":fff");
+//            }
+            return data.getValue().commNumProperty();
+        });
         commName.setCellValueFactory(data -> data.getValue().commNameProperty());
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
         newPrice.setCellValueFactory(data -> data.getValue().newPriceProperty().asString());
