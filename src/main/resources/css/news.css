@@ -1,0 +1,9 @@
+#lvBulletin .list-cell,#lvNews .list-cell,#lvInfo .list-cell{
+    -fx-background-color: #2A2A2A;
+    -fx-pref-height: 24px;
+    -fx-font-size: 12px;
+    -fx-padding: 0px;
+}
+#lvBulletin .list-cell:even,#lvNews .list-cell:even{
+    -fx-background-color: #000;
+}

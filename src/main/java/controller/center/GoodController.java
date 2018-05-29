@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.util.Callback;
 
 import java.io.IOException;
@@ -208,18 +209,26 @@ public class GoodController implements Initializable {
     }
 
     private void initGood() {
-
         getGood();
 
         commNum.setCellValueFactory(data ->  data.getValue().commNumProperty());
         commNum.setCellFactory(column -> new TableCell<Goods,String>(){
-                @Override
-                protected void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty);
-                    setText(item);
-                }
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                setFont(Font.font("宋体"));
+                setText(item);
+            }
         });
         commName.setCellValueFactory(data -> data.getValue().commNameProperty());
+        commName.setCellFactory(column -> new TableCell<Goods,String>(){
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                setFont(Font.font("宋体"));
+                setText(item);
+            }
+        });
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
         newPrice.setCellValueFactory(data -> data.getValue().newPriceProperty().asString());
         upDown.setCellValueFactory(data -> data.getValue().upDownProperty().asString());
@@ -248,6 +257,8 @@ public class GoodController implements Initializable {
             return row;
         });
 
+
+        Contants.autoFitTable(tb_goods);
     }
 
 

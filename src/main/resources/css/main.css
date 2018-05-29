@@ -290,7 +290,9 @@ buttom start
     -fx-background-color: linear-gradient(#404040, #686868);
 }
 
-.table-view .column-header#commName .label{ -fx-alignment:center-left }
+.table-view .column-header#commName .label,.table-view .column-header#commNum .label{
+    -fx-alignment:center-left
+}
 .table-view .column-header .label{
     -fx-border-color: #800000;
     -fx-border-style: solid;
@@ -299,6 +301,7 @@ buttom start
     -fx-text-fill: #FFFFC0;
     -fx-padding: 0 0 2 0;
 }
+
 #Indicator .button,#good_type .button{
     -fx-background-color: #484848;
     -fx-background-repeat: repeat;

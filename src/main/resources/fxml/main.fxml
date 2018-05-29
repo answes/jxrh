@@ -82,7 +82,7 @@
                 <Button fx:id="news" onAction="#news" style="-fx-text-fill: #000" text="新闻数据">
                 </Button>
             </HBox>
-            <AnchorPane fx:id="trade" visible="false" style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84" AnchorPane.bottomAnchor="0">
+            <AnchorPane fx:id="trade"  style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84" AnchorPane.bottomAnchor="0">
                 <HBox fx:id="klineCycle" >
                     <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="返回" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
