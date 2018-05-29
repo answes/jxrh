@@ -10,16 +10,15 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -184,8 +183,6 @@ public class GoodController implements Initializable {
             goods.setOpenPrice(entities.get(i).getNewest().getOpenPrice().doubleValue());
             //最新价
             goods.setNewPrice(entities.get(i).getNewest().getClosePrice().doubleValue());
-            //成交量
-//            goods.setCount(entities.get(i).getNewest().getTotalNum().intValue());
             //涨跌
             goods.setUpDown(Double.parseDouble(StringUtil.keepDecimal(entities.get(i).getNewest().getClosePrice().subtract(entities.get(i).getNewest().getOpenPrice()),null)));
             //涨跌幅
@@ -212,18 +209,15 @@ public class GoodController implements Initializable {
 
     private void initGood() {
 
-
         getGood();
 
-        commNum.setCellValueFactory(data -> {
-//            if(data.getValue().commNumProperty().getValue().equals("600001")){
-//                commNum.setStyle("-fx-text-fill:red;");
-//                System.out.println("編碼："+data.getValue().commNumProperty().getValue()+":red");
-//            }else{
-//                commNum.setStyle("-fx-text-fill:#fff;");
-//                System.out.println("編碼："+data.getValue().commNumProperty().getValue()+":fff");
-//            }
-            return data.getValue().commNumProperty();
+        commNum.setCellValueFactory(data ->  data.getValue().commNumProperty());
+        commNum.setCellFactory(column -> new TableCell<Goods,String>(){
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    setText(item);
+                }
         });
         commName.setCellValueFactory(data -> data.getValue().commNameProperty());
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
