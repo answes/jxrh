@@ -4,6 +4,7 @@ import bean.Goods;
 import chart.domain.TradeMaketEntity;
 import chart.util.StringUtil;
 import controller.bottom.NewsController;
+import controller.cell.GoodActionCell;
 import controller.common.Contants;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
@@ -12,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
@@ -44,6 +46,8 @@ public class GoodController implements Initializable {
      */
     @FXML
     private TableColumn<Goods, String> commNum;
+    @FXML
+    private TableColumn<Goods, String> commAction;
     @FXML
     private TableColumn<Goods, String> commName;
     @FXML
@@ -209,6 +213,20 @@ public class GoodController implements Initializable {
 
     private void initGood() {
         getGood();
+
+
+        commAction.setCellValueFactory(data -> data.getValue().commNumProperty());
+        commAction.setCellFactory(column -> new GoodActionCell(new GoodActionCell.GoodsActionCellOnClick() {
+            @Override
+            public void dayLineClick(String item) {
+
+            }
+
+            @Override
+            public void klineClick(String item) {
+
+            }
+        }));
 
         commNum.setCellValueFactory(data -> data.getValue().commNumProperty());
         commNum.setCellFactory(column -> new TableCell<Goods,String>(){

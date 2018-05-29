@@ -23,6 +23,7 @@
             <columns>
                 <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-alignment: center-left;-fx-text-fill: #FFFFC0;" fx:id="commNum" editable="false" minWidth="100" text="商品代码"/>
                 <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-alignment: center-left;-fx-text-fill: #FFFFC0;" fx:id="commName" editable="false" minWidth="120" text="商品名称"/>
+                <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-alignment: center;-fx-text-fill: #FFFFC0;" fx:id="commAction" editable="false" minWidth="80" text=" "/>
                 <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-text-fill:#EB0000;" fx:id="openPrice" editable="false" minWidth="80" text="开盘价"/>
                 <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-text-fill:#EB0000;" fx:id="maxPrice" editable="false" minWidth="80" text="最高价"/>
                 <TableColumn style="-fx-pref-height: 22;-fx-font-size: 14px;-fx-text-fill:#00FF00;" fx:id="mixPrice" editable="false" minWidth="80" text="最低价"/>
