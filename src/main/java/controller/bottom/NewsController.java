@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
  * @Modificd :
  */
 public class NewsController implements Initializable{
-    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(2L,"2018-05-05 00:00:00","新闻标题不想说什么")
+    ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 00:00:00","一带一路”政策密集出台 今年有望纵深推进"),new News(2L,"2018-05-05 00:00:00","新闻标题不想说什么")
             ,new News(3L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(4L,"2018-05-05 00:00:00","新闻标题不想说什么"),new News(5L,"2018-05-05 00:00:00","新闻标题不想说什么"));
 
     @FXML
@@ -50,14 +50,17 @@ public class NewsController implements Initializable{
         lvBulletin.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
+                    new NewsPupWindow(list,new_val);
                 });
         lvInfo.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
+                    new NewsPupWindow(list,new_val);
                 });
         lvNews.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
+                    new NewsPupWindow(list,new_val);
                 });
     }
 }
