@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+            fx:id="root">
+    <HBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0">
+    <Label fx:id="time" prefHeight="30" prefWidth="180" text="2018-05-05 11:00:00" textFill="#C9992D" style="-fx-font-size: 12px" alignment="CENTER_LEFT">
+        <HBox.margin>
+            <Insets left="4.0" />
+        </HBox.margin></Label>
+    <Label prefHeight="30" fx:id="title"  text="新闻标题:门中惊醒梦中人" alignment="CENTER_LEFT" textFill="#C9992D" style="-fx-font-size: 12px"/>
+    </HBox>
+</AnchorPane>

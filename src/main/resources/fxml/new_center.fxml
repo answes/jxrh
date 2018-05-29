@@ -25,12 +25,12 @@
     </AnchorPane>
     <AnchorPane prefHeight="28" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
         <HBox maxHeight="28.0" prefHeight="28" prefWidth="35" spacing="0" style="-fx-background-color:#03407F ;-fx-padding: 1px" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-            <Label prefHeight="28" prefWidth="130" style="-fx-padding: 1px 4px;" text="时间" textFill="white">
+            <Label prefHeight="28" prefWidth="180" alignment="CENTER_LEFT" style="-fx-padding: 1px 4px;" text="时间" textFill="white">
             <HBox.margin>
                <Insets left="4.0" />
             </HBox.margin></Label>
-            <Label prefHeight="28" prefWidth="120" style="-fx-padding: 1px 4px;" text="新闻标题" textFill="white" />
+            <Label prefHeight="30" prefWidth="120" alignment="CENTER_LEFT" text="新闻标题" textFill="white" style="-fx-font-size: 14px"/>
         </HBox>
-        <ListView style="-fx-background-color: black" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+        <ListView fx:id="lv_news"  AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
     </AnchorPane>
 </AnchorPane>
