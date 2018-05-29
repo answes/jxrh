@@ -17,19 +17,19 @@
         <TableView fx:id="tb_goods" editable="false" visible="true" AnchorPane.bottomAnchor="0.0"
                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
             <columns>
-                <TableColumn style="-fx-pref-height: 18;-fx-alignment: center-left" fx:id="commNum" editable="false" minWidth="80" text="商品代码"/>
-                <TableColumn style="-fx-pref-height: 18;-fx-alignment: center-left" fx:id="commName" editable="false" minWidth="80" text="商品名称"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="openPrice" editable="false" minWidth="80" text="开盘价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="maxPrice" editable="false" minWidth="80" text="最高价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="mixPrice" editable="false" minWidth="80" text="最低价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="newPrice" editable="false" minWidth="80" text="最新价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="upDown" editable="false" minWidth="80" text="涨跌"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="extent" editable="false" minWidth="80" text="幅度%"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="yestedayPrice" editable="false" minWidth="80" text="昨收盘价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="comePrice" editable="false" minWidth="80" text="买价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="outPrice" editable="false" minWidth="80" text="卖价"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="overNumber" editable="false" minWidth="80" text="成交量"/>
-                <TableColumn style="-fx-pref-height: 18;" fx:id="overMoney" editable="false" minWidth="80" text="成交金额"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-alignment: center-left;-fx-text-fill: #FFFFC0;" fx:id="commNum" editable="false" minWidth="100" text="商品代码"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-alignment: center-left;-fx-text-fill: #FFFFC0;" fx:id="commName" editable="false" minWidth="120" text="商品名称"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-text-fill:#EB0000;" fx:id="openPrice" editable="false" minWidth="80" text="开盘价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-text-fill:#EB0000;" fx:id="maxPrice" editable="false" minWidth="80" text="最高价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-text-fill:#00FF00;" fx:id="mixPrice" editable="false" minWidth="80" text="最低价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="newPrice" editable="false" minWidth="80" text="最新价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="upDown" editable="false" minWidth="80" text="涨跌"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="extent" editable="false" minWidth="80" text="幅度%"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-text-fill: #fff;-fx-font-weight: bold;" fx:id="yestedayPrice" editable="false" minWidth="80" text="昨收"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="comePrice" editable="false" minWidth="80" text="买价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="outPrice" editable="false" minWidth="80" text="卖价"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="overNumber" editable="false" minWidth="80" text="成交量"/>
+                <TableColumn style="-fx-pref-height: 18;-fx-font-size: 13px;-fx-font-weight: bold;" fx:id="overMoney" editable="false" minWidth="80" text="成交金额"/>
             </columns>
         </TableView>
         <HBox fx:id="good_type" spacing="4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0" style="-fx-padding: 0;-fx-background-color: #484848;-fx-border-style: solid;-fx-border-color: #88A4BE;-fx-border-width: 1 0 0 0 "/>
