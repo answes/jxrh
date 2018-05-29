@@ -218,7 +218,6 @@ public class GoodController implements Initializable {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                setFont(Font.font("宋体"));
                 if(item != null && !empty) {
                     setText(item);
                 }else{
@@ -231,7 +230,6 @@ public class GoodController implements Initializable {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                setFont(Font.font("宋体"));
                 setText(item);
             }
         });
