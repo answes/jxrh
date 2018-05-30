@@ -10,59 +10,44 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="root" prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0"
-          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
-          xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="controller.bottom.NewsController">
+<GridPane fx:id="root" prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.NewsController">
     <stylesheets>
-        <URL value="@../css/news.css"/>
+        <URL value="@../css/news.css" />
     </stylesheets>
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="250.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="250.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="250.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
         <VBox prefHeight="200">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
-                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
-                       text="系统公告"/>
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90" style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="系统公告" />
             </HBox>
             <HBox prefHeight="174">
-                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
-                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
-                       text="系统公告" wrapText="true" HBox.hgrow="ALWAYS"/>
-                <ListView fx:id="lvBulletin" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24" style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="系统公告" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView fx:id="lvBulletin"  style="-fx-background-color: #2A2A2A" HBox.hgrow="SOMETIMES" />
             </HBox>
         </VBox>
         <VBox prefHeight="200" GridPane.columnIndex="1">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
-                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
-                       text="产品资讯"/>
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90" style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="产品资讯" />
             </HBox>
             <HBox prefHeight="174">
-                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
-                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
-                       text="产品资讯" wrapText="true" HBox.hgrow="ALWAYS"/>
-                <ListView fx:id="lvInfo" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24" style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="产品资讯" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView fx:id="lvInfo"  style="-fx-background-color: #2A2A2A" HBox.hgrow="SOMETIMES" />
             </HBox>
         </VBox>
         <VBox prefHeight="200" GridPane.columnIndex="2">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
-                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
-                       text="新闻速递"/>
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90" style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;" text="新闻速递" />
             </HBox>
             <HBox prefHeight="174">
-                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
-                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
-                       text="滚动新闻" wrapText="true" HBox.hgrow="ALWAYS"/>
-                <ListView fx:id="lvNews" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24" style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="滚动新闻" wrapText="true" HBox.hgrow="ALWAYS" />
+                <ListView fx:id="lvNews"  style="-fx-background-color: #2A2A2A" HBox.hgrow="SOMETIMES" />
             </HBox>
         </VBox>
     </children>

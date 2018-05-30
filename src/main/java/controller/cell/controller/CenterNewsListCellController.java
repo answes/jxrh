@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ import java.io.IOException;
  */
 public class CenterNewsListCellController {
     @FXML
-    private AnchorPane root;
+    private HBox root;
     @FXML
     private Label title;
     @FXML
@@ -40,7 +41,7 @@ public class CenterNewsListCellController {
         time.setText(date);
     }
 
-    public AnchorPane getRoot(){
+    public HBox getRoot(){
         return  root;
     }
 

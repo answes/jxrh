@@ -33,7 +33,7 @@ import java.util.ResourceBundle;
 public class NewsController implements Initializable{
     ObservableList<News> list = FXCollections.observableArrayList(new News(1L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"),new News(2L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进")
             ,new News(3L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"),new News(4L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"),new News(5L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"),
-            new News(6L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"),new News(7L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"));
+            new News(6L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进一带一路”政策密集出台 今年有望纵深推进"),new News(7L,"2018-05-05 08:45:26","一带一路”政策密集出台 今年有望纵深推进"));
 
     @FXML
     private ListView<News> lvBulletin;
