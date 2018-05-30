@@ -13,7 +13,7 @@
 
 <?import javafx.scene.layout.Pane?>
 <AnchorPane prefHeight="300.0"
-            style="-fx-background-radius: 2;-fx-border-style: solid ; -fx-border-color: #FFFF00;-fx-border-width: 2px;-fx-border-radius: 2"
+            style="-fx-background-radius: 2;-fx-border-radius: 2"
             prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.user.loginController">
     <stylesheets>
@@ -22,10 +22,10 @@
     <children>
         <Label fx:id="loginTitle" alignment="CENTER_LEFT" prefHeight="30" AnchorPane.leftAnchor="0"
                AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
-               style="-fx-background-color: black;-fx-text-fill: #ffffff;-fx-font-size: 14px;-fx-padding: 0 0 0 5;-fx-font-weight: bold;"
+               style="-fx-background-color: black;-fx-text-fill: #ffffff;-fx-font-size: 14px;-fx-padding: 0 0 0 8;-fx-font-weight: bold;"
                text="交易系统登录窗口"></Label>
         <Button AnchorPane.topAnchor="0"  fx:id="exit"  mnemonicParsing="false"
-                style="-fx-text-fill: #ffffff;-fx-font-weight: bold" onAction="#exit" text="X" textAlignment="CENTER"
+                style="-fx-text-fill: #ffffff;-fx-font-weight: bold;-fx-cursor: hand" onAction="#exit" text="X" textAlignment="CENTER"
                 AnchorPane.rightAnchor="8">
             <font>
                 <Font size="13.0"/>
