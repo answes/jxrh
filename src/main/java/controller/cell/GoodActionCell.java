@@ -6,10 +6,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -28,6 +25,9 @@ public class GoodActionCell extends TableCell<Goods, String> {
     // records the y pos of the last button press so that the add person dialog can be shown next to the cell.
     final DoubleProperty buttonY = new SimpleDoubleProperty();
     GoodsActionCellOnClick goodsActionCellOnClick;
+
+    String text = "-1";
+
     final String css =
             "-fx-font-size: 12px;"+
             "-fx-pref-height:13px;" +
@@ -52,24 +52,28 @@ public class GoodActionCell extends TableCell<Goods, String> {
         hBox.setStyle("-fx-alignment: center");
         hBox.setPadding(new Insets(3,0,0,0));
 
+        String str = this.getTableColumn() == null ? "-1" : this.getTableColumn().textProperty().getValue();
+
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                goodsActionCellOnClick.dayLineClick("");
+                goodsActionCellOnClick.dayLineClick(text);
             }
         });
         removeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                goodsActionCellOnClick.klineClick("");
+                goodsActionCellOnClick.klineClick(text);
             }
         });
     }
 
     /** places an add button in the row only if the row is not empty. */
-    @Override protected void updateItem(String item, boolean empty) {
+    @Override
+    protected void updateItem(String item, boolean empty) {
         super.updateItem(item, empty);
         if (!empty) {
+            text = item;
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             setGraphic(hBox);
         } else {

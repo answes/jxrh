@@ -219,12 +219,12 @@ public class GoodController implements Initializable {
         commAction.setCellFactory(column -> new GoodActionCell(new GoodActionCell.GoodsActionCellOnClick() {
             @Override
             public void dayLineClick(String item) {
-
+                System.out.println("日点击："+item);
             }
 
             @Override
             public void klineClick(String item) {
-
+                System.out.println("分点击："+item);
             }
         }));
 
