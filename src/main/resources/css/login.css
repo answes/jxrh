@@ -2,6 +2,15 @@
     -fx-background-color: #00000000;
 }
 .root {
-    -fx-background-image: url("../image/login_bg.jpg");
+    /*-fx-background-image: url("../image/login_bg.jpg");*/
+    -fx-background-color: #ffffff;
 }
 
+#login,#register{
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-background-color: linear-gradient(to bottom,#F1F1F1,#D2D2D2);
+}
