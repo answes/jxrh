@@ -3,7 +3,7 @@
      -fx-background-repeat: repeat;
      -fx-background-size: auto;
      -fx-text-fill: #dddddd;
-     -fx-font-size: 10px;
+     -fx-font-size: 12px;
      -fx-cursor: hand;
      -fx-start-margin: 0;
      -fx-end-margin: 0;
@@ -22,7 +22,7 @@
     -fx-background-repeat: repeat;
     -fx-background-size: auto;
     -fx-text-fill: #FF0000;
-    -fx-font-size: 10px;
+    -fx-font-size: 12px;
     -fx-cursor: hand;
     -fx-start-margin: 0;
     -fx-end-margin: 0;

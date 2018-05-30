@@ -52,8 +52,6 @@ public class GoodActionCell extends TableCell<Goods, String> {
         hBox.setStyle("-fx-alignment: center");
         hBox.setPadding(new Insets(3,0,0,0));
 
-        String str = this.getTableColumn() == null ? "-1" : this.getTableColumn().textProperty().getValue();
-
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

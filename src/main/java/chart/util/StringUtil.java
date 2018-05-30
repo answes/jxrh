@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 public class StringUtil {
 
     public static String keepDecimal(Object f,String pattern){
-        DecimalFormat df = new DecimalFormat(pattern == null ? "#.00" : pattern);
+        DecimalFormat df = new DecimalFormat(pattern == null ? "#0.00" : pattern);
         return df.format(f);
     }
 

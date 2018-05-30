@@ -18,8 +18,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
-import javafx.util.Callback;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -127,10 +125,11 @@ public class GoodController implements Initializable {
 
     @FXML
     private void initGoodBottom() {
+
         ObservableList<Button> buttons = FXCollections.observableArrayList();
         for (int i = 0; i < 5; i++) {
             try {
-                Button button = new Button(new String("商品".getBytes(),"utf-8"));
+                Button button = new Button(new String(("商品"+i).getBytes(),"utf-8"));
                 if(i==0){
                     button.setStyle(activedCss);
                 }else {

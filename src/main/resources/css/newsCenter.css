@@ -13,3 +13,10 @@
 .list-cell:hover{
     -fx-background-color: #404040;
 }
+#newsTab .label{
+    -fx-cursor: hand;
+}
+
+#newsChild1 .label:hover,#newsChild2 .label:hover{
+    -fx-background-color: #444;
+}
