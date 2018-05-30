@@ -222,38 +222,49 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void fenshiKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.showMinLine();
     }
 
     public void oneMinuteKLine(ActionEvent event) {
+
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(0);
     }
 
     public void fiveMinuteKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(1);
     }
 
     public void fifteenMinuteKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(2);
     }
 
     public void thrityMinuteKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(3);
     }
 
     public void sixtyMinuteKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(4);
     }
 
     public void dayKLine(ActionEvent event) {
+
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(5);
     }
 
     public void weekKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(6);
     }
 
     public void monthKLine(ActionEvent event) {
+        goodController.setRowOnTwoClick(null);
         tradeController.cycle(7);
     }
 

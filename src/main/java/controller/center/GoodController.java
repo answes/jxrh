@@ -300,7 +300,7 @@ public class GoodController implements Initializable {
      *
      * @param commodity
      */
-    private void setRowOnTwoClick(Goods commodity) {
+    public void setRowOnTwoClick(Goods commodity) {
         goods_root.setVisible(false);
         tradeController.setRootVisible(true);
     }
