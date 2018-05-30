@@ -72,6 +72,8 @@
 }
 .table-row-cell{
     -fx-background-color: #000;
+    -fx-pref-height:20px;
+    -fx-max-height: 20px;
 }
 .table-row-cell .cell,.table-row-cell .cell .label {
     -fx-text-fill: #FF0000;

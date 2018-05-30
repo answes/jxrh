@@ -58,7 +58,14 @@ public class GoodActionCell extends TableCell<Goods, String> {
         this.goodsList = goodsList;
 
         addButton.setStyle(css);
-        removeButton.setStyle(css);
+        removeButton.setStyle("-fx-font-size: 12px;"+
+                "-fx-pref-height:13px;" +
+                "-fx-background-color:#00FFFF;"+
+                "-fx-text-fill: #000;"+
+                "-fx-border-width: 0em;"+
+                "-fx-background-radius: 1;" +
+                "-fx-font-weight:bold;"+
+                "-fx-padding:0 1;");
         imageView.setFitHeight(12.0);
         imageView.setFitWidth(12.0);
 
@@ -71,7 +78,7 @@ public class GoodActionCell extends TableCell<Goods, String> {
         hBox.getChildren().add(imageView);
 
         hBox.setSpacing(4);
-        hBox.setStyle("-fx-alignment: center");
+        hBox.setStyle("-fx-alignment: center;-fx-padding: 0 0 3 0 ");
 
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
