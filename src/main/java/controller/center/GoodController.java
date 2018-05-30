@@ -17,7 +17,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -157,7 +159,7 @@ public class GoodController implements Initializable {
     }
 
     private void init() {
-        AnchorPane loader = null;
+        GridPane loader = null;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/news.fxml"));
         try {
             loader = fxmlLoader.load();
