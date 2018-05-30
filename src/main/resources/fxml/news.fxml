@@ -28,39 +28,39 @@
     <children>
         <VBox prefHeight="200">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="28" prefWidth="90"
-                       style="-fx-font-size: 14px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
+                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
                        text="系统公告"/>
             </HBox>
-            <HBox prefHeight="172">
-                <Label alignment="CENTER" prefHeight="172" prefWidth="24"
-                       style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
+            <HBox prefHeight="174">
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
+                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
                        text="系统公告" wrapText="true" HBox.hgrow="ALWAYS"/>
                 <ListView fx:id="lvBulletin" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
             </HBox>
         </VBox>
         <VBox prefHeight="200" GridPane.columnIndex="1">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="28" prefWidth="90"
-                       style="-fx-font-size: 14px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
+                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
                        text="产品资讯"/>
             </HBox>
-            <HBox prefHeight="172">
-                <Label alignment="CENTER" prefHeight="172" prefWidth="24"
-                       style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
+            <HBox prefHeight="174">
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
+                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
                        text="产品资讯" wrapText="true" HBox.hgrow="ALWAYS"/>
                 <ListView fx:id="lvInfo" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
             </HBox>
         </VBox>
         <VBox prefHeight="200" GridPane.columnIndex="2">
             <HBox style="-fx-background-color: linear-gradient(to bottom,#2C2B2B, #202021);">
-                <Label alignment="CENTER" prefHeight="28" prefWidth="90"
-                       style="-fx-font-size: 14px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
+                <Label alignment="CENTER" prefHeight="26" prefWidth="90"
+                       style="-fx-font-size: 12px;-fx-border-style: solid;-fx-border-width: 1 0 0 0;-fx-border-color:#82B2CA;-fx-background-color: linear-gradient(#619DBC, #4371A0);-fx-text-fill: white;"
                        text="新闻速递"/>
             </HBox>
-            <HBox prefHeight="172">
-                <Label alignment="CENTER" prefHeight="172" prefWidth="24"
-                       style="-fx-font-size: 13px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
+            <HBox prefHeight="174">
+                <Label alignment="CENTER" prefHeight="174" prefWidth="24"
+                       style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5"
                        text="滚动新闻" wrapText="true" HBox.hgrow="ALWAYS"/>
                 <ListView fx:id="lvNews" prefWidth="376" style="-fx-background-color: #2A2A2A"/>
             </HBox>

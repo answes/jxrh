@@ -71,7 +71,7 @@
                     <Button fx:id="bt_close" onAction="#closeWindow" text="X" />
                 </HBox>
             </AnchorPane>
-            <HBox alignment="CENTER_LEFT" prefHeight="44" spacing="8" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818); -fx-border-width: 1 0 1 0;-fx-border-color: #000;-fx-border-style: solid" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="39">
+            <HBox alignment="CENTER_LEFT" prefHeight="40" spacing="8" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818); -fx-border-width: 1 0 1 0;-fx-border-color: #000;-fx-border-style: solid" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="39">
                 <Button fx:id="hot" onAction="#hot" style="-fx-text-fill: #000" text="热点导航">
                     <HBox.margin>
                         <Insets left="4"/>
@@ -82,7 +82,7 @@
                 <Button fx:id="news" onAction="#news" style="-fx-text-fill: #000" text="新闻数据">
                 </Button>
             </HBox>
-            <AnchorPane fx:id="trade"  style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84" AnchorPane.bottomAnchor="0">
+            <AnchorPane fx:id="trade"  style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80" AnchorPane.bottomAnchor="0">
                 <HBox fx:id="klineCycle" >
                     <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="返回" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />

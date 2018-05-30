@@ -283,7 +283,7 @@ public class GoodController implements Initializable {
             return row;
         });
 
-
+        tb_goods.getSelectionModel().setCellSelectionEnabled(true);
     }
 
 
