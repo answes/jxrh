@@ -3,6 +3,8 @@ package controller;
 import controller.center.GoodController;
 import controller.center.NewCenterController;
 import controller.center.TradeController;
+import controller.pup.PasswordPupWindow;
+import controller.pup.WithdrawPupWindow;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.*;
@@ -165,10 +167,12 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void historyQurey(ActionEvent event) {
+        new PasswordPupWindow();
     }
 
 
     public void complaints(ActionEvent event) {
+        new PasswordPupWindow();
     }
 
     public void addressManege(ActionEvent event) {
@@ -329,4 +333,18 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
 
+    /**
+     * 出金
+     * @param event
+     */
+    public void withdraw(ActionEvent event) {
+        new WithdrawPupWindow();
+    }
+
+    /**
+     * 入金
+     * @param event
+     */
+    public void recharge(ActionEvent event) {
+    }
 }

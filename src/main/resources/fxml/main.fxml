@@ -25,13 +25,18 @@
                 <Label fx:id="top_title" alignment="CENTER" prefHeight="38.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);-fx-font-size: 18px" text="锦绣融和交易系统" textFill="azure" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                 <MenuBar prefHeight="30" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="7">
                     <menus>
-                        <Menu mnemonicParsing="false" text="板块">
+                        <Menu mnemonicParsing="false" text="账户">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#historyQurey" text="历史查询" />
-                                <MenuItem mnemonicParsing="false" onAction="#complaints" text="投诉/申述" />
+                                <MenuItem mnemonicParsing="false" onAction="#historyQurey" text="修改密码" />
+                                <MenuItem mnemonicParsing="false" onAction="#complaints" text="重置密码" />
                                 <MenuItem mnemonicParsing="false" onAction="#addressManege" text="地址管理" />
-                                <MenuItem mnemonicParsing="false" onAction="#systemSet" text="系统设置" />
-                                <MenuItem mnemonicParsing="false" onAction="#aboutMe" text="关于" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="资金">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#withdraw" text="出金" />
+                                <MenuItem mnemonicParsing="false" onAction="#recharge" text="入金" />
+                                <!--<MenuItem mnemonicParsing="false" onAction="#wrNotes" text="出入金记录" />-->
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="技术">
@@ -49,20 +54,13 @@
                                 <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="显示">
+                        <Menu mnemonicParsing="false" text="系统">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#calculator" text="计算器" />
-                                <MenuItem mnemonicParsing="false" onAction="#refresh" text="刷新" />
-                                <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局" />
+                                <MenuItem mnemonicParsing="false" onAction="#systemSet" text="系统设置" />
+                                <MenuItem mnemonicParsing="false" onAction="#aboutMe" text="关于" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="委托">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#calculator" text="计算器" />
-                                <MenuItem mnemonicParsing="false" onAction="#refresh" text="刷新" />
-                                <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局" />
-                            </items>
-                        </Menu>
+
                     </menus>
                 </MenuBar>
                 <HBox prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom,#2B2B2B,#181818);" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
