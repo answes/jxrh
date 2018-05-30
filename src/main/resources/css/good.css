@@ -74,8 +74,13 @@
 .table-view .column-header#overMoney .label{
     -fx-alignment: center-right;
 }
+.table-row-cell{
+    -fx-background-color: #000;
+}
 .table-row-cell .cell,.table-row-cell .cell .label {
     -fx-text-fill: #FF0000;
     -fx-font-weight: 300;
 }
-
+.table-row-cell:selected{
+    -fx-background-color: #2E2E2E;
+}
