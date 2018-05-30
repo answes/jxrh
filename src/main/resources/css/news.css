@@ -2,11 +2,16 @@
     -fx-background-color: #2A2A2A;
     -fx-pref-height: 26px;
     -fx-font-size: 12px;
-    -fx-padding: 0px;
+    -fx-padding: 0px;;
+    -fx-cursor: hand;
 }
 #lvBulletin .list-cell:odd,#lvNews .list-cell:odd{
     -fx-background-color: #000;
 }
+.list-cell:hover .label{
+    -fx-background-color: #444;
+}
+
 /* The main scrollbar **track** CSS class  */
 .list-view .scroll-bar:horizontal .track,
 .list-view .scroll-bar:vertical .track{
