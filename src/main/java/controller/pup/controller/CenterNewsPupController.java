@@ -104,8 +104,8 @@ public class CenterNewsPupController implements Initializable{
             isMax = true;
         }else{
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-            stage.setX(xOffset==0?(primaryScreenBounds.getWidth()-width)/2:xOffset);
-            stage.setY(yOffset==0?(primaryScreenBounds.getHeight()-height)/2:yOffset);
+            stage.setX((primaryScreenBounds.getWidth()-width)/2);
+            stage.setY((primaryScreenBounds.getHeight()-height)/2);
             stage.setWidth(width);
             stage.setHeight(height);
             isMax=false;

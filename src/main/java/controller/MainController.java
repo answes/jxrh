@@ -46,6 +46,7 @@ public class MainController implements ControlledStage ,Initializable{
     private double yOffset = 0;
     private Date oldDate=new Date();
     private int count = 0;
+    private boolean isMax= false;
 
     private StageController myController;
     private GoodController goodController;
@@ -70,7 +71,7 @@ public class MainController implements ControlledStage ,Initializable{
         //改变窗口位置
         top_title.setOnMouseDragged(event -> {
             event.consume();
-            if(!myController.getStage(Constant.MAIN_ID).isMaximized()){
+            if(!isMax){
                 myController.getStage(Constant.MAIN_ID).setX(event.getScreenX() - xOffset);
                 if (event.getScreenY() - yOffset < 0) {
                     myController.getStage(Constant.MAIN_ID).setY(0);
@@ -87,8 +88,15 @@ public class MainController implements ControlledStage ,Initializable{
                 count ++;
             }else{
                 if(new Date().getTime()-oldDate.getTime()<1200){
-                    boolean maxMin = !myController.getStage(Constant.MAIN_ID).isMaximized();
-                    myController.getStage(Constant.MAIN_ID).setMaximized(maxMin);
+//                    boolean maxMin = !myController.getStage(Constant.MAIN_ID).isMaximized();
+//                    myController.getStage(Constant.MAIN_ID).setMaximized(maxMin);
+                    if(!isMax){
+                        myController.setWindow(Constant.MAIN_ID);
+                        isMax=true;
+                    }else{
+                        myController.setMinWindow(Constant.MAIN_ID,1200.0,855.0);
+                        isMax=false;
+                    }
                 }
                 count = 0;
             }
@@ -198,14 +206,14 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void scaleWindow(ActionEvent event) {
-        myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
-//        if(!isMax){
-//            myController.setWindow(Constant.MAIN_ID);
-//            isMax = true;
-//        }else{
-//            isMax=false;
-//            myController.getStage(Constant.MAIN_ID).setMaximized(false);
-//        }
+//        myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
+        if(!isMax){
+            myController.setWindow(Constant.MAIN_ID);
+            isMax=true;
+        }else{
+            myController.setMinWindow(Constant.MAIN_ID,1200.0,855.0);
+            isMax=false;
+        }
     }
 
     public void closeWindow(ActionEvent event) {

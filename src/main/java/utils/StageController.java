@@ -109,6 +109,14 @@ public class StageController {
         getStage(name).setHeight(primaryScreenBounds.getHeight());
     }
 
+    public void setMinWindow(String name,double w,double h){
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+        getStage(name).setX((primaryScreenBounds.getWidth()-w)/2);
+        getStage(name).setY((primaryScreenBounds.getHeight()-h)/2);
+        getStage(name).setWidth(w);
+        getStage(name).setHeight(h);
+    }
+
     /**
      * 显示Stage但不隐藏任何Stage
      *
