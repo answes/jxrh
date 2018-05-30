@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.web.WebView?>
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="800.0"
+            fx:controller="controller.pup.controller.CenterNewsPupController">
+    <AnchorPane AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefHeight="34.0" style="-fx-background-color:linear-gradient(to bottom,#3C3B3B,#202021);">
+        <Label fx:id="top_title" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" text="这个是标题" style="-fx-background-color: transparent;-fx-text-fill: #FFAA07;-fx-padding: 0 0 0 4px;"/>
+        <Button prefHeight="34.0" style="-fx-background-color: transparent;-fx-text-fill: #FFAA07" onAction="#close" prefWidth="34.0" text="X" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="2"/>
+        <Button prefHeight="34.0" style="-fx-background-color: transparent;-fx-text-fill: #FFAA07" onAction="#max" prefWidth="34.0" text="口" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="36"/>
+    </AnchorPane>
+    <Label fx:id="time" text="时间：2017年03月28日 09:35" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="34" AnchorPane.leftAnchor="0" prefHeight="30" style="-fx-background-color: #A9A9A9"/>
+    <AnchorPane AnchorPane.leftAnchor="0"  AnchorPane.bottomAnchor="1" AnchorPane.topAnchor="64" AnchorPane.rightAnchor="1" style="-fx-border-color: black;-fx-border-width:1px 0 1px 1px;">
+    <WebView fx:id="wvWeb" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" />
+    </AnchorPane>
+
+</AnchorPane>

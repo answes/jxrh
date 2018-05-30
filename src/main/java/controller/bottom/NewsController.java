@@ -1,7 +1,9 @@
 package controller.bottom;
 
 import bean.News;
+import controller.cell.CenterNewsCell;
 import controller.cell.NewsListLeftCell;
+import controller.pup.CenterNewsPupWindow;
 import controller.pup.NewsPupWindow;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -42,25 +44,25 @@ public class NewsController implements Initializable{
 
     private void init() {
         lvBulletin.setItems(list);
-        lvBulletin.setCellFactory(param -> new NewsListLeftCell());
+        lvBulletin.setCellFactory(param -> new CenterNewsCell());
         lvInfo.setItems(list);
-        lvInfo.setCellFactory(param -> new NewsListLeftCell());
+        lvInfo.setCellFactory(param -> new CenterNewsCell());
         lvNews.setItems(list);
-        lvNews.setCellFactory(param -> new NewsListLeftCell());
+        lvNews.setCellFactory(param -> new CenterNewsCell());
         lvBulletin.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
-                    new NewsPupWindow(list,new_val);
+                    new CenterNewsPupWindow(new_val);
                 });
         lvInfo.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
-                    new NewsPupWindow(list,new_val);
+                    new CenterNewsPupWindow(new_val);
                 });
         lvNews.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
-                    new NewsPupWindow(list,new_val);
+                    new CenterNewsPupWindow(new_val);
                 });
     }
 }

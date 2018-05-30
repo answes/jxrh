@@ -3,6 +3,7 @@ package controller.user;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -25,7 +26,7 @@ public class loginController implements ControlledStage,Initializable {
     @FXML
     private ImageView code;
     @FXML
-    private Pane loginTitle;
+    private Label loginTitle;
 
     private StageController myController;
     private double xOffset = 0;
