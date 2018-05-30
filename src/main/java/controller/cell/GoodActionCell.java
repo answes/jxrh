@@ -68,6 +68,8 @@ public class GoodActionCell extends TableCell<Goods, String> {
         btnBox.setStyle("-fx-alignment: center");
 
         hBox.getChildren().add(btnBox);
+        hBox.getChildren().add(imageView);
+
         hBox.setSpacing(4);
         hBox.setStyle("-fx-alignment: center");
 
@@ -96,7 +98,6 @@ public class GoodActionCell extends TableCell<Goods, String> {
             }else{
                 imageView.setImage(new Image("/icon/arrow_down.png"));
             }
-            hBox.getChildren().add(imageView);
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             setGraphic(hBox);
         } else {

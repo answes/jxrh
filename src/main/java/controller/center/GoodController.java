@@ -276,7 +276,7 @@ public class GoodController implements Initializable {
         });
 
 
-        Contants.autoFitTable(tb_goods);
+//        Contants.autoFitTable(tb_goods);
     }
 
 
