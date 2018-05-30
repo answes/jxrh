@@ -270,7 +270,6 @@ public class GoodController implements Initializable {
                         n.setStyle("-fx-background-color: #000");
                     }
                     row.setStyle("-fx-background-color: #2E2E2E");
-
                     Goods Goods = row.getItem();
                     if (event.getClickCount() == 2) {
                         setRowOnTwoClick(Goods);

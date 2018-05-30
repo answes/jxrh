@@ -82,6 +82,7 @@
 .table-row-cell:selected{
     -fx-background-color: #2E2E2E;
 }
+
 .table-cell:selected{
     -fx-background-color: #2E2E2E;
     -fx-background-color: transparent;
