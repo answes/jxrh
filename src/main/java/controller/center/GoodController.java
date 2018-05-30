@@ -104,6 +104,8 @@ public class GoodController implements Initializable {
     private NewsController newsController;
     private TradeController tradeController;
 
+
+    ObservableList<Goods> markets = FXCollections.observableArrayList();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         init();
@@ -173,7 +175,6 @@ public class GoodController implements Initializable {
 
     private void getGood(){
         List<TradeMaketEntity> entities = Contants.getMarketList();
-        ObservableList<Goods> markets = FXCollections.observableArrayList();
 
         for(int i = 0;i < entities.size();i++){
             Goods goods = new Goods();
@@ -213,7 +214,6 @@ public class GoodController implements Initializable {
     private void initGood() {
         getGood();
 
-
         commAction.setCellValueFactory(data -> data.getValue().commNumProperty());
         commAction.setCellFactory(column -> new GoodActionCell(new GoodActionCell.GoodsActionCellOnClick() {
             @Override
@@ -225,7 +225,7 @@ public class GoodController implements Initializable {
             public void klineClick(String item) {
                 System.out.println("分点击："+item);
             }
-        }));
+        },markets));
 
         commNum.setCellValueFactory(data -> data.getValue().commNumProperty());
         commNum.setCellFactory(column -> new TableCell<Goods,String>(){

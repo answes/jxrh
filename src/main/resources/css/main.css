@@ -299,7 +299,7 @@ buttom start
     -fx-border-width:0 0 1 0;
     -fx-font-size: 14px;
     -fx-text-fill: #FFFFC0;
-    -fx-padding: 0 0 2 0;
+    -fx-padding: 0 0 0 0;
 }
 
 #Indicator .button{

@@ -7,10 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 /**
  * Created by 京美电子 on 2018/5/29.
@@ -19,6 +23,8 @@ public class GoodActionCell extends TableCell<Goods, String> {
     // a button for adding a new person.
     final Button addButton       = new Button("日");
     final Button removeButton       = new Button("分");
+    final ImageView imageView = new ImageView();
+
     final HBox hBox = new HBox();
     // pads and centers the add button in the cell.
     final StackPane paddedButton = new StackPane();
@@ -27,6 +33,10 @@ public class GoodActionCell extends TableCell<Goods, String> {
     GoodsActionCellOnClick goodsActionCellOnClick;
 
     String text = "-1";
+
+    List<Goods> goodsList;
+
+    HBox btnBox = new HBox();
 
     final String css =
             "-fx-font-size: 12px;"+
@@ -38,19 +48,28 @@ public class GoodActionCell extends TableCell<Goods, String> {
             "-fx-border-color: #000;" +
             "-fx-background-radius: 1;" +
             "-fx-font-weight:bold;"+
-            "-fx-padding:1 2";
+            "-fx-padding:0 1;";
 
     /**
      * AddPersonCell constructor
      * @param table the table to which a new person can be added.
      */
-    public GoodActionCell(GoodsActionCellOnClick goodsActionCellOnClick) {
+    public GoodActionCell(GoodsActionCellOnClick goodsActionCellOnClick,List<Goods> goodsList) {
+        this.goodsList = goodsList;
+
         addButton.setStyle(css);
         removeButton.setStyle(css);
-        hBox.getChildren().add(addButton);
-        hBox.getChildren().add(removeButton);
+        imageView.setFitHeight(12.0);
+        imageView.setFitWidth(12.0);
+
+        btnBox.getChildren().add(addButton);
+        btnBox.getChildren().add(removeButton);
+
+        btnBox.setStyle("-fx-alignment: center");
+
+        hBox.getChildren().add(btnBox);
+        hBox.setSpacing(4);
         hBox.setStyle("-fx-alignment: center");
-        hBox.setPadding(new Insets(3,0,0,0));
 
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -72,6 +91,12 @@ public class GoodActionCell extends TableCell<Goods, String> {
         super.updateItem(item, empty);
         if (!empty) {
             text = item;
+            if(text.equals("600001")){
+                imageView.setImage(new Image("/icon/arrow_red.png"));
+            }else{
+                imageView.setImage(new Image("/icon/arrow_down.png"));
+            }
+            hBox.getChildren().add(imageView);
             setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             setGraphic(hBox);
         } else {
