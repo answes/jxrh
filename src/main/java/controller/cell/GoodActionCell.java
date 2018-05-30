@@ -37,6 +37,7 @@ public class GoodActionCell extends TableCell<Goods, String> {
     List<Goods> goodsList;
 
     HBox btnBox = new HBox();
+    HBox imgBox = new HBox();
 
     final String css =
             "-fx-font-size: 12px;"+
@@ -66,19 +67,22 @@ public class GoodActionCell extends TableCell<Goods, String> {
                 "-fx-background-radius: 1;" +
                 "-fx-font-weight:bold;"+
                 "-fx-padding:0 1;");
-        imageView.setFitHeight(12.0);
-        imageView.setFitWidth(12.0);
+        imageView.setFitHeight(16.0);
+        imageView.setFitWidth(16.0);
 
         btnBox.getChildren().add(addButton);
         btnBox.getChildren().add(removeButton);
 
         btnBox.setStyle("-fx-alignment: center");
+        imgBox.setStyle("-fx-padding: 4 0 0 0");
+
+        imgBox.getChildren().add(imageView);
 
         hBox.getChildren().add(btnBox);
-        hBox.getChildren().add(imageView);
+        hBox.getChildren().add(imgBox);
 
         hBox.setSpacing(4);
-        hBox.setStyle("-fx-alignment: center;-fx-padding: 0 0 3 0 ");
+        hBox.setStyle("-fx-alignment: center;-fx-padding: 0 0 2 0 ");
 
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -101,7 +105,7 @@ public class GoodActionCell extends TableCell<Goods, String> {
         if (!empty) {
             text = item;
             if(text.equals("600001")){
-                imageView.setImage(new Image("/icon/arrow_red.png"));
+                imageView.setImage(new Image("/icon/arrow_up.png"));
             }else{
                 imageView.setImage(new Image("/icon/arrow_down.png"));
             }
