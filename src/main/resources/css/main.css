@@ -341,7 +341,7 @@ buttom start
 }
 
 #tb_goods .table-column{
-    -fx-padding: 0px 0px;
+    -fx-padding: 2px 0px;
     -fx-border-width: 0px;
 }
 #newest .label{
