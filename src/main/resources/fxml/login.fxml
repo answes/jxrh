@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.layout.Pane?>
-<AnchorPane prefHeight="300.0" style="-fx-background-radius: 2px;-fx-border-style: solid ; -fx-border-color: #FFFF00;-fx-border-width: 12px;-fx-border-radius: 2px" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.loginController">
+<AnchorPane prefHeight="300.0" style="-fx-background-radius: 2;-fx-border-style: solid ; -fx-border-color: #FFFF00;-fx-border-width: 12px;-fx-border-radius: 2" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.loginController">
     <stylesheets>
         <URL value="@../css/login.css" />
     </stylesheets>
@@ -27,7 +27,7 @@
                 </Button>
             </HBox>
         </Pane>
-        <VBox alignment="CENTER_LEFT" AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="70">
+        <VBox alignment="CENTER_LEFT" AnchorPane.topAnchor="60.0" AnchorPane.leftAnchor="70">
                 <HBox alignment="CENTER_RIGHT" spacing="5">
                     <Label style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;" text="手机号码:" />
                     <TextField style="-fx-pref-height: 30px;-fx-padding: 0 2px 0;-fx-border-width: 1;-fx-border-style: solid;-fx-border-color: #A1A1A1;-fx-border-radius: 0;-fx-pref-width: 182px;" />
