@@ -15,11 +15,12 @@
     <stylesheets>
         <URL value="@../css/news_pup.css"/>
     </stylesheets>
-    <AnchorPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" prefWidth="200">
+    <AnchorPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" prefWidth="200" style="-fx-border-color: #A9A9A9;-fx-border-width: 1px;">
         <ListView fx:id="lvNews" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"   />
     </AnchorPane>
-    <AnchorPane  AnchorPane.leftAnchor="200" AnchorPane.bottomAnchor="1" AnchorPane.topAnchor="1" AnchorPane.rightAnchor="1" style="-fx-border-color: #404040;-fx-border-width:  0 0 0 1">
-        <WebView fx:id="wvWeb" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" />
+    <AnchorPane  AnchorPane.leftAnchor="200" AnchorPane.bottomAnchor="1" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="1" style="-fx-border-color: #A9A9A9;-fx-border-width: 1px;">
+        <Label text="时间：2017年03月28日 09：35" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" prefHeight="30" style="-fx-background-color: #A9A9A9"/>
+        <WebView fx:id="wvWeb" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="30" AnchorPane.rightAnchor="0" />
     </AnchorPane>
 
 </AnchorPane>

@@ -43,11 +43,12 @@ public class NewCenterController implements  Initializable {
         lv_news.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends News> ov, News old_val,
                  News new_val) -> {
-                    if(newsPupWindow!=null){
-                        newsPupWindow.setData(new_val);
-                    }else{
-                        newsPupWindow = new NewsPupWindow(list,new_val);
-                    }
+                    newsPupWindow = new NewsPupWindow(list,new_val);
+//                    if(newsPupWindow!=null){
+//                        newsPupWindow.setData(new_val);
+//                    }else{
+//
+//                    }
                 });
     }
 

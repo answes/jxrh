@@ -11,8 +11,17 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controller.adivce.AdviceController"
             prefHeight="400.0" prefWidth="600.0">
-            <Label AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefHeight="30" alignment="CENTER" style="-fx-background-color: #272627;-fx-text-fill: white">系统公告</Label>
-            <Button onAction="#close" style="-fx-background-color: transparent;-fx-text-fill: white"  AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefHeight="30"  text="X"/>
-            <WebView fx:id="web"  AnchorPane.bottomAnchor="34" AnchorPane.rightAnchor="4" AnchorPane.topAnchor="34" AnchorPane.leftAnchor="4"/>
-            <Button text="确定" onAction="#close" style="-fx-background-color: #A9A9A9;-fx-border-width: 0px; -fx-background-radius: 0px;-fx-border-radius: 0px" AnchorPane.rightAnchor="4" AnchorPane.bottomAnchor="4"/>
+    <Label AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefHeight="30"
+           alignment="CENTER" style="-fx-background-color: #272627;-fx-text-fill: white">系统公告
+    </Label>
+    <Button onAction="#close" style="-fx-background-color: transparent;-fx-text-fill: white" AnchorPane.topAnchor="0"
+            AnchorPane.rightAnchor="0" prefHeight="30" text="X"/>
+    <AnchorPane AnchorPane.bottomAnchor="34" AnchorPane.rightAnchor="4" AnchorPane.topAnchor="34"
+                AnchorPane.leftAnchor="4" style="-fx-border-width: 1px;-fx-border-color: #A9A9A9;">
+        <WebView fx:id="web" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+                 AnchorPane.leftAnchor="0"/>
+    </AnchorPane>
+    <Button text="确定" onAction="#close"
+            style="-fx-background-color: #A9A9A9;-fx-border-width: 0px; -fx-background-radius: 0px;-fx-border-radius: 0px"
+            AnchorPane.rightAnchor="4" AnchorPane.bottomAnchor="4"/>
 </AnchorPane>
