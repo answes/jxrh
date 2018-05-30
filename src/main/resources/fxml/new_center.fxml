@@ -20,7 +20,7 @@
             <VBox minHeight="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                 <Label alignment="CENTER" prefHeight="28.0" prefWidth="200" style="-fx-cursor:default ;-fx-border-style: solid;-fx-border-width: 1 0 1 0;-fx-border-color: #494848 #494848 #000 #494848;-fx-background-color:linear-gradient(to bottom,#2D2C2C,#202021);-fx-text-fill: #FFB10B;-fx-font-size: 14px;-fx-font-weight: bold" text="新闻资讯" />
                 <VBox fx:id="newsChild1">
-                    <Label text="新闻必读" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label fx:id="new1" text="新闻必读" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -29,7 +29,7 @@
                             </ImageView>
                         </graphic>
                     </Label>
-                    <Label text="新闻速递" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label  fx:id="new2" text="新闻速递" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -39,7 +39,7 @@
                         </graphic>
                     </Label>
 
-                    <Label text="经济数据" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="经济数据" fx:id="new3" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -48,7 +48,7 @@
                             </ImageView>
                         </graphic>
                     </Label>
-                    <Label text="央行动态" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="央行动态" fx:id="new4" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -57,7 +57,7 @@
                             </ImageView>
                         </graphic>
                     </Label>
-                    <Label text="财经要闻" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="财经要闻" fx:id="new5" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -72,7 +72,7 @@
                 <Label alignment="CENTER" prefHeight="28.0" prefWidth="200" style="-fx-cursor:default;-fx-border-style: solid;-fx-border-width: 1 0 1 0;-fx-border-color:  #494848 #494848 #000 #494848;-fx-background-color:linear-gradient(to bottom,#2D2C2C, #202021);-fx-text-fill: #FFB10B;-fx-font-size: 14px;-fx-font-weight: bold" text="交易决策" >
                 </Label>
                 <VBox fx:id="newsChild2">
-                    <Label text="市场评论" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="市场评论" fx:id="new6" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -81,7 +81,7 @@
                             </ImageView>
                         </graphic>
                     </Label>
-                    <Label text="机构贵金属" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="机构贵金属" fx:id="new7" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
@@ -90,7 +90,7 @@
                             </ImageView>
                         </graphic>
                     </Label>
-                    <Label text="机构外汇" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
+                    <Label text="机构外汇" fx:id="new8" style="-fx-background-color: transparent;-fx-text-fill:white;-fx-padding: 0 0 0 20px;-fx-graphic-text-gap:10px;" prefHeight="28.0" prefWidth="200" alignment="CENTER_LEFT">
                         <graphic>
                             <ImageView fitWidth="10" preserveRatio="true" smooth="true">
                                 <image>
