@@ -352,13 +352,24 @@ buttom start
 
 #klineCycle{
       -fx-padding: 0 0 0 0 ;
+    -fx-spacing: 6;
   }
 #klineCycle .button{
     -fx-text-fill: #E4C6C6;
-    -fx-spacing: 0;
-    -fx-pref-height: 18px;
+    -fx-pref-height: 16px;
+    -fx-border-width: 1;
+    -fx-padding: 2px 6px;
+    -fx-border-style: solid;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
 }
-
+#klineCycle .button:hover{
+    -fx-border-color: #000;
+    -fx-border-width: 1 1 0 1;
+    -fx-padding: 2px 6px;
+    -fx-border-style: solid;
+    -fx-background-color: #1C3B5B;
+}
 .anchor-pane .button{
     -fx-spacing: 0;
     -fx-pref-height: 18px;

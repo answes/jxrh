@@ -82,7 +82,7 @@
             </HBox>
             <AnchorPane fx:id="trade"  style="-fx-alignment: center-left;-fx-background-color: linear-gradient(to bottom,#222222,#181818); -fx-border-width: 0 0 1 0;-fx-border-color: #252525;-fx-border-style: solid" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80" AnchorPane.bottomAnchor="0">
                 <HBox fx:id="klineCycle" >
-                    <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="返回" />
+                    <Button fx:id="back" AnchorPane.leftAnchor="4" mnemonicParsing="false" onAction="#back" text="返回" />
                     <Button fx:id="fenshi" mnemonicParsing="false" onAction="#fenshiKLine" text="分时" />
                     <Button fx:id="oneMinute" mnemonicParsing="false" onAction="#oneMinuteKLine" text="1分" />
                     <Button fx:id="fiveMinute" mnemonicParsing="false" onAction="#fiveMinuteKLine" text="5分" />
