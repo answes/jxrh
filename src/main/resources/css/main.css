@@ -380,8 +380,9 @@ buttom start
 }
 .menu-item{
     -fx-background-color: #ffffff;
+}
+.menu-item .label{
     -fx-text-fill: #000;
-    -fx-min-width: 100px;
 }
 .menu-item:hover{
     -fx-background-color: #ddd;
