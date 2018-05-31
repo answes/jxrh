@@ -193,8 +193,6 @@ public abstract class IndicatorBase {
             if(y < top + fm.getHeight() || y > m_rc.y + m_rc.height) {
                 value -= unit;
             } else {
-                int xx = m_rc.width + 6;
-                int yy = (y - fm.getHeight() / 2) + fm.getAscent();
                 value -= unit;
             }
 
@@ -280,85 +278,6 @@ public abstract class IndicatorBase {
 
     }
 
-    class XYText{
-        private Integer lineX1;
-        private Integer lineY1;
-
-        private Integer lineX2;
-        private Integer lineY2;
-
-        private Integer stringX;
-        private Integer stringY;
-
-
-        private String text;
-
-        public XYText(Integer lineX1, Integer lineY1, Integer lineX2, Integer lineY2, Integer stringX, Integer stringY, String text) {
-            this.lineX1 = lineX1;
-            this.lineY1 = lineY1;
-            this.lineX2 = lineX2;
-            this.lineY2 = lineY2;
-            this.stringX = stringX;
-            this.stringY = stringY;
-            this.text = text;
-        }
-
-        public Integer getLineX1() {
-            return lineX1;
-        }
-
-        public void setLineX1(Integer lineX1) {
-            this.lineX1 = lineX1;
-        }
-
-        public Integer getLineY1() {
-            return lineY1;
-        }
-
-        public void setLineY1(Integer lineY1) {
-            this.lineY1 = lineY1;
-        }
-
-        public Integer getLineX2() {
-            return lineX2;
-        }
-
-        public void setLineX2(Integer lineX2) {
-            this.lineX2 = lineX2;
-        }
-
-        public Integer getLineY2() {
-            return lineY2;
-        }
-
-        public void setLineY2(Integer lineY2) {
-            this.lineY2 = lineY2;
-        }
-
-        public Integer getStringX() {
-            return stringX;
-        }
-
-        public void setStringX(Integer stringX) {
-            this.stringX = stringX;
-        }
-
-        public Integer getStringY() {
-            return stringY;
-        }
-
-        public void setStringY(Integer stringY) {
-            this.stringY = stringY;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-    }
 
     final void GetValueMaxMin(float data[], int iFirst) {
         if(data == null)
