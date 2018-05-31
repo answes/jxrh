@@ -378,6 +378,9 @@ buttom start
 .menu{
     -fx-background-color: transparent;
 }
+.menu:hover{
+    -fx-background-color: transparent;
+}
 .menu-item{
     -fx-background-color: #ffffff;
 }
