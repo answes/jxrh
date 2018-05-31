@@ -120,9 +120,8 @@ public class MainController implements ControlledStage ,Initializable{
         initTrade();
         initCenter();
     }
-
+    AnchorPane newsLoader = null;
     private void initNews() {
-        AnchorPane newsLoader = null;
         FXMLLoader newsLoaderFx = new FXMLLoader(getClass().getClassLoader().getResource("fxml/new_center.fxml"));
         try {
             newsLoader = newsLoaderFx.load();
@@ -133,9 +132,8 @@ public class MainController implements ControlledStage ,Initializable{
             e.printStackTrace();
         }
     }
-
+    AnchorPane kLoader = null;
     private void initTrade() {
-        AnchorPane kLoader = null;
         FXMLLoader kLoaderFx = new FXMLLoader(getClass().getClassLoader().getResource("fxml/trade.fxml"));
         try {
             kLoader = kLoaderFx.load();
@@ -148,9 +146,10 @@ public class MainController implements ControlledStage ,Initializable{
 
     }
 
+    AnchorPane goodLoader = null;
     private void initCenter() {
         trade.managedProperty().bind(trade.visibleProperty());
-        AnchorPane goodLoader = null;
+
         FXMLLoader goodLoaderFx = new FXMLLoader(getClass().getClassLoader().getResource("fxml/good.fxml"));
         try {
             goodLoader = goodLoaderFx.load();
@@ -362,5 +361,18 @@ public class MainController implements ControlledStage ,Initializable{
      */
     public void resetPw(ActionEvent event) {
         new PasswordPupWindow(2);
+    }
+
+    public void lock(MouseEvent event) {
+        if(kLoader.isVisible()){
+            if(!tradeController.isLock()){
+                tradeController.setLock();
+            }
+        }else if(goodLoader.isVisible()){
+
+        }else  if(newsLoader.isVisible()){
+
+        }
+
     }
 }

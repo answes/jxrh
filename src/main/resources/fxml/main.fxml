@@ -157,7 +157,7 @@
     <bottom>
         <VBox prefHeight="1" style="-fx-background-color: #686868;" />
         <AnchorPane prefHeight="30" style="-fx-background-color: #383838">
-            <ImageView fitHeight="18.0" fitWidth="18.0" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.topAnchor="5">
+            <ImageView onMouseClicked="#lock" fitHeight="18.0" fitWidth="18.0" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.topAnchor="5">
                 <Image url="@../image/unlock.png" />
             </ImageView>
             <Label alignment="CENTER" prefHeight="30" style="-fx-text-fill: #A9A9A9" text="投资有风险，入行需谨慎" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="60" />

@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.OperController">
+    <AnchorPane fx:id="unLock" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" visible="true">
     <AnchorPane fx:id="btm_top" prefHeight="30.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <HBox alignment="CENTER" prefHeight="30.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="0.0">
             <Label text="成交总额：30000" />
@@ -108,4 +109,11 @@
             </tabs>
         </TabPane>
     </AnchorPane>
+    </AnchorPane>
+    <VBox fx:id="lock" visible="false" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" style="-fx-background-color: #A9A9A9">
+        <HBox spacing="4" alignment="CENTER">
+            <TextField/>
+            <Button onAction="#btUnLock" text="解锁"/>
+        </HBox>
+    </VBox>
 </AnchorPane>

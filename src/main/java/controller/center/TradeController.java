@@ -91,6 +91,13 @@ public class TradeController implements Initializable {
         init();
     }
 
+    public void setLock(){
+        operController.setLock();
+    }
+    public boolean isLock(){
+        return operController.isLock();
+    }
+
     public void setRootVisible(boolean see){
         if(see){
             view_root.setVisible(true);
