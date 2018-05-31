@@ -59,6 +59,10 @@ public class WRNotesController implements Initializable{
     }
 
     private void init() {
+        type.getItems().addAll("全部","出金","入金");
+        status.getItems().addAll("全部","申请中","已审核","已完成","已取消");
+        type.setValue("全部");
+        status.setValue("全部");
         tvIndex.setCellValueFactory(param -> param.getValue().idProperty().asString());
         tvSerial.setCellValueFactory(param -> param.getValue().serialProperty());
         tvAmount.setCellValueFactory(param -> param.getValue().amountProperty().asString());

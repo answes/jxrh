@@ -32,7 +32,7 @@ public class Main extends Application {
         stageController.loadStage(Constant.REGISTER_ID, Constant.REGISTER_VIEW_RES,StageStyle.UNDECORATED);
         //显示MainView舞台
 //        stageController.setStage(Constant.LOGIN_ID);
-        stageController.setStage(Constant.MAIN_ID);
+        stageController.setStage(Constant.REGISTER_ID);
     }
 
     public static void main(String[] arg){

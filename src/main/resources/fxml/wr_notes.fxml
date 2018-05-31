@@ -33,11 +33,11 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="4">
                     <Label text="类型:"/>
-                    <ComboBox fx:id="type" prefHeight="23.0" prefWidth="25.0"/>
+                    <ComboBox fx:id="type" prefHeight="23.0" prefWidth="80.0"/>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="4">
                     <Label text="状态:"/>
-                    <ComboBox fx:id="status" prefHeight="23.0" prefWidth="25.0"/>
+                    <ComboBox fx:id="status" prefHeight="23.0" prefWidth="80.0"/>
                 </HBox>
                 <Button prefHeight="23.0" prefWidth="59.0" text="搜索"/>
             </HBox>

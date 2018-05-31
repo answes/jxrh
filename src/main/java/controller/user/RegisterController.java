@@ -2,6 +2,7 @@ package controller.user;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,12 +18,16 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import utils.Constant;
 import utils.ControlledStage;
 import utils.StageController;
 import utils.VerifyUtil;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -42,6 +47,8 @@ public class RegisterController implements ControlledStage, Initializable {
     private Label tip3;
     @FXML
     private Label tip4;
+    @FXML
+    private Label tip5;
     @FXML
     private WebView web;
     @FXML
@@ -75,7 +82,9 @@ public class RegisterController implements ControlledStage, Initializable {
     @FXML
     private AnchorPane next4;
     @FXML
-    private ImageView icon;
+    private AnchorPane next5;
+    @FXML
+    private ImageView icon,ivID1,ivID2;
 
     /**
      * 步骤0，阅读了风险揭示，1，填写了手机号码，2，进行了实名认证，3，已完成
@@ -139,6 +148,7 @@ public class RegisterController implements ControlledStage, Initializable {
         tip2.setBackground(new Background(new BackgroundFill(Color.grayRgb(217), null, null)));
         tip3.setBackground(new Background(new BackgroundFill(Color.grayRgb(217), null, null)));
         tip4.setBackground(new Background(new BackgroundFill(Color.grayRgb(217), null, null)));
+        tip5.setBackground(new Background(new BackgroundFill(Color.grayRgb(217), null, null)));
     }
 
     @FXML
@@ -156,6 +166,9 @@ public class RegisterController implements ControlledStage, Initializable {
                 break;
             case 4:
                 tip4.setBackground(new Background(new BackgroundFill(Color.grayRgb(161), null, null)));
+                break;
+            case 5:
+                tip5.setBackground(new Background(new BackgroundFill(Color.grayRgb(161),null,null)));
                 break;
         }
     }
@@ -181,15 +194,22 @@ public class RegisterController implements ControlledStage, Initializable {
                 tips2.setText("");
                 if(verifyParam2()){
                     flag = 3;
-                    submit.setText("完成");
+                    submit.setText("下一步");
                     showTip(4);
                     next3.setVisible(false);
                     next4.setVisible(true);
                 }
                 break;
             case 3:
-                flag = 0;
+                flag=4;
+                showTip(5);
+                submit.setText("完成");
                 next4.setVisible(false);
+                next5.setVisible(true);
+                break;
+            case 4:
+                flag = 0;
+                next5.setVisible(false);
                 web.setVisible(true);
                 showTip(1);
                 submit.setText("下一步");
@@ -272,5 +292,41 @@ public class RegisterController implements ControlledStage, Initializable {
         myController.setStage(Constant.LOGIN_ID, Constant.REGISTER_ID);
     }
 
+    final FileChooser fileChooser = new FileChooser();
+    public void btID1(ActionEvent event) {
+        configureFileChooser(fileChooser);
+        File file = fileChooser.showOpenDialog(myController.getStage(Constant.REGISTER_ID));
+        if(file!=null){
+            System.out.println(file.getAbsolutePath());
+            try {
+                ivID1.setImage(new Image(new FileInputStream(file)));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    public void btID2(ActionEvent event) {
+        configureFileChooser(fileChooser);
+        File file = fileChooser.showOpenDialog(myController.getStage(Constant.REGISTER_ID));
+        if(file!=null){
+            try {
+                ivID2.setImage(new Image(new FileInputStream(file)));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static void configureFileChooser(
+            final FileChooser fileChooser) {
+        fileChooser.setTitle("选择图片");
+        fileChooser.setInitialDirectory(
+                new File(System.getProperty("user.home"))
+        );
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
+    }
 }
