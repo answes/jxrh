@@ -1,0 +1,26 @@
+#submit{
+    -fx-border-color: #DDDDDD;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-font-size: 15px;
+    -fx-background-color: linear-gradient(to bottom,#F1F1F1,#D2D2D2);
+}
+.text-field,.text-area,.combo-box{
+    -fx-pref-height: 30px;
+    -fx-padding: 0 2px 0;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-border-color: #A1A1A1;
+    -fx-border-radius: 0;
+}
+/*.text-field:selected:focused,*/
+/*.text-area:selected:focused,*/
+/*.combo-box:selected:focused,*/
+/*.text-field:hover,*/
+/*.text-area:hover,*/
+/*.combo-box:hover{*/
+    /*-fx-border-color: #59ABE6;*/
+    /*-fx-border-radius: 0;*/
+    /*-fx-border-width: 1;*/
+    /*-fx-border-style: solid;*/
+/*}*/

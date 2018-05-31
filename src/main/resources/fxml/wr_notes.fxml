@@ -10,8 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
+<?import java.net.URL?>
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.pup.controller.WRNotesController">
+
+    <stylesheets>
+        <URL value="@../css/wr_node.css" />
+    </stylesheets>
+
     <AnchorPane prefHeight="30" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0"
                 AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
         <children>
@@ -19,11 +25,11 @@
                   AnchorPane.topAnchor="0">
                 <HBox alignment="CENTER_LEFT" spacing="4">
                     <Label text="开始时间:"/>
-                    <DatePicker fx:id="startTime" prefHeight="23.0" prefWidth="132.0"/>
+                    <DatePicker fx:id="startTime" prefHeight="23.0" prefWidth="142.0"/>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="4">
                     <Label text="结束时间:"/>
-                    <DatePicker fx:id="endTime" prefHeight="23.0" prefWidth="132.0"/>
+                    <DatePicker fx:id="endTime" prefHeight="23.0" prefWidth="142.0"/>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="4">
                     <Label text="类型:"/>
@@ -39,13 +45,14 @@
     </AnchorPane>
     <TableView fx:id="tvList" layoutY="30.0" prefHeight="371.0" prefWidth="1000.0" AnchorPane.bottomAnchor="40.0"
                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
         <columns>
-            <TableColumn fx:id="tvIndex" minWidth="75.0" text="序号"/>
-            <TableColumn fx:id="tvSerial" minWidth="75.0" text="单号"/>
-            <TableColumn fx:id="tvAmount" minWidth="75.0" text="金额"/>
-            <TableColumn fx:id="tvType" minWidth="75.0" text="类型"/>
-            <TableColumn fx:id="tvStatus" minWidth="75.0" text="状态"/>
-            <TableColumn fx:id="tvTime" minWidth="75.0" text="时间"/>
+            <TableColumn fx:id="tvIndex" minWidth="20.0" style="-fx-alignment: center" text="序号"/>
+            <TableColumn fx:id="tvSerial" minWidth="75.0" style="-fx-alignment: center" text="单号"/>
+            <TableColumn fx:id="tvAmount" minWidth="50.0" style="-fx-alignment: center-right"  text="金额"/>
+            <TableColumn fx:id="tvType" minWidth="50.0" style="-fx-alignment: center-right"  text="类型"/>
+            <TableColumn fx:id="tvStatus" minWidth="50.0" style="-fx-alignment: center-right"  text="状态"/>
+            <TableColumn fx:id="tvTime" minWidth="100.0" style="-fx-alignment: center-right"  text="时间"/>
             <TableColumn fx:id="tvOpera" minWidth="75.0" text="操作"/>
         </columns>
     </TableView>

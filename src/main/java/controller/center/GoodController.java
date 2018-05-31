@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -246,11 +247,17 @@ public class GoodController implements Initializable {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                setText(item);
+                if(item != null && !empty) {
+                    setText("商品名称");
+                }else{
+                    setText(null);
+                }
             }
         });
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
+
         newPrice.setCellValueFactory(data -> data.getValue().newPriceProperty().asString());
+
         upDown.setCellValueFactory(data -> data.getValue().upDownProperty());
         extent.setCellValueFactory(data -> data.getValue().extentProperty().asString());
         maxPrice.setCellValueFactory(data -> data.getValue().maxPriceProperty().asString());

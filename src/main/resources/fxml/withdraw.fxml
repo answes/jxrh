@@ -12,7 +12,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import java.net.URL?>
 <AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: #404040;-fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.pup.controller.WithdrawController">
+
+    <stylesheets>
+        <URL value="@../css/withdraw.css" />
+    </stylesheets>
+
     <AnchorPane prefHeight="30" style="-fx-background-color: black" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
         <Label fx:id="lbTitle" alignment="CENTER" prefHeight="30" style="-fx-text-fill: white;-fx-font: 14px;" text="出金" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
         <Button onAction="#close" style="-fx-background-color: transparent;-fx-text-fill: white" text="X" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="2" AnchorPane.topAnchor="0" />
@@ -20,10 +26,10 @@
     <VBox alignment="CENTER" spacing="15" AnchorPane.bottomAnchor="1" AnchorPane.leftAnchor="1" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="31">
 
     </VBox>
-    <GridPane prefHeight="317.0" prefWidth="400.0" AnchorPane.topAnchor="60">
+    <GridPane prefHeight="317.0" prefWidth="400.0" vgap="4" hgap="8" AnchorPane.topAnchor="60">
         <columnConstraints>
-            <ColumnConstraints halignment="RIGHT"  minWidth="10.0" prefWidth="145.0" />
-            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="RIGHT"  minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" />
@@ -35,32 +41,31 @@
             <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" />
         </rowConstraints>
         <children>
-            <Label alignment="CENTER_LEFT" text="账号名称:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label alignment="CENTER_LEFT" text="账号名称:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;" />
+            <TextField fx:id="name" GridPane.columnIndex="1" prefWidth="182.0" GridPane.rowIndex="0"/>
 
-            <Label alignment="CENTER_LEFT" text="登陆账号:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="account" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_LEFT" text="登陆账号:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;" />
+            <TextField fx:id="account" GridPane.columnIndex="1" prefWidth="182.0"  GridPane.rowIndex="1"/>
 
-            <Label alignment="CENTER_LEFT" text="资金密码:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_LEFT" text="资金密码:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;"  />
+            <PasswordField fx:id="password" GridPane.columnIndex="1" prefWidth="182.0"  GridPane.rowIndex="2"/>
 
-            <Label alignment="CENTER_LEFT" text="银行通道:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <ComboBox fx:id="bank" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_LEFT" text="银行通道:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;" />
+            <ComboBox fx:id="bank"  GridPane.columnIndex="1" prefWidth="182.0"  GridPane.rowIndex="3" />
 
-            <Label alignment="CENTER_LEFT" text="金额:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_LEFT" text="金额:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;"  />
             <HBox GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER" spacing="4">
-                <TextField fx:id="money" prefWidth="70.0" />
-                <Label fx:id="canOutMoney" prefWidth="80" text="可出金:0.00" />
+                <TextField fx:id="money"  prefWidth="100.0"  />
+                <Label fx:id="canOutMoney" style="-fx-padding: 0 0 0 6" prefWidth="80" text="可出金:0.00" />
             </HBox>
-            <Label alignment="CENTER_LEFT" text="大写:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label alignment="CENTER_LEFT" text="大写:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;"  />
 
-            <TextField fx:id="capital" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label alignment="CENTER_LEFT" text="备注:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-
-            <TextField fx:id="remarks" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="capital" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            <Label alignment="CENTER_LEFT" text="备注:" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-text-fill: #1C74C1;-fx-font-size: 14px;"  />
+            <TextField fx:id="remarks" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="6"   />
         </children>
     </GridPane>
-    <Button prefHeight="40" prefWidth="300" text="提交" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50.0">
+    <Button prefHeight="40" fx:id="submit" prefWidth="300" text="提交" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50.0">
     </Button>
 
 </AnchorPane>

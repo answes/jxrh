@@ -1,0 +1,12 @@
+.table-view .column-header#tvAmount .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#tvType .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#tvStatus .label{
+    -fx-alignment: center-right;
+}
+.table-view .column-header#tvTime .label{
+    -fx-alignment: center-right;
+}

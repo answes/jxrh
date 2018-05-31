@@ -374,3 +374,16 @@ buttom start
     -fx-spacing: 0;
     -fx-pref-height: 18px;
 }
+
+.menu{
+    -fx-background-color: transparent;
+}
+.menu-item{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000;
+    -fx-min-width: 100px;
+}
+.menu-item:hover{
+    -fx-background-color: #ddd;
+    -fx-text-fill: #000;
+}
