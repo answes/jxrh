@@ -5,10 +5,12 @@ import bean.WRNotes;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import utils.DateUtil;
@@ -51,10 +53,35 @@ public class WRNotesController implements Initializable{
     @FXML
     private Pagination pn;
     Stage stage;
+    private double xOffset = 0;
+    private double yOffset = 0;
+
+    @FXML
+    private Label lbTitle;
+
     ObservableList<WRNotes> notes = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+        lbTitle.setOnMousePressed(event -> {
+            event.consume();
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        //改变窗口位置
+        lbTitle.setOnMouseDragged(event -> {
+            event.consume();
+            stage.setX(event.getScreenX() - xOffset);
+            if (event.getScreenY() - yOffset < 0) {
+                stage.setY(0);
+            } else {
+                stage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
         init();
     }
 
@@ -119,4 +146,10 @@ public class WRNotesController implements Initializable{
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+
+    public void close(ActionEvent event) {
+        stage.close();
+    }
+
+
 }

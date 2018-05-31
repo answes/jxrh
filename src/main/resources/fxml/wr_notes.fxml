@@ -11,15 +11,20 @@
 <?import javafx.scene.layout.HBox?>
 
 <?import java.net.URL?>
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121"
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-border-width: 1;-fx-border-style: solid;-fx-border-color: #404040" xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.pup.controller.WRNotesController">
 
     <stylesheets>
         <URL value="@../css/wr_node.css" />
     </stylesheets>
 
+    <AnchorPane prefHeight="30"  style="-fx-background-color: black" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Label fx:id="lbTitle" alignment="CENTER" prefHeight="30" style="-fx-text-fill: white;-fx-font: 14px;" text="出入金记录" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+        <Button onAction="#close" style="-fx-background-color: transparent;-fx-text-fill: white" text="X" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="2" AnchorPane.topAnchor="0" />
+    </AnchorPane>
+
     <AnchorPane prefHeight="30" style="-fx-background-color: #A9A9A9" AnchorPane.leftAnchor="0"
-                AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
         <children>
             <HBox alignment="CENTER_LEFT" spacing="6" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="4"
                   AnchorPane.topAnchor="0">
@@ -44,7 +49,7 @@
         </children>
     </AnchorPane>
     <TableView fx:id="tvList" layoutY="30.0" prefHeight="371.0" prefWidth="1000.0" AnchorPane.bottomAnchor="40.0"
-               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
+               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60.0">
         <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
         <columns>
             <TableColumn fx:id="tvIndex" minWidth="20.0" style="-fx-alignment: center" text="序号"/>
@@ -56,7 +61,7 @@
             <TableColumn fx:id="tvOpera" minWidth="75.0" text="操作"/>
         </columns>
     </TableView>
-    <Pagination fx:id="pn" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="0"
+    <Pagination fx:id="pn" AnchorPane.rightAnchor="0" pageCount="20" maxPageIndicatorCount="15" AnchorPane.topAnchor="60.0" AnchorPane.bottomAnchor="0"
                 AnchorPane.leftAnchor="0"/>
 
 </AnchorPane>
