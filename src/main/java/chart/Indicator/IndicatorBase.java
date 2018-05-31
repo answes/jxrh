@@ -13,6 +13,8 @@ import chart.HQApplet;
 import chart.KLineData;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 
 // Referenced classes of package gnnt.MEBS.HQApplet.Indicator:
 //            IndicatorPos
@@ -21,18 +23,18 @@ public abstract class IndicatorBase {
 
     String m_strIndicatorName;
     /**
-     * ªÊÕº«¯”Ú
+     * ÔøΩÔøΩÕºÔøΩÔøΩÔøΩÔøΩ
      */
     protected Rectangle m_rc;
     /**
-     * Kœﬂ ˝æ›
+     * KÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
      */
     protected KLineData m_kData[];
     protected IndicatorPos m_pos;
     protected float m_max;
     protected float m_min;
     /**
-     * ◊÷ÃÂ¥Û–°
+     * ÔøΩÔøΩÔøΩÔøΩÔøΩ–°
      */
     protected int m_iTextH;
     protected float m_data[][];
@@ -135,22 +137,25 @@ public abstract class IndicatorBase {
     }
 
     /**
-     * ªÊ÷∆y÷·£®◊Ó¥Û◊Ó–°÷µ£©
      * @param g
      * @param precision
      */
-    final void DrawCoordinate(Graphics g, int precision) {
-//        System.out.println(g+","+precision);
+    protected  int coordinateMin(Graphics g, int precision) {
+
+        //precisionÈ°∫Â∫è 0 0 2
+
         if(m_max <= m_min)
-            return;
+            return -1;
         g.setFont(new Font("\u5B8B\u4F53", 0, 12));
         FontMetrics fm = g.getFontMetrics();
+        //‰∏Ä‰∏™Â≠óÁöÑÈ´òÂ∫¶
         m_iTextH = fm.getHeight();
         int top = m_rc.y + fm.getHeight();
         if(top >= m_rc.y + m_rc.height)
-            return;
-        //º‰∏Ùµ•Œª
+            return -1;
+        //Èó¥ÈöîÊï∞Â≠ó
         float unit = 100F;
+
         switch(precision) {
         case 2: // '\002'
             unit = 0.1F;
@@ -164,11 +169,14 @@ public abstract class IndicatorBase {
             unit = 1F;
             break;
         }
+        //Èó¥Èöî
         float minUnit = unit;
         int step[] = {
             2, 5, 2
         };
+
         int height = (int)((unit * (float)m_rc.height) / (m_max - m_min));
+
         for(int i = 0; height < fm.getHeight() * 2; i = ++i % 3) {
             unit *= step[i];
             if(i == 1)
@@ -178,8 +186,80 @@ public abstract class IndicatorBase {
 
         float max = (float)(int)(m_max / minUnit / (unit / minUnit)) * unit;
 
+        float retValue = 0;
+        //‰ªé‰∏äÂæÄ‰∏ã
         for(float value = max; value <= m_max && value >= m_min;) {
             int y = (int)((float)top + ((m_max - value) * (float)(m_rc.height - fm.getHeight())) / (m_max - m_min));
+            if(y < top + fm.getHeight() || y > m_rc.y + m_rc.height) {
+                value -= unit;
+            } else {
+                int xx = m_rc.width + 6;
+                int yy = (y - fm.getHeight() / 2) + fm.getAscent();
+                value -= unit;
+            }
+
+            retValue = value;
+
+        }
+
+
+        return (int)retValue;
+    }
+
+    /**
+     * @param g
+     * @param precision
+     */
+    final void DrawCoordinate(Graphics g, int precision) {
+
+        //precisionÈ°∫Â∫è 0 0 2
+
+        if(m_max <= m_min)
+            return;
+        g.setFont(new Font("\u5B8B\u4F53", 0, 12));
+        FontMetrics fm = g.getFontMetrics();
+        //‰∏Ä‰∏™Â≠óÁöÑÈ´òÂ∫¶
+        m_iTextH = fm.getHeight();
+        int top = m_rc.y + fm.getHeight();
+        if(top >= m_rc.y + m_rc.height)
+            return;
+        //Èó¥ÈöîÊï∞Â≠ó
+        float unit = 100F;
+
+        switch(precision) {
+            case 2: // '\002'
+                unit = 0.1F;
+                break;
+
+            case 3: // '\003'
+                unit = 0.01F;
+                break;
+
+            default:
+                unit = 1F;
+                break;
+        }
+        //Èó¥Èöî
+        float minUnit = unit;
+        int step[] = {
+                2, 5, 2
+        };
+
+        int height = (int)((unit * (float)m_rc.height) / (m_max - m_min));
+
+        for(int i = 0; height < fm.getHeight() * 2; i = ++i % 3) {
+            unit *= step[i];
+            if(i == 1)
+                unit /= 2.0F;
+            height = (int)((unit * (float)m_rc.height) / (m_max - m_min));
+        }
+
+        float max = (float)(int)(m_max / minUnit / (unit / minUnit)) * unit;
+
+        //‰ªé‰∏äÂæÄ‰∏ã
+        for(float value = max; value <= m_max && value >= m_min;) {
+            int y = (int)((float)top + ((m_max - value) * (float)(m_rc.height - fm.getHeight())) / (m_max - m_min));
+//            System.out.println("y:"+y+",top:"+top+",(m_max - value):"+(m_max - value)+"value:"+value+"(float)(m_rc.height - fm.getHeight())):"+(float)(m_rc.height - fm.getHeight())+",(m_max - m_min):"+(m_max - m_min));
             if(y < top + fm.getHeight() || y > m_rc.y + m_rc.height) {
                 value -= unit;
             } else {
@@ -187,14 +267,97 @@ public abstract class IndicatorBase {
                 g.drawLine(m_rc.x - 3, y, m_rc.x, y);
                 Common.DrawDotLine(g, m_rc.x, y, m_rc.x + m_rc.width, y);
                 String text = Common.FloatToString(value, precision);
+//                System.out.println("yÂÄºÔºö"+text);
                 int xx = m_rc.width + 6;
                 int yy = (y - fm.getHeight() / 2) + fm.getAscent();
                 g.setColor(HQApplet.rhColor.clNumber);
                 g.drawString(text, xx, yy);
                 value -= unit;
             }
+
+
         }
 
+    }
+
+    class XYText{
+        private Integer lineX1;
+        private Integer lineY1;
+
+        private Integer lineX2;
+        private Integer lineY2;
+
+        private Integer stringX;
+        private Integer stringY;
+
+
+        private String text;
+
+        public XYText(Integer lineX1, Integer lineY1, Integer lineX2, Integer lineY2, Integer stringX, Integer stringY, String text) {
+            this.lineX1 = lineX1;
+            this.lineY1 = lineY1;
+            this.lineX2 = lineX2;
+            this.lineY2 = lineY2;
+            this.stringX = stringX;
+            this.stringY = stringY;
+            this.text = text;
+        }
+
+        public Integer getLineX1() {
+            return lineX1;
+        }
+
+        public void setLineX1(Integer lineX1) {
+            this.lineX1 = lineX1;
+        }
+
+        public Integer getLineY1() {
+            return lineY1;
+        }
+
+        public void setLineY1(Integer lineY1) {
+            this.lineY1 = lineY1;
+        }
+
+        public Integer getLineX2() {
+            return lineX2;
+        }
+
+        public void setLineX2(Integer lineX2) {
+            this.lineX2 = lineX2;
+        }
+
+        public Integer getLineY2() {
+            return lineY2;
+        }
+
+        public void setLineY2(Integer lineY2) {
+            this.lineY2 = lineY2;
+        }
+
+        public Integer getStringX() {
+            return stringX;
+        }
+
+        public void setStringX(Integer stringX) {
+            this.stringX = stringX;
+        }
+
+        public Integer getStringY() {
+            return stringY;
+        }
+
+        public void setStringY(Integer stringY) {
+            this.stringY = stringY;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
     }
 
     final void GetValueMaxMin(float data[], int iFirst) {

@@ -30,6 +30,7 @@ public class KLine extends IndicatorBase {
     public static final int LineType_USA = 1;
     public static final int LineType_POLY = 2;
     int m_iLineType;
+    int unit;
 
     public KLine(IndicatorPos pos, int iLineType, int Precision) {
         super(pos, Precision);
@@ -40,7 +41,11 @@ public class KLine extends IndicatorBase {
     public void Paint(Graphics g, Rectangle rc, KLineData data[]) {
         super.Paint(g, rc, data);
         GetMaxMin();
-        System.out.println("�����Сֵ��"+super.m_max+":"+super.m_min);
+
+        //绘制刻度
+        unit = coordinateMin(g, super.m_iPrecision);
+        super.m_min = unit;
+
         DrawCoordinate(g, super.m_iPrecision);
         //����K�����ͻ�ͼ
         switch(m_iLineType) {
@@ -56,6 +61,7 @@ public class KLine extends IndicatorBase {
             DrawKLine(g);
             break;
         }
+
     }
 
     public void Calculate() {
@@ -92,11 +98,14 @@ public class KLine extends IndicatorBase {
         int end = super.m_pos.m_End;
         if(super.m_max - super.m_min == 0.0F || super.m_rc.height - super.m_iTextH <= 0)
             return;
+        System.out.println("");
         int width = super.m_pos.m_Ratio >= 3F ? (int)((super.m_pos.m_Ratio + 1.0F) / 3F) : 0;
         if(width % 2 == 0 && width > 0)
             width--;
         float valuex = (float)super.m_rc.x + super.m_pos.m_Ratio / 2.0F;
         float valuey = (super.m_max - super.m_min) / (float)(super.m_rc.height - super.m_iTextH);
+
+        System.out.println("begin:"+begin+",end:"+end+",valuex:"+valuex+",valuey:"+valuey);
         //ѭ����������ͼ
         for(int i = begin; i <= end; i++) {
         	//��
@@ -107,6 +116,7 @@ public class KLine extends IndicatorBase {
             int low = super.m_rc.y + super.m_iTextH + (int)((super.m_max - super.m_kData[i].lowPrice) / valuey);
             //��
             int close = super.m_rc.y + super.m_iTextH + (int)((super.m_max - super.m_kData[i].closePrice) / valuey);
+
             //��������
             if(super.m_kData[i].openPrice == super.m_kData[i].closePrice) {
             	//������ɫ
