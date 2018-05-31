@@ -25,7 +25,7 @@ public class WRNotesPupWindow {
 
     public WRNotesPupWindow() {
         stage = new Stage();
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.TRANSPARENT);
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/wr_notes.fxml"));
         try
         {
