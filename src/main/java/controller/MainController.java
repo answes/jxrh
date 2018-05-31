@@ -4,6 +4,7 @@ import controller.center.GoodController;
 import controller.center.NewCenterController;
 import controller.center.TradeController;
 import controller.pup.PasswordPupWindow;
+import controller.pup.WRNotesPupWindow;
 import controller.pup.WithdrawPupWindow;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -20,7 +21,10 @@ import utils.ControlledStage;
 import utils.DateUtil;
 import utils.StageController;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -197,6 +201,12 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void calculator(ActionEvent event) {
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            runtime.exec("calc");
+        } catch (Exception e) {
+            System.out.println("Error!");
+        }
     }
 
     public void refresh(ActionEvent event) {
@@ -210,7 +220,6 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void scaleWindow(ActionEvent event) {
-//        myController.getStage(Constant.MAIN_ID).setMaximized(!myController.getStage(Constant.MAIN_ID).isMaximized());
         if(!isMax){
             myController.setWindow(Constant.MAIN_ID);
             isMax=true;
@@ -346,5 +355,16 @@ public class MainController implements ControlledStage ,Initializable{
      * @param event
      */
     public void recharge(ActionEvent event) {
+        try {
+            Desktop.getDesktop().browse(new URI("http://www.boc.cn/"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void wrNotes(ActionEvent event) {
+        new WRNotesPupWindow();
     }
 }

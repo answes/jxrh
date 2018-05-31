@@ -36,7 +36,7 @@
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#withdraw" text="出金" />
                                 <MenuItem mnemonicParsing="false" onAction="#recharge" text="入金" />
-                                <!--<MenuItem mnemonicParsing="false" onAction="#wrNotes" text="出入金记录" />-->
+                                <MenuItem mnemonicParsing="false" onAction="#wrNotes" text="出入金记录" />
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="技术">

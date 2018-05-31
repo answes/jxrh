@@ -1,5 +1,8 @@
 package bean;
 
+import javafx.beans.property.LongProperty;
+import javafx.beans.property.SimpleLongProperty;
+
 import java.util.Date;
 
 /**
@@ -9,17 +12,24 @@ import java.util.Date;
  * @Modificd :
  */
 public class BaseEntity{
-    public Long id;
+    public LongProperty id;
     public Date createTime;
     public Date updateTime;
 
+    public BaseEntity() {
+        this.id = new SimpleLongProperty();
+    }
 
-    public Long getId() {
+    public long getId() {
+        return id.get();
+    }
+
+    public LongProperty idProperty() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(long id) {
+        this.id.set(id);
     }
 
     public Date getCreateTime() {
