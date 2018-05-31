@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" style="-fx-border-width: 1px;-fx-border-color: #A9A9A9" fx:controller="controller.pup.controller.SystemSetController">
+        <Label fx:id="title" prefHeight="30" alignment="CENTER" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"  AnchorPane.topAnchor="0"  style="-fx-text-fill: white;-fx-font-size: 16px; -fx-background-color: black" text="系统设置"
+        />
+        <Button fx:id="btExit"  onAction="#exit" prefHeight="30.0"
+                style="-fx-background-color: transparent;-fx-text-fill: white" text="X" AnchorPane.rightAnchor="0"/>
+    <VBox alignment="CENTER" prefWidth="400" spacing="12" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+
+                <HBox alignment="CENTER" spacing="3">
+                    <Label text="委托后界面设置:" />
+                    <ComboBox fx:id="cb1" prefWidth="150.0" />
+         <VBox.margin>
+            <Insets top="12.0" />
+         </VBox.margin>
+                </HBox>
+    <HBox alignment="CENTER" spacing="3">
+        <Label text="      委托前确认:" />
+        <ComboBox fx:id="cb2" prefWidth="150.0" />
+    </HBox>
+    <HBox alignment="CENTER" spacing="3">
+        <Label text="   委托成功提示:" />
+        <ComboBox fx:id="cb3" prefWidth="150.0" />
+    </HBox>
+    <HBox alignment="CENTER" spacing="3">
+        <Label text="      撤单前提示:" />
+        <ComboBox fx:id="cb4" prefWidth="150.0" />
+    </HBox>
+    <HBox alignment="CENTER" spacing="3">
+        <Label text="         锁屏时间:" />
+        <ComboBox fx:id="cb5" prefWidth="150.0" />
+    </HBox>
+    </VBox>
+    <HBox AnchorPane.bottomAnchor="12">
+        <Button prefHeight="30.0" prefWidth="120.0" text="确定" textAlignment="CENTER" onAction="#submit">
+         <HBox.margin>
+            <Insets left="50.0" />
+         </HBox.margin></Button>
+        <Button prefHeight="30.0" prefWidth="120.0" text="取消" onAction="#exit">
+         <HBox.margin>
+            <Insets left="50.0" />
+         </HBox.margin></Button>
+    </HBox>
+</AnchorPane>

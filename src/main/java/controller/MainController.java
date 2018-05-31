@@ -3,6 +3,7 @@ package controller;
 import controller.center.GoodController;
 import controller.center.NewCenterController;
 import controller.center.TradeController;
+import controller.pup.CommonPupWindow;
 import controller.pup.PasswordPupWindow;
 import controller.pup.WRNotesPupWindow;
 import controller.pup.WithdrawPupWindow;
@@ -175,9 +176,11 @@ public class MainController implements ControlledStage ,Initializable{
     }
 
     public void systemSet(ActionEvent event) {
+        new CommonPupWindow(2);
     }
 
     public void aboutMe(ActionEvent event) {
+        new CommonPupWindow(1);
     }
 
     public void signed(ActionEvent event) {
