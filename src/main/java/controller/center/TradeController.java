@@ -2,22 +2,22 @@ package controller.center;
 
 import chart.Draw_KLine;
 import chart.HQApplet;
+import controller.bottom.OperController;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -46,7 +46,10 @@ public class TradeController implements Initializable {
     @FXML
     private int height;
     @FXML
+    private AnchorPane bottom_root;
+    @FXML
     private Pane kline;
+    private OperController operController;
 
     private String normalCss =
             "-fx-background-color: #484848;" +
@@ -138,6 +141,22 @@ public class TradeController implements Initializable {
 
             }
         });
+
+        loadTrade();
+    }
+
+    private void loadTrade() {
+        AnchorPane loader = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/oper.fxml"));
+        try {
+            loader = fxmlLoader.load();
+            //这个是我把获取MainBottomController添加到这个Controller的底下布局，你不用管
+            bottom_root.getChildren().add(loader);
+            //获取MainBottomController
+            operController = fxmlLoader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

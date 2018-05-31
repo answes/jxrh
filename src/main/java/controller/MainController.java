@@ -170,14 +170,6 @@ public class MainController implements ControlledStage ,Initializable{
 
     }
 
-    public void historyQurey(ActionEvent event) {
-        new PasswordPupWindow();
-    }
-
-
-    public void complaints(ActionEvent event) {
-        new PasswordPupWindow();
-    }
 
     public void addressManege(ActionEvent event) {
     }
@@ -231,7 +223,6 @@ public class MainController implements ControlledStage ,Initializable{
 
     public void closeWindow(ActionEvent event) {
         myController.getStage(Constant.MAIN_ID).close();
-//        Platform.exit();
     }
 
     public void fenshiKLine(ActionEvent event) {
@@ -281,20 +272,6 @@ public class MainController implements ControlledStage ,Initializable{
         tradeController.cycle(7);
     }
 
-    public void homeClick(MouseEvent event) {
-    }
-
-    public void kLineClick(MouseEvent event) {
-    }
-
-    public void productInformation(MouseEvent event) {
-    }
-
-    public void dealDetails(MouseEvent event) {
-    }
-
-    public void setIng(MouseEvent event) {
-    }
 
     public void toTranstion(ActionEvent event) {
         goodController.setRootVisible(false);
@@ -366,5 +343,21 @@ public class MainController implements ControlledStage ,Initializable{
 
     public void wrNotes(ActionEvent event) {
         new WRNotesPupWindow();
+    }
+
+    /**
+     * 更改密码
+     * @param event
+     */
+    public void chagePw(ActionEvent event) {
+        new PasswordPupWindow(1);
+    }
+
+    /**
+     * 重置密码
+     * @param event
+     */
+    public void resetPw(ActionEvent event) {
+        new PasswordPupWindow(2);
     }
 }

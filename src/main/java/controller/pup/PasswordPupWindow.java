@@ -22,7 +22,7 @@ public class PasswordPupWindow {
     Parent root = null;
     PasswordController withdrawController;
 
-    public PasswordPupWindow() {
+    public PasswordPupWindow(int type) {
         stage = new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/password.fxml"));
@@ -34,7 +34,7 @@ public class PasswordPupWindow {
             e.printStackTrace();
         }
         withdrawController = loader.getController();
-        withdrawController.setStage(stage);
+        withdrawController.setStage(stage,type);
         stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(root);
         stage.setIconified(false);

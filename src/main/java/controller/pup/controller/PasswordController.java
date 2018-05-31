@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -21,10 +22,15 @@ public class PasswordController implements Initializable{
 
     @FXML
     private Label lbTitle;
+    @FXML
+    private GridPane chage;
+    @FXML
+    private GridPane reset;
 
     private Stage stage;
     private double xOffset = 0;
     private double yOffset = 0;
+    private int type;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,8 +53,22 @@ public class PasswordController implements Initializable{
         });
     }
 
-    public void setStage(Stage stage){
+    public void setStage(Stage stage,int type){
+        this.type = type;
         this.stage =stage;
+        init();
+    }
+
+    private void init() {
+        if(type ==1){
+            lbTitle.setText("修改密码");
+            chage.setVisible(true);
+            reset.setVisible(false);
+        }else if(type ==2){
+            lbTitle.setText("重置密码");
+            chage.setVisible(false);
+            reset.setVisible(true);
+        }
     }
 
     public void close(ActionEvent event) {

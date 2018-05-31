@@ -27,9 +27,9 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="账户">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#historyQurey" text="修改密码" />
-                                <MenuItem mnemonicParsing="false" onAction="#complaints" text="重置密码" />
-                                <MenuItem mnemonicParsing="false" onAction="#addressManege" text="地址管理" />
+                                <MenuItem mnemonicParsing="false" onAction="#chagePw" text="修改密码" />
+                                <MenuItem mnemonicParsing="false" onAction="#resetPw" text="重置密码" />
+                                <!--<MenuItem mnemonicParsing="false" onAction="#addressManege" text="地址管理" />-->
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="资金">
@@ -39,19 +39,19 @@
                                 <MenuItem mnemonicParsing="false" onAction="#wrNotes" text="出入金记录" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="技术">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#signed" text="签约申请" />
-                                <MenuItem mnemonicParsing="false" onAction="#termination" text="签约申请" />
-                                <MenuItem mnemonicParsing="false" onAction="#outMoney" text="出金" />
-                                <MenuItem mnemonicParsing="false" onAction="#clientReport" text="客户报表" />
-                            </items>
-                        </Menu>
+                        <!--<Menu mnemonicParsing="false" text="技术">-->
+                            <!--<items>-->
+                                <!--<MenuItem mnemonicParsing="false" onAction="#signed" text="签约申请" />-->
+                                <!--<MenuItem mnemonicParsing="false" onAction="#termination" text="签约申请" />-->
+                                <!--<MenuItem mnemonicParsing="false" onAction="#outMoney" text="出金" />-->
+                                <!--<MenuItem mnemonicParsing="false" onAction="#clientReport" text="客户报表" />-->
+                            <!--</items>-->
+                        <!--</Menu>-->
                         <Menu mnemonicParsing="false" text="工具">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#calculator" text="计算器" />
                                 <MenuItem mnemonicParsing="false" onAction="#refresh" text="刷新" />
-                                <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局" />
+                                <!--<MenuItem mnemonicParsing="false" onAction="#restore" text="恢复默认布局" />-->
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="系统">
