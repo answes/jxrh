@@ -1,5 +1,7 @@
 package bean;
 
+import javafx.beans.property.SimpleLongProperty;
+
 /**
  * @Author : bigshark
  * @Descripstion :
@@ -12,7 +14,7 @@ public class News extends BaseEntity{
     private String content;
 
     public News(Long id,String date, String tilte) {
-        this.id = id;
+        this.id = new SimpleLongProperty(id);
         this.date = date;
         this.tilte = tilte;
     }

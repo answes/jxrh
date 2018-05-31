@@ -23,4 +23,10 @@ public class DateUtil {
         return timeDF.format(date);
     }
 
+    public static String date2String(Date date){
+        String dd = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat timeDF = new SimpleDateFormat(dd);
+        return timeDF.format(date);
+    }
+
 }
