@@ -8,9 +8,9 @@
 
 <HBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-             style="-fx-background-color: transparent;-fx-padding: 1px" fx:id="root">
-        <Label fx:id="lbType"  alignment="CENTER" prefWidth="35" >卖一</Label>
-        <Label fx:id="lbPrice"  alignment="CENTER" prefWidth="40" style="-fx-text-fill: black">10</Label>
-        <Label fx:id="lbNumber"  alignment="CENTER" prefWidth="45" style="-fx-text-fill: black">36</Label>
-        <Label fx:id="lbAmount"  alignment="CENTER" prefWidth="55" style="-fx-text-fill: black">360</Label>
+             style="-fx-background-color: #000;-fx-padding: 1px" fx:id="root">
+        <Label fx:id="lbType"  alignment="CENTER_LEFT" prefWidth="30" style="-fx-font-family: Arial;-fx-font-size:14px;-fx-background-color: #000;-fx-padding: 0 0 0 2">卖一</Label>
+        <Label fx:id="lbPrice"  alignment="CENTER_RIGHT" prefWidth="60" style="-fx-font-family: Arial;-fx-font-weight:bold;-fx-font-size:14px;-fx-background-color: #000;-fx-text-fill: #D4D0C8">10</Label>
+        <Label fx:id="lbNumber"  alignment="CENTER_RIGHT" prefWidth="60" style="-fx-font-family: Arial;-fx-font-weight:bold;-fx-font-size:14px;-fx-background-color: #000;-fx-text-fill: #D4D0C8">36</Label>
+        <Label fx:id="lbAmount"  alignment="CENTER_RIGHT" prefWidth="62" style="-fx-font-family: Arial;-fx-font-weight:bold;-fx-font-size:14px;-fx-background-color: #000;-fx-text-fill: #D4D0C8;">360</Label>
 </HBox>

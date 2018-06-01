@@ -4,6 +4,8 @@ import bean.TradeOrder;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import utils.DateUtil;
@@ -22,6 +24,8 @@ public class TransactionController {
     private HBox root;
     @FXML
     private Label lbTime,lbPrice,lbNumber;
+    @FXML
+    private ImageView lbImage;
 
     public TransactionController()
     {
@@ -50,6 +54,10 @@ public class TransactionController {
         lbTime.setText(DateUtil.getNowTime());
         lbPrice.setText(String.valueOf(order.getPrice()));
         lbNumber.setText(String.valueOf(order.getNumber()));
+
+        lbImage.setFitWidth(16);
+        lbImage.setFitHeight(16);
+        lbImage.setImage(new Image("/icon/arrow_down.png"));
     }
 
     public HBox getRoot(){

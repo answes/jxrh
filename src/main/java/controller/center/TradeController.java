@@ -63,6 +63,27 @@ public class TradeController implements Initializable {
     private ListView<TradeOrder> lvTrade;
     private OperController operController;
 
+    @FXML
+    javafx.scene.control.Label currentPrice;
+    @FXML
+    javafx.scene.control.Label changeRadio;
+    @FXML
+    javafx.scene.control.Label changeValue;
+    @FXML
+    javafx.scene.control.Label yestodayClose;
+    @FXML
+    javafx.scene.control.Label count;
+    @FXML
+    javafx.scene.control.Label open;
+    @FXML
+    javafx.scene.control.Label amount;
+    @FXML
+    javafx.scene.control.Label high;
+    @FXML
+    javafx.scene.control.Label change;
+    @FXML
+    javafx.scene.control.Label low;
+
     private String normalCss =
             "-fx-background-color: #484848;" +
                     "-fx-background-radius: 0px;" +

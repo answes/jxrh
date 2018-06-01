@@ -869,16 +869,18 @@ public class Draw_KLine {
         for(int i = 0; i < 3; i++)
             m_indicator[i].DrawTitle(g, iIndex);
 
+        int gap = 8;
+
         if(m_iPos < 0 || outOfArea)
             return;
-        g.clearRect(m_rcLabel.x - m_rcLabel.width, m_rcLabel.y, m_rcLabel.width, m_rcLabel.height);
+        g.clearRect(m_rcLabel.x - m_rcLabel.width + gap, m_rcLabel.y, m_rcLabel.width - gap, m_rcLabel.height);
         g.setColor(HQApplet.rhColor.clNumber);
-        g.drawRect(m_rcLabel.x - m_rcLabel.width, m_rcLabel.y, m_rcLabel.width, m_rcLabel.height);
+        g.drawRect(m_rcLabel.x - m_rcLabel.width + gap, m_rcLabel.y, m_rcLabel.width - gap, m_rcLabel.height);
         g.setColor(Color.BLACK);
-        g.fillRect(m_rcLabel.x - m_rcLabel.width + 1, m_rcLabel.y + 1, m_rcLabel.width - 1, m_rcLabel.height - 1);
-        g.setFont(new Font("\u5B8B\u4F53", 0, 14));
+        g.fillRect(m_rcLabel.x - m_rcLabel.width + 1 + gap, m_rcLabel.y + 1, m_rcLabel.width - 1 - gap, m_rcLabel.height - 1);
+        g.setFont(new Font("\u5B8B\u4F53", 0, 12));
         FontMetrics fm = g.getFontMetrics();
-        int x = m_rcLabel.x - m_rcLabel.width + 1;
+        int x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         int y = m_rcLabel.y + fm.getAscent() + 1;
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Date"), x, y);
@@ -914,7 +916,7 @@ public class Draw_KLine {
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clEqual);
         g.drawString(str.substring(4,str.length() - 6 ), x, y);
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Open"), x, y);
@@ -934,7 +936,7 @@ public class Draw_KLine {
             g.setColor(HQApplet.rhColor.clEqual);
         x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("High"), x, y);
@@ -949,7 +951,7 @@ public class Draw_KLine {
             g.setColor(HQApplet.rhColor.clEqual);
         x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
-        x = m_rcLabel.x  - m_rcLabel.width + 1;
+        x = m_rcLabel.x  - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Low"), x, y);
@@ -964,7 +966,7 @@ public class Draw_KLine {
             g.setColor(HQApplet.rhColor.clEqual);
         x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Close"), x, y);
@@ -982,7 +984,7 @@ public class Draw_KLine {
         boolean bShowBalance = true;
         if(((MenuListener) (parent)).m_applet.m_iKLineCycle != 1 && (((MenuListener) (parent)).m_applet.getProductType(m_product.sCode) == 2 || ((MenuListener) (parent)).m_applet.getProductType(m_product.sCode) == 3))
             bShowBalance = false;
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         if(bShowBalance) {
             g.setColor(HQApplet.rhColor.clItem);
@@ -1002,7 +1004,7 @@ public class Draw_KLine {
             g.drawString(str, x, y);
         }
 
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Volume"), x, y);
@@ -1012,7 +1014,7 @@ public class Draw_KLine {
         x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
 
-        x = m_rcLabel.x - m_rcLabel.width + 1;
+        x = m_rcLabel.x - m_rcLabel.width + 1 + gap;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Money"), x, y);
