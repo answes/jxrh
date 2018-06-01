@@ -239,7 +239,7 @@ public class Draw_MinLine {
             return;
         m_iPrecision = m_applet.GetPrecision(m_product.sCode);
         float fDiff = m_maxPrice - m_minPrice;
-        System.out.println("1.m_maxPrice,m_minPrice:"+m_maxPrice+","+m_minPrice);
+
         float fUnit = 1.0F;
         for(int i = 0; i < m_iPrecision; i++) {
             fDiff *= 10F;

@@ -31,42 +31,42 @@ public class Draw_KLine {
      */
     Page_KLine parent;
     /**
-     * ÈÕÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_DAY = 1;
     /**
-     * ÖÜÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_WEEK = 2;
     /**
-     * ÔÂÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_MONTH = 3;
     /**
-     * 5·ÖÏß
+     * 5ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_MIN5 = 4;
     /**
-     * 15·ÖÏß
+     * 15ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_MIN15 = 5;
     /**
-     * 30·ÖÏß
+     * 30ï¿½ï¿½ï¿½ï¿½
      */
     static final int CYCLE_MIN30 = 6;
     /**
-     * 60·ÖÏß£¨Ð¡Ê±Ïß£©
+     * 60ï¿½ï¿½ï¿½ß£ï¿½Ð¡Ê±ï¿½ß£ï¿½
      */
     static final int CYCLE_MIN60 = 7;
     /**
-     * ÉÌÆ·ÐÅÏ¢£¨KÏß£¬½»Ò×ÐÅÏ¢£¬·ÖÊ±Ïß£¬Î¯ÍÐ£¬ÈÕÏßÊý¾Ý£¬5·ÖÏßÊý¾Ý£©
+     * ï¿½ï¿½Æ·ï¿½ï¿½Ï¢ï¿½ï¿½Kï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ß£ï¿½Î¯ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½
      */
     private ProductData m_product;
     KLineData m_kData[];
     Rectangle m_rcPane[];
     IndicatorBase m_indicator[];
     /**
-     * Ö¸±ê
+     * Ö¸ï¿½ï¿½
      */
     IndicatorPos m_pos;
     private int m_iPos;
@@ -112,7 +112,7 @@ public class Draw_KLine {
 
         if(m_rcPane[0].width < 0)
             return;
-        // »æÖÆÊ±¼ä
+        // ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
         DrawTimeCoordinate(g);
         for(int i = 0; i < 3; i++)
             m_indicator[i].Paint(g, m_rcPane[i], m_kData);
@@ -123,7 +123,7 @@ public class Draw_KLine {
     }
 
     /**
-     * »ñÈ¡Ä»²¼
+     * ï¿½ï¿½È¡Ä»ï¿½ï¿½
      * @param g
      * @param rc
      */
@@ -161,19 +161,19 @@ public class Draw_KLine {
     }
 
     /**
-     * »æÖÆÊ±¼ä
+     * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
      * @param g
      */
     private void DrawTimeCoordinate(Graphics g) {
         if(m_kData == null || m_kData.length == 0)
             return;
-        //ËÎÌå
+        //ï¿½ï¿½ï¿½ï¿½
         g.setFont(new Font("\u5B8B\u4F53", 0, 14));
         FontMetrics fm = g.getFontMetrics();
         int iHeight = fm.getHeight();
         Rectangle rc = new Rectangle(m_rcPane[2].x, m_rcPane[2].y + m_rcPane[2].height, m_rcPane[2].width, iHeight);
         int iStringWidth;
-        //Cycle,ÖÜÆÚ
+        //Cycle,ï¿½ï¿½ï¿½ï¿½
         switch(((MenuListener) (parent)).m_applet.m_iKLineCycle) {
             case 3: // '\003'
                 iStringWidth = fm.stringWidth("2004-10");
@@ -248,7 +248,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ´¦ÀíKÏßÖÜÆÚÊý¾Ý
+     * ï¿½ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     private void MakeCycleData() {
         if(m_product == null)
@@ -283,7 +283,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ÈÕÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     private void MakeTodayDayLine() {
         if(m_product.realData == null || m_product.realData.curPrice < 0.001F) {
@@ -323,7 +323,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ½ñÈÕ5·ÖKÏß
+     * ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½Kï¿½ï¿½
      */
     private void MakeToday5MinLine() {
         if(m_product.realData == null)
@@ -353,7 +353,7 @@ public class Draw_KLine {
     }
 
     /**
-     * 5·ÖKÏß
+     * 5ï¿½ï¿½Kï¿½ï¿½
      * @param code
      * @param vBillData
      * @param fPreClosePrice
@@ -364,7 +364,7 @@ public class Draw_KLine {
     }
 
     /*'
-     * ÖÜÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     private void MakeWeek() {
         CodeTable codeTable = (CodeTable)((MenuListener) (parent)).m_applet.m_htProduct.get(m_product.sCode);
@@ -439,7 +439,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ÔÂÏß
+     * ï¿½ï¿½ï¿½ï¿½
      */
     private void MakeMonth() {
         Vector vector = new Vector();
@@ -496,7 +496,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ´¦Àí·ÖÖÓÏßÊý¾Ý
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param iMin
      */
     private void MakeMinCycle(int iMin) {
@@ -564,7 +564,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ´¦Àí¼üÅÌ°´¼ü
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ï¿½ï¿½
      * @param e
      * @return
      */
@@ -647,12 +647,12 @@ public class Draw_KLine {
                 }
                 break;
 
-            //¸Ä±äÖ¸±ê
+            //ï¿½Ä±ï¿½Ö¸ï¿½ï¿½
             case 36: // '$'
                 ChangeIndicator(false);
                 bResult = true;
                 break;
-            //¸Ä±äÖ¸±ê
+            //ï¿½Ä±ï¿½Ö¸ï¿½ï¿½
             case 35: // '#'
                 ChangeIndicator(true);
                 bResult = true;
@@ -662,7 +662,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ¸Ä±äKÏßÀàÐÍ
+     * ï¿½Ä±ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param iType
      */
     void ChangeKLineType(int iType) {
@@ -672,7 +672,7 @@ public class Draw_KLine {
     }
 
     /**
-     * ¸Ä±äKÏßÖÜÆÚ
+     * ï¿½Ä±ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     void ChangeCycle() {
         if(((MenuListener) (parent)).m_applet.m_iKLineCycle >= 7)
@@ -684,12 +684,12 @@ public class Draw_KLine {
         m_pos.m_MaxPos = 0;
         m_pos.m_End = 0;
         m_pos.m_Begin = 0;
-        //ÐÞ¸ÄÊý¾Ý
+        //ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
         parent.AskForKLine();
     }
 
     /**
-     * ¸Ä±äÏÔÊ¾±ÈÀý£¨·Å´óËõÐ¡£©
+     * ï¿½Ä±ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½
      * @param b
      * @return
      */
@@ -708,7 +708,7 @@ public class Draw_KLine {
     }
 
     /**
-     * »æÖÆÊ±¼äÖÜÆÚKÏßÎÄ×Ö
+     * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param g
      */
     private void DrawCycle(Graphics g) {
@@ -753,8 +753,8 @@ public class Draw_KLine {
     }
 
     /**
-     * <- ×óÒÆÓÒÒÆ°´Å¥ ->
-     * @param bIsLeft ÊÇ·ñ×óÒÆ
+     * <- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ°ï¿½Å¥ ->
+     * @param bIsLeft ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     private boolean ChangePos(boolean bIsLeft) {
@@ -798,7 +798,7 @@ public class Draw_KLine {
 
 
     /**
-     * Êó±ê×ó¼üµã»÷
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param x
      * @param y
      * @return
@@ -820,7 +820,7 @@ public class Draw_KLine {
     }
 
     /**
-     * Êó±êÍÏ¶¯
+     * ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
      * @param x
      * @param y
      * @return
@@ -830,7 +830,7 @@ public class Draw_KLine {
     }
 
     /**
-     * »æÖÆÊ®×ÖÓÎ±ê
+     * ï¿½ï¿½ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Î±ï¿½
      * @param iNewPos
      */
     private void DrawCursor(int iNewPos) {
@@ -855,7 +855,7 @@ public class Draw_KLine {
     }
 
     /**
-     * »æÖÆÌáÊ¾ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ï¢
      */
     private void DrawLabel() {
         if(m_kData == null || m_kData.length == 0)
@@ -884,7 +884,7 @@ public class Draw_KLine {
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Date"), x, y);
         y += fm.getHeight();
         String str = String.valueOf(m_kData[iIndex].date);
-//        System.out.println("ÌáÊ¾Ê±¼ä£º"+str);
+//        System.out.println("ï¿½ï¿½Ê¾Ê±ï¿½ä£º"+str);
 //        switch(((MenuListener) (parent)).m_applet.m_iKLineCycle) {
 //        case 1: // '\001'
 //        case 2: // '\002'
@@ -1001,6 +1001,7 @@ public class Draw_KLine {
             x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
             g.drawString(str, x, y);
         }
+
         x = m_rcLabel.x - m_rcLabel.width + 1;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
@@ -1010,12 +1011,13 @@ public class Draw_KLine {
         g.setColor(HQApplet.rhColor.clVolume);
         x = (m_rcLabel.x ) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
+
         x = m_rcLabel.x - m_rcLabel.width + 1;
         y += fm.getHeight();
         g.setColor(HQApplet.rhColor.clItem);
         g.drawString(((MenuListener) (parent)).m_applet.getShowString("Money"), x, y);
         y += fm.getHeight();
-        str = String.valueOf( m_kData[iIndex].totalMoney > 10000 ? StringUtil.keepDecimal(m_kData[iIndex].totalMoney / 10000,null) + "Íò" : StringUtil.keepDecimal(m_kData[iIndex].totalMoney,null));
+        str = String.valueOf( m_kData[iIndex].totalMoney > 10000 ? StringUtil.keepDecimal(m_kData[iIndex].totalMoney / 10000,null) + "ä¸‡" : StringUtil.keepDecimal(m_kData[iIndex].totalMoney,null));
         g.setColor(HQApplet.rhColor.clVolume);
         x = (m_rcLabel.x) - fm.stringWidth(str) - 1;
         g.drawString(str, x, y);
@@ -1031,10 +1033,10 @@ public class Draw_KLine {
     }
 
     /**
-     * ´´½¨ÓÒ¼üÖ¸±ê²Ëµ¥
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½Ö¸ï¿½ï¿½Ëµï¿½
      */
     void CreateIndicator() {
-//        System.out.println("<----CreateIndicator---->£º"+((MenuListener) (parent)).m_applet.m_strIndicator);
+//        System.out.println("<----CreateIndicator---->ï¿½ï¿½"+((MenuListener) (parent)).m_applet.m_strIndicator);
         int iPrecision = ((MenuListener) (parent)).m_applet.GetPrecision(((MenuListener) (parent)).m_applet.strCurrentCode);
         if(((MenuListener) (parent)).m_applet.m_strIndicator.equals("ASI"))
             m_indicator[2] = new ASI(m_pos, iPrecision);
@@ -1107,8 +1109,8 @@ public class Draw_KLine {
     }
 
     /**
-     * ¸Ä±äÖ¸±ê(ÉÏÏÂÇÐ»»)
-     * @param bDown ÊÇÏòÏÂÇÐ»»
+     * ï¿½Ä±ï¿½Ö¸ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½)
+     * @param bDown ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½
      */
     void ChangeIndicator(boolean bDown) {
 //        System.out.println("<----ChangeIndicator---->");

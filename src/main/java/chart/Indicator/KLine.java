@@ -105,7 +105,6 @@ public class KLine extends IndicatorBase {
         float valuex = (float)super.m_rc.x + super.m_pos.m_Ratio / 2.0F;
         float valuey = (super.m_max - super.m_min) / (float)(super.m_rc.height - super.m_iTextH);
 
-        System.out.println("begin:"+begin+",end:"+end+",valuex:"+valuex+",valuey:"+valuey);
         //ѭ����������ͼ
         for(int i = begin; i <= end; i++) {
         	//��

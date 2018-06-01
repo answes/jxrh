@@ -1,0 +1,84 @@
+#tradePane .label{
+    -fx-text-fill: #fff;
+}
+.radio-button,.radio-button .label,.radio-button .radio{
+    -fx-text-fill: #fff;
+}
+.check-box{
+    -fx-text-fill: #fff;
+}
+
+.table-view{
+    -fx-padding: 0;
+}
+.table-view .column-header{
+    -fx-pref-height: 22px;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+.table-view .column-header .label{
+    -fx-border-width: 1 0 1 0;
+    -fx-border-style: solid;
+    -fx-padding: 0;
+    -fx-border-color: #444 transparent #800000 transparent;
+}
+.text-field{
+    -fx-pref-height: 26px;
+    -fx-border-radius: 0;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-pref-width:100px;
+}
+#sellBtn,#buyBtn{
+    -fx-pref-width: 100px;
+    -fx-pref-height: 26px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-background-color: linear-gradient(to bottom,#F1F1F1,#D2D2D2);
+}
+.tab{
+    -fx-pref-height: 24px;
+    -fx-background-color:#3C3741 ;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-background-insets: 0;
+}
+.tab .tab-label{
+    -fx-text-fill: #fff;
+    -fx-alignment: center;
+    -fx-padding: 0 8px 0;
+    -fx-background-insets: 0;
+}
+
+
+.tab:selected,
+.tab:focused,
+.tab:hover{
+    -fx-background-color:#4F4B54;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #609BBB;
+    -fx-border-style: solid;
+}
+.tab .label{
+    -fx-text-fill: #fff;
+}
+.tab-pane .tab-header-area{
+    -fx-pref-height: 24px;
+    -fx-padding: 0;
+}
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #3C3741;
+    -fx-background-insets: 0;
+    -fx-padding: 0 10px;
+}
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: transparent;
+}
