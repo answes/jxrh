@@ -191,6 +191,7 @@ public class TradeController implements Initializable {
         ObservableList<TradeOrder> buyOrders = FXCollections.observableArrayList();
         for(int i=0;i<5;i++){
             TradeOrder tradeOrder = new TradeOrder();
+            tradeOrder.setIndex(i);
             tradeOrder.setType(1);
             tradeOrder.setNumber(10);
             tradeOrder.setPrice(10+i);
@@ -198,13 +199,14 @@ public class TradeController implements Initializable {
         }
         for(int i=0;i<5;i++){
             TradeOrder tradeOrder = new TradeOrder();
+            tradeOrder.setIndex(4-i);
             tradeOrder.setType(2);
             tradeOrder.setNumber(10);
-            tradeOrder.setPrice(10+i);
+            tradeOrder.setPrice(10-i);
             buyOrders.add(tradeOrder);
         }
 
-        lvBuys.setCellFactory(param -> new TradeOrderCell(1));
+        lvBuys.setCellFactory((ListView<TradeOrder> l) -> new TradeOrderCell(1));
         lvSells.setCellFactory(param -> new TradeOrderCell(1));
         lvTrade.setCellFactory(param -> new TradeOrderCell(2));
         lvBuys.setItems(sellOrders);

@@ -12,14 +12,28 @@ import javafx.beans.property.SimpleIntegerProperty;
  * @Modificd :
  */
 public class TradeOrder extends BaseEntity {
+    private IntegerProperty index;
     private IntegerProperty type;
     private DoubleProperty price;
     private DoubleProperty number;
 
     public TradeOrder() {
+        this.index = new SimpleIntegerProperty();
         this.type = new SimpleIntegerProperty();
         this.price = new SimpleDoubleProperty();
         this.number = new SimpleDoubleProperty();
+    }
+
+    public int getIndex() {
+        return index.get();
+    }
+
+    public IntegerProperty indexProperty() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index.set(index);
     }
 
     public int getType() {

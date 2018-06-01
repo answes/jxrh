@@ -36,48 +36,48 @@ public class TradeOrderController{
     }
 
     public void initData(TradeOrder order,int index){
-//            switch (index){
-//                case 0:
-//                    if(order.getType()==1){
-//                        lbType.setText("买一");
-//                    }else if(order.getType()==2){
-//                        lbType.setText("卖一");
-//                    }
-//                    break;
-//                case 1:
-//                    if(order.getType()==1){
-//                        lbType.setText("买二");
-//                    }else if(order.getType()==2){
-//                        lbType.setText("卖二");
-//                    }
-//                    break;
-//                case 2:
-//                    if(order.getType()==1){
-//                        lbType.setText("买三");
-//                    }else if(order.getType()==2){
-//                        lbType.setText("卖三");
-//                    }
-//                    break;
-//                case 3:
-//                    if(order.getType()==1){
-//                        lbType.setText("买四");
-//                    }else if(order.getType()==2){
-//                        lbType.setText("卖四");
-//                    }
-//                    break;
-//                case 4:
-//                    if(order.getType()==1){
-//                        lbType.setText("买五");
-//                    }else if(order.getType()==2){
-//                        lbType.setText("卖五");
-//                    }
-//                    break;
-//            }
+            switch (order.getIndex()){
+                case 0:
+                    if(order.getType()==1){
+                        lbType.setText("买一");
+                    }else if(order.getType()==2){
+                        lbType.setText("卖一");
+                    }
+                    break;
+                case 1:
+                    if(order.getType()==1){
+                        lbType.setText("买二");
+                    }else if(order.getType()==2){
+                        lbType.setText("卖二");
+                    }
+                    break;
+                case 2:
+                    if(order.getType()==1){
+                        lbType.setText("买三");
+                    }else if(order.getType()==2){
+                        lbType.setText("卖三");
+                    }
+                    break;
+                case 3:
+                    if(order.getType()==1){
+                        lbType.setText("买四");
+                    }else if(order.getType()==2){
+                        lbType.setText("卖四");
+                    }
+                    break;
+                case 4:
+                    if(order.getType()==1){
+                        lbType.setText("买五");
+                    }else if(order.getType()==2){
+                        lbType.setText("卖五");
+                    }
+                    break;
+            }
         if(order.getType()==1){
-            lbType.setText("买一");
+//            lbType.setText("买一");
             lbType.setTextFill(Color.web("#EB0000"));
         }else if(order.getType()==2){
-            lbType.setText("卖一");
+//            lbType.setText("卖一");
             lbType.setTextFill(Color.web("#00FF00"));
         }
         lbPrice.setText(String.valueOf(order.getPrice()));

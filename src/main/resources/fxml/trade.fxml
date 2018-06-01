@@ -98,11 +98,11 @@
             </VBox>
             <VBox prefHeight="1" style="-fx-background-color: #4E4E4E;" />
             <HBox prefHeight="160" prefWidth="220.0">
-                <ListView fx:id="lvSells" prefWidth="220.0" prefHeight="150" style="-fx-background-color: #000000;" />
+                <ListView fx:id="lvSells" prefWidth="218.0" prefHeight="150" focusTraversable="false" style="-fx-background-color: #000000;" />
             </HBox>
             <VBox prefHeight="1" style="-fx-background-color: #4E4E4E;" />
             <HBox prefHeight="160" prefWidth="220.0">
-                <ListView fx:id="lvBuys" prefWidth="220.0" prefHeight="150" style="-fx-background-color: #000000;" />
+                <ListView fx:id="lvBuys" prefWidth="218.0" prefHeight="150"  focusTraversable="false" style="-fx-background-color: #000000;" />
             </HBox>
             <VBox  prefWidth="220">
                 <!--<HBox prefWidth="220" style="-fx-background-color: #A9A9A9">-->
@@ -110,7 +110,7 @@
                     <!--<Label alignment="CENTER" prefHeight="30.0" prefWidth="73">价位</Label>-->
                     <!--<Label alignment="CENTER" prefHeight="30.0" prefWidth="73">现手</Label>-->
                 <!--</HBox>-->
-                <ListView fx:id="lvTrade" VBox.vgrow="SOMETIMES" prefWidth="220" style="-fx-background-color: #000000;" />
+                <ListView fx:id="lvTrade" VBox.vgrow="SOMETIMES" focusTraversable="false" prefWidth="220" style="-fx-background-color: #000000;" />
             </VBox>
         </VBox>
     </HBox>
