@@ -61,8 +61,8 @@
                     </RadioButton>
                     <RadioButton fx:id="market_price_consign" text="市价委托" toggleGroup="$priceGroup" />
                 </HBox>
-                <VBox alignment="CENTER">
-                    <Button fx:id="buyBtn" text="提交" />
+                <VBox alignment="CENTER_RIGHT" style="-fx-padding: 0 14 0 0">
+                    <Button fx:id="buyBtn" text="提交"  />
                 </VBox>
             </VBox>
             <HBox prefWidth="1" style="-fx-background-color: #4E4E4E;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="179" AnchorPane.topAnchor="0" />
@@ -88,7 +88,7 @@
                     </RadioButton>
                     <RadioButton text="市价委托" toggleGroup="$priceGroup" />
                 </HBox>
-                <VBox alignment="CENTER">
+                <VBox alignment="CENTER_RIGHT" style="-fx-padding: 0 14 0 0">
                     <Button fx:id="sellBtn" text="提交" />
                 </VBox>
             </VBox>

@@ -678,7 +678,7 @@ public class Draw_MinLine {
         g.fillRect(m_rcLabel.x + 1, m_rcLabel.y + 1, m_rcLabel.width - 1, m_rcLabel.height - 1);
         g.setColor(HQApplet.rhColor.clNumber);
         g.drawRect(m_rcLabel.x, m_rcLabel.y, m_rcLabel.width, m_rcLabel.height);
-        g.setFont(new Font("\u5B8B\u4F53", 0, 14));
+        g.setFont(new Font("\u5B8B\u4F53", 0, 12));
         FontMetrics fm = m_graphics.getFontMetrics();
         int x = m_rcLabel.x + 1;
         int y = m_rcLabel.y + fm.getAscent() + 1;

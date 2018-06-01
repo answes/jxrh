@@ -18,7 +18,7 @@ import java.awt.*;
 //            IndicatorBase, IndicatorPos
 
 public class MACD extends IndicatorBase {
-
+    Color color = new Color(0, 255, 255);
     private final int m_iParam[] = {
         12, 26, 9
     };
@@ -46,7 +46,8 @@ public class MACD extends IndicatorBase {
             DrawCoordinate(g, 2);
             DrawLine(g, super.m_data[0], m_iParam[1] - 1, HQApplet.rhColor.clIndicator[0]);
             DrawLine(g, super.m_data[1], (m_iParam[1] + m_iParam[2]) - 2, HQApplet.rhColor.clIndicator[1]);
-            DrawVertLine(g, super.m_data[2], (m_iParam[1] + m_iParam[2]) - 2, HQApplet.rhColor.clIncrease, HQApplet.rhColor.clDecrease);
+
+            DrawVertLine(g, super.m_data[2], (m_iParam[1] + m_iParam[2]) - 2, HQApplet.rhColor.clIncrease,color );
             return;
         }
     }

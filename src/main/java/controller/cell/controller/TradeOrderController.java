@@ -75,10 +75,10 @@ public class TradeOrderController{
 //            }
         if(order.getType()==1){
             lbType.setText("买一");
-            lbType.setTextFill(Color.web("#991E10"));
+            lbType.setTextFill(Color.web("#EB0000"));
         }else if(order.getType()==2){
             lbType.setText("卖一");
-            lbType.setTextFill(Color.web("#22bd69"));
+            lbType.setTextFill(Color.web("#00FF00"));
         }
         lbPrice.setText(String.valueOf(order.getPrice()));
         lbNumber.setText(String.valueOf(order.getNumber()));

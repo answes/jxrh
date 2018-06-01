@@ -62,7 +62,7 @@
                     </HBox>
                     <HBox prefWidth="110">
                         <Label style="-fx-text-fill: #D4D0C8" text="振幅" />
-                        <Label fx:id="change" style="-fx-pref-width: 100px;-fx-font-size:13px;-fx-font-weight: bold;-fx-text-fill: #fff;-fx-alignment: center-right;-fx-padding: 0 2 0 0" text="0.02%" />
+                        <Label fx:id="change" style="-fx-pref-width: 100px;-fx-font-size:13px;-fx-font-weight: bold;-fx-text-fill: #EB0000;-fx-alignment: center-right;-fx-padding: 0 2 0 0" text="0.02%" />
                     </HBox>
                 </HBox>
                 <HBox prefWidth="220.0" style="-fx-padding:  2px 0">

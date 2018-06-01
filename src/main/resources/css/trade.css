@@ -7,6 +7,7 @@
 #lvSells .list-cell .label,
 #lvBuys .list-cell .label,
 #lvTrade .list-cell .label{
+    -fx-font-family: Arial;
     -fx-padding: 0;
     -fx-pref-height: 22px;
     -fx-max-height: 22px;
@@ -17,7 +18,7 @@
 }
 #lvSells,#lvBuys,#lvTrade{
     -fx-border-color: #4a4a4a;
-    -fx-border-width: 1 0 0 0;
+    -fx-border-width: 2 0 0 0;
     -fx-border-style: solid;
     -fx-background-color: #000;
 }
