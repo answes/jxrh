@@ -38,7 +38,7 @@
             </HBox>
             <HBox prefHeight="174">
                 <Label alignment="CENTER" prefHeight="174" prefWidth="24" style="-fx-font-size: 12px;-fx-background-color: #1C3B5B;-fx-text-fill: white;-fx-padding: 5 5 5 5" text="产品资讯" wrapText="true" HBox.hgrow="ALWAYS" />
-                <ListView fx:id="lvInfo"  style="-fx-background-color: #2A2A2A" HBox.hgrow="SOMETIMES" />
+                <ListView fx:id="lvInfo" focusTraversable="false"  style="-fx-background-color: #2A2A2A" HBox.hgrow="SOMETIMES" />
             </HBox>
         </VBox>
         <VBox prefHeight="200" GridPane.columnIndex="2">

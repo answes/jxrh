@@ -36,6 +36,7 @@
     -fx-cursor: hand;
     -fx-border-radius: 0;
     -fx-background-radius: 0;
+    -fx-focus-traversable:false;
 }
 #sellBtn{
     -fx-background-color: linear-gradient(to bottom,#00FF00,#02BE02);
