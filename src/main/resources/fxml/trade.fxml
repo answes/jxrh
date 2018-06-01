@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="view_root" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.center.TradeController">
     <VBox prefWidth="1" style="-fx-background-color: #A9A9A9" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-    <AnchorPane fx:id="kline_root" AnchorPane.bottomAnchor="200" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221" AnchorPane.topAnchor="0">
+    <AnchorPane fx:id="kline_root" AnchorPane.bottomAnchor="300" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221" AnchorPane.topAnchor="0">
         <Pane fx:id="kline" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
         <AnchorPane fx:id="klineType" style="-fx-background-color: #484848;-fx-border-style: solid;-fx-border-width: 1px 0 0 0;-fx-border-color: #88A4BE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <HBox fx:id="Indicator" AnchorPane.bottomAnchor="1" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
@@ -33,7 +33,7 @@
             </HBox>
         </AnchorPane>
     </AnchorPane>
-    <AnchorPane fx:id="bottom_root" prefHeight="200" style="-fx-background-color: #000" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221" />
+    <AnchorPane fx:id="bottom_root" prefHeight="300" style="-fx-background-color: #000" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="221" />
     <HBox fx:id="rightBox" prefWidth="220.0" style="-fx-background-color: #000000" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="1">
         <VBox prefWidth="220.0" style="-fx-border-style: solid;-fx-border-width:0 0 0 1;-fx-border-color: #4E4E4E">
             <HBox alignment="CENTER_LEFT">

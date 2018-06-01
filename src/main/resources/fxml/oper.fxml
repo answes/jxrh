@@ -2,18 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="200.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.OperController">
-    <AnchorPane fx:id="unLock" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" visible="true">
+<AnchorPane prefHeight="300.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bottom.OperController">
+    <AnchorPane fx:id="unLock" visible="true" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
     <AnchorPane fx:id="btm_top" prefHeight="30.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <HBox alignment="CENTER" prefHeight="30.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="0.0">
             <Label text="成交总额：30000" />
@@ -84,36 +88,99 @@
             </VBox>
             <HBox prefWidth="1" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="359" AnchorPane.topAnchor="0" />
         </AnchorPane>
-        <TabPane AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="360" AnchorPane.rightAnchor="0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tb" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="360" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
             <tabs>
                 <Tab text="持仓">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6">
+                                <CheckBox text="历史记录" />
+                            </HBox>
+                            <TableView AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
+                                <columns>
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                </columns>
+                            </TableView>
+                            <Pagination maxPageIndicatorCount="6" pageCount="6" AnchorPane.bottomAnchor="-14" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="委托">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6">
+                                <CheckBox text="历史记录" />
+                            </HBox>
+                            <TableView AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
+                                <columns>
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="单号" />
+                                    <TableColumn editable="false" minWidth="80" text="金额" />
+                                    <TableColumn editable="false" minWidth="80" text="数量" />
+                                    <TableColumn editable="false" minWidth="80" text="状态" />
+                                    <TableColumn editable="false" minWidth="80" text="时间" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                </columns>
+                            </TableView>
+                            <Pagination maxPageIndicatorCount="6" pageCount="6" AnchorPane.bottomAnchor="-14" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="成交">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6">
+                                <CheckBox text="历史记录" />
+                            </HBox>
+                            <TableView AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
+                                <columns>
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="单号" />
+                                    <TableColumn editable="false" minWidth="80" text="金额" />
+                                    <TableColumn editable="false" minWidth="80" text="数量" />
+                                    <TableColumn editable="false" minWidth="80" text="状态" />
+                                    <TableColumn editable="false" minWidth="80" text="时间" />
+                                </columns>
+                            </TableView>
+                            <Pagination maxPageIndicatorCount="6" pageCount="6" AnchorPane.bottomAnchor="-14" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="流水">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6">
+                                <CheckBox text="历史记录" />
+                            </HBox>
+                            <TableView AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
+                                <columns>
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                    <TableColumn editable="false" minWidth="80" text="序号" />
+                                </columns>
+                            </TableView>
+                            <Pagination maxPageIndicatorCount="6" pageCount="6" AnchorPane.bottomAnchor="-14" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30" />
+                        </AnchorPane>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
     </AnchorPane>
     </AnchorPane>
-    <VBox fx:id="lock" visible="false" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" style="-fx-background-color: #A9A9A9">
-        <HBox spacing="4" alignment="CENTER">
-            <TextField/>
-            <Button onAction="#btUnLock" text="解锁"/>
+    <VBox fx:id="lock" alignment="CENTER" style="-fx-background-color: #A9A9A9" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <HBox alignment="CENTER" spacing="4">
+            <TextField />
+            <Button onAction="#btUnLock" text="解锁" />
         </HBox>
     </VBox>
 </AnchorPane>
