@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+             style="-fx-background-color: transparent;-fx-padding: 1px" fx:id="root">
+        <Label fx:id="lbType"  alignment="CENTER" prefWidth="35" >卖一</Label>
+        <Label fx:id="lbPrice"  alignment="CENTER" prefWidth="40" style="-fx-text-fill: black">10</Label>
+        <Label fx:id="lbNumber"  alignment="CENTER" prefWidth="45" style="-fx-text-fill: black">36</Label>
+        <Label fx:id="lbAmount"  alignment="CENTER" prefWidth="55" style="-fx-text-fill: black">360</Label>
+</HBox>

@@ -1,10 +1,12 @@
 package controller.center;
 
 import bean.Goods;
+import bean.TradeOrder;
 import chart.domain.TradeMaketEntity;
 import chart.util.StringUtil;
 import controller.bottom.NewsController;
 import controller.cell.GoodActionCell;
+import controller.cell.TradeOrderCell;
 import controller.common.Contants;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
@@ -115,6 +117,7 @@ public class GoodController implements Initializable {
         initGood();
         initGoodBottom();
     }
+
 
     public void setTradeController(TradeController tradeController){
         this.tradeController = tradeController;

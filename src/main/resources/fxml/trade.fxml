@@ -93,20 +93,20 @@
                 </HBox>
             </VBox>
             <VBox prefHeight="1" style="-fx-background-color: #4E4E4E;" />
-            <HBox prefHeight="140" prefWidth="220.0">
-                <ListView prefWidth="220.0" style="-fx-background-color: #000000;" />
+            <HBox prefHeight="160" prefWidth="220.0">
+                <ListView fx:id="lvSells" prefWidth="220.0" prefHeight="150" style="-fx-background-color: #000000;" />
             </HBox>
             <VBox prefHeight="1" style="-fx-background-color: #4E4E4E;" />
-            <HBox prefHeight="140" prefWidth="220.0">
-                <ListView prefWidth="220.0" style="-fx-background-color: #000000;" />
+            <HBox prefHeight="160" prefWidth="220.0">
+                <ListView fx:id="lvBuys" prefWidth="220.0" prefHeight="150" style="-fx-background-color: #000000;" />
             </HBox>
-            <VBox prefHeight="-Infinity" style="-fx-border-color:#4E4E4E;-fx-border-width: 1 0 0 0;-fx-border-style: solid " prefWidth="220">
+            <VBox style="-fx-border-color:#4E4E4E;-fx-border-width: 1 0 0 0;-fx-border-style: solid " prefWidth="220">
                 <!--<HBox prefWidth="220" style="-fx-background-color: #A9A9A9">-->
                     <!--<Label alignment="CENTER" prefHeight="30.0" prefWidth="73">时间</Label>-->
                     <!--<Label alignment="CENTER" prefHeight="30.0" prefWidth="73">价位</Label>-->
                     <!--<Label alignment="CENTER" prefHeight="30.0" prefWidth="73">现手</Label>-->
                 <!--</HBox>-->
-                <ListView prefWidth="-NaN" style="-fx-background-color: #000000;" />
+                <ListView fx:id="lvTrade" VBox.vgrow="SOMETIMES" prefWidth="220" style="-fx-background-color: #000000;" />
             </VBox>
         </VBox>
     </HBox>

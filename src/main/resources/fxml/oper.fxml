@@ -121,8 +121,8 @@
                 <Tab text="委托">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6">
-                                <CheckBox text="历史记录" />
+                            <HBox AnchorPane.leftAnchor="6" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="6" spacing="6">
+                                <CheckBox text="历史记录" /><Button> 快速平仓</Button><Button> 止盈/止损</Button>
                             </HBox>
                             <TableView AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="28">
                                 <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>

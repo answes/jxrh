@@ -1,11 +1,15 @@
 package controller.center;
 
+import bean.TradeOrder;
 import chart.Draw_KLine;
 import chart.HQApplet;
 import controller.bottom.OperController;
+import controller.cell.TradeOrderCell;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +17,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.*;
 
 import javax.swing.*;
@@ -49,6 +55,12 @@ public class TradeController implements Initializable {
     private AnchorPane bottom_root;
     @FXML
     private Pane kline;
+    @FXML
+    private ListView<TradeOrder> lvSells;
+    @FXML
+    private ListView<TradeOrder> lvBuys;
+    @FXML
+    private ListView<TradeOrder> lvTrade;
     private OperController operController;
 
     private String normalCss =
@@ -150,8 +162,36 @@ public class TradeController implements Initializable {
         });
 
         loadTrade();
+        initTrade();
     }
 
+    private void initTrade() {
+        ObservableList<TradeOrder> sellOrders = FXCollections.observableArrayList();
+        ObservableList<TradeOrder> buyOrders = FXCollections.observableArrayList();
+        for(int i=0;i<5;i++){
+            TradeOrder tradeOrder = new TradeOrder();
+            tradeOrder.setType(1);
+            tradeOrder.setNumber(10);
+            tradeOrder.setPrice(10+i);
+            sellOrders.add(tradeOrder);
+        }
+        for(int i=0;i<5;i++){
+            TradeOrder tradeOrder = new TradeOrder();
+            tradeOrder.setType(2);
+            tradeOrder.setNumber(10);
+            tradeOrder.setPrice(10+i);
+            buyOrders.add(tradeOrder);
+        }
+
+        lvBuys.setCellFactory(param -> new TradeOrderCell(1));
+        lvSells.setCellFactory(param -> new TradeOrderCell(1));
+        lvTrade.setCellFactory(param -> new TradeOrderCell(2));
+        lvBuys.setItems(sellOrders);
+        lvSells.setItems(buyOrders);
+        lvTrade.setItems(buyOrders);
+
+
+    }
     private void loadTrade() {
         AnchorPane loader = null;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/oper.fxml"));
