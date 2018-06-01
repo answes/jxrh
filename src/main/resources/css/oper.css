@@ -23,7 +23,7 @@
     -fx-border-color: #444 transparent #800000 transparent;
 }
 .text-field{
-    -fx-pref-height: 26px;
+    -fx-pref-height: 24px;
     -fx-border-radius: 0;
     -fx-border-style: solid;
     -fx-border-width: 1;
@@ -32,10 +32,28 @@
 #sellBtn,#buyBtn{
     -fx-pref-width: 100px;
     -fx-pref-height: 26px;
-    -fx-border-color: #DDDDDD;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+#sellBtn{
+    -fx-background-color: linear-gradient(to bottom,#00FF00,#02BE02);
+}
+#sellBtn:hover,#sellBtn .focus-indicator{
+    -fx-background-color: linear-gradient(to bottom,#05D705,#029E02);
     -fx-border-style: solid;
-    -fx-border-width: 1px;
-    -fx-background-color: linear-gradient(to bottom,#F1F1F1,#D2D2D2);
+    -fx-border-width: 1;
+    -fx-border-color: transparent;
+}
+#buyBtn{
+    -fx-background-color: linear-gradient(to bottom,#EB0000,#B10303);
+}
+#buyBtn:hover,#buyBtn .focus-indicator{
+    -fx-background-color: linear-gradient(to bottom,#DA0101,#9E0202);
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-color: transparent;
 }
 .tab{
     -fx-pref-height: 24px;

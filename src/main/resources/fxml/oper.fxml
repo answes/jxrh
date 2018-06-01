@@ -24,7 +24,7 @@
     </stylesheets>
 
     <AnchorPane fx:id="unLock" visible="true" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-    <AnchorPane fx:id="btm_top" prefHeight="30.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <AnchorPane fx:id="btm_top" style="-fx-background-color: #0d0d0d" prefHeight="30.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <!--<HBox alignment="CENTER" prefHeight="30.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="0.0">-->
             <!--<Label text="成交总额：30000" />-->
             <!--<Label text="总成交量：30000" />-->
@@ -36,21 +36,21 @@
             <Label style="-fx-text-fill: #fff;" text="权益：30000" />
         </HBox>
     </AnchorPane>
-    <HBox prefHeight="1.0" style="-fx-background-color: #4e4e4e" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="29" />
+    <HBox prefHeight="1.0" style="-fx-background-color: #363636" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="29" />
     <AnchorPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30">
-        <AnchorPane fx:id="tradePane" prefWidth="180" style="-fx-background-color: #000" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
+        <AnchorPane fx:id="tradePane" prefWidth="180" style="-fx-background-color: #0d0d0d" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
             <VBox prefWidth="180.0" spacing="10">
-                <Label fx:id="lb_transcation_title" style="-fx-font-size: 14px" text="买入商品" textAlignment="JUSTIFY">
+                <Label fx:id="lb_transcation_title" style="-fx-font-size: 14px;  " text="买入商品" textAlignment="JUSTIFY">
                     <VBox.margin>
                         <Insets left="8.0" top="10.0" />
                     </VBox.margin></Label>
 
                 <HBox alignment="CENTER" spacing="6">
-                    <Label fx:id="lb_byy_price" text="买入价格" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #D4CFC8"  fx:id="lb_byy_price" text="买入价格" />
                     <TextField fx:id="tf_buy_price" prefWidth="85.0" />
                 </HBox>
                 <HBox alignment="CENTER" spacing="6">
-                    <Label fx:id="lb_can_buy" text="可买数量" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #D4CFC8"  fx:id="lb_can_buy" text="可买数量" />
                     <TextField fx:id="tf_can_buynum" prefWidth="85.0" text="12" />
                 </HBox>
                 <HBox alignment="CENTER" spacing="6">
@@ -62,22 +62,22 @@
                     <RadioButton fx:id="market_price_consign" text="市价委托" toggleGroup="$priceGroup" />
                 </HBox>
                 <VBox alignment="CENTER_RIGHT" style="-fx-padding: 0 14 0 0">
-                    <Button fx:id="buyBtn" text="提交"  />
+                    <Button fx:id="buyBtn" text="买入"  />
                 </VBox>
             </VBox>
-            <HBox prefWidth="1" style="-fx-background-color: #4E4E4E;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="179" AnchorPane.topAnchor="0" />
+            <HBox prefWidth="1" style="-fx-background-color: #363636;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="179" AnchorPane.topAnchor="0" />
             <VBox prefWidth="180.0" spacing="10" AnchorPane.leftAnchor="180">
-                <Label style="-fx-font-size: 14px" text="卖出商品" textAlignment="JUSTIFY">
+                <Label style="-fx-font-size: 14px; " text="卖出商品" textAlignment="JUSTIFY">
                     <VBox.margin>
                         <Insets left="8.0" top="10.0" />
                     </VBox.margin></Label>
 
                 <HBox alignment="CENTER" spacing="6">
-                    <Label text="卖出价格" />
+                    <Label style="-fx-font-size: 13px;  -fx-text-fill: #D4CFC8" text="卖出价格" />
                     <TextField prefWidth="85.0" />
                 </HBox>
                 <HBox alignment="CENTER" spacing="6">
-                    <Label text="卖出数量" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #D4CFC8" text="卖出数量" />
                     <TextField prefWidth="85.0" text="12" />
                 </HBox>
                 <HBox alignment="CENTER" spacing="6">
@@ -89,10 +89,10 @@
                     <RadioButton text="市价委托" toggleGroup="$priceGroup" />
                 </HBox>
                 <VBox alignment="CENTER_RIGHT" style="-fx-padding: 0 14 0 0">
-                    <Button fx:id="sellBtn" text="提交" />
+                    <Button fx:id="sellBtn" text="卖出" />
                 </VBox>
             </VBox>
-            <HBox prefWidth="1" style="-fx-background-color: #4E4E4E;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="359" AnchorPane.topAnchor="0" />
+            <HBox prefWidth="1" style="-fx-background-color: #363636;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="359" AnchorPane.topAnchor="0" />
         </AnchorPane>
         <TabPane fx:id="tb" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="360" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
             <tabs>
