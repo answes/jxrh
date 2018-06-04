@@ -10,6 +10,7 @@ package chart;
 
 
 
+import chart.util.StringUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import chart.domain.TradeDataDesc;
@@ -48,7 +49,7 @@ public class HQApplet extends JPanel
     static final int PAGE_HISTORY = 6;
     public int iCurrentPage;
     public String strCurrentCode;
-    String marketId;
+    public String marketId;
     String indexMainCode;
     int m_iKLineCycle;
     String m_strIndicator;
@@ -118,19 +119,19 @@ public class HQApplet extends JPanel
         indexMainCode = "";
         m_iKLineCycle = 1;
         /**
-         * Ä¬ÈÏÏÔÊ¾Ö¸±ê
+         * Ä¬ï¿½ï¿½ï¿½ï¿½Ê¾Ö¸ï¿½ï¿½
          */
         m_strIndicator = "MACD";
         m_iDate = 0;
         m_iTime = 0;
 
         /**
-         * ·ÖÊ±Ïß¼ä¸ô´óÐ¡£¨Ãë£©
+         * ï¿½ï¿½Ê±ï¿½ß¼ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ë£©
          */
         m_iMinLineInterval = 60;
         m_codeList = new Vector();
         m_htProduct = new Hashtable();
-        //²úÆ·ÐÅÏ¢
+        //ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
         vProductData = new Vector();
         m_rcMain = null;
         m_rcBottom = null;
@@ -156,7 +157,7 @@ public class HQApplet extends JPanel
     private void init() {
         bRunning = true;
         try {
-        	//³õÊ¼»¯
+        	//ï¿½ï¿½Ê¼ï¿½ï¿½
             jbInit();
         }
         catch(Exception e) {
@@ -168,8 +169,8 @@ public class HQApplet extends JPanel
     }
 
     private void jbInit() throws Exception {
-    	//Êý¾ÝÔ´
-        // ×ÊÔ´ÎÄ¼þ
+    	//ï¿½ï¿½ï¿½ï¿½Ô´
+        // ï¿½ï¿½Ô´ï¿½Ä¼ï¿½
         try {
             m_resourceBundle = ResourceBundle.getBundle("rc/string", new Locale(strLanguageName, ""));
         }
@@ -178,36 +179,36 @@ public class HQApplet extends JPanel
             e.printStackTrace();
         }
         m_rcMain = null;
-        //ÇëÇóÊÐ³¡ÁÐ±í
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½Ð±ï¿½
         ReceiveStockQuote();
         
         String strColorStyle = getParameter("ColorStyle", "0");
         rhColor = new RHColor(Integer.parseInt(strColorStyle));
-        //ÉèÖÃ±³¾°ÑÕÉ«
+        //ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½É«
         setBackground(rhColor.clBackGround);
-        //Ìí¼ÓÊÂ¼þ
+        //ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         addComponentListener(new HQApplet2(this));
-        //Ìí¼Ó°´¼ü¼àÌýÊÂ¼þ
+        //ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         addKeyListener(new HQApplet3(this));
-        //Ìí¼ÓÊó±êÊÂ¼þ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         addMouseListener(new HQApplet4(this));
         addMouseMotionListener(new HQApplet5(this));
-        //Ìí¼Ó½¹µãÊÂ¼þ
+        //ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         addFocusListener(this);
         this_componentResized(null);
-        //µ×²¿ÊÓÍ¼
+        //ï¿½×²ï¿½ï¿½ï¿½Í¼
 //        bottomGraph = new Page_Bottom(getGraphics(), m_rcBottom, this);
         requestFocus();
         showPageMinLine();
-        // KÏßÍ¼±êÊ¶
+        // Kï¿½ï¿½Í¼ï¿½ï¿½Ê¶
     }
 
     /**
-     * »ñÈ¡ÊÐ³¡
+     * ï¿½ï¿½È¡ï¿½Ð³ï¿½
      */
     private ProductDataVO[] GetData(){
 
-        //«@È¡ËùÓÐÊÐ³¡
+        //ï¿½@È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½
         HttpUtils utils = new HttpUtils();
         String jsonStr = utils.get("/platform/trade/getMarketList.m");
 
@@ -222,7 +223,10 @@ public class HQApplet extends JPanel
             TradeDataDesc tradeNewest = tradeMaketEntity.getNewest();
             TradeMarket tradeMarket = tradeMaketEntity.getTradeMarket();
 
-            if(i == index){
+            if(StringUtil.isEmpty(strCurrentCode) && i == 0){
+                marketId = tradeMarket.getId();
+                strCurrentCode = tradeMarket.getName();
+            }else if(tradeMaketEntity.getTradeMarket().getName().equals(strCurrentCode)){
                 marketId = tradeMarket.getId();
                 strCurrentCode = tradeMarket.getName();
             }
@@ -286,11 +290,11 @@ public class HQApplet extends JPanel
 
     /**
      *
-     * ½ÓÊÕÊý¾Ý
-     * ÉèÖÃ²úÆ·ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½Ã²ï¿½Æ·ï¿½ï¿½Ï¢
      */
     private void ReceiveStockQuote() throws IOException {
-        //½âÎöºóÊý¾Ý
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         ProductDataVO data[] = GetData();
 
         String sCode = "";
@@ -311,7 +315,7 @@ public class HQApplet extends JPanel
             }
         }
 //        if(data.length > 0 && (2 == this.iCurrentPage || 1 == this.iCurrentPage) && this.strCurrentCode.equals(sCode))
-//            //ÖØÐÂ»æÖÆÕû¸ö»­²¼
+//            //ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //            this.repaint();
 //        if(data.length > 0 && this.m_bShowIndexAtBottom == 1 && this.indexMainCode.length() > 0 && data[0].code.equalsIgnoreCase(this.indexMainCode))
 //            this.repaintBottom();
@@ -419,7 +423,7 @@ public class HQApplet extends JPanel
 //        case 118: // 'v'
 //            UserCommand("70");
 //            break;
-        // Page_MinLiine£¬Page_KLineÏìÓ¦µã»÷ÊÂ¼þ
+        // Page_MinLiineï¿½ï¿½Page_KLineï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         default:
             if(mainGraph != null)
 //            	System.out.println(this.getClass().getName()+"---->"+mainGraph.toString());
@@ -431,7 +435,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ¸Ä±ä²úÆ·£¨ÊÐ³¡£©
+     * ï¿½Ä±ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½
      * @param bUp
      * @param bIgnoreStatus
      */
@@ -472,7 +476,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * Êó±ê×ó¼ü
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param e
      */
     void this_mouseLeftPressed(MouseEvent e) {
@@ -494,7 +498,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * Êó±êµã»÷
+     * ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param e
      */
     void this_mouseLeftDblClicked(MouseEvent e) {
@@ -505,7 +509,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * Êó±êÒÆ¶¯
+     * ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
      * @param e
      */
     void this_mouseMoved(MouseEvent e) {
@@ -517,7 +521,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * Êó˜ËÍÏ„Ó
+     * ï¿½ï¿½ï¿½ï¿½Ï„ï¿½
      * @param e
      */
     void this_mouseDragged(MouseEvent e) {
@@ -545,10 +549,10 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÇÐ»»·ÖÊ±Í¼£¬KÏßÍ¼
-     * @param sCode ÊÐ³¡µÄcode
+     * ï¿½Ð»ï¿½ï¿½ï¿½Ê±Í¼ï¿½ï¿½Kï¿½ï¿½Í¼
+     * @param sCode ï¿½Ð³ï¿½ï¿½ï¿½code
      */
-    void QueryStock(String sCode) {
+    public void QueryStock(String sCode) {
         strCurrentCode = sCode;
         if(2 == iCurrentPage)
             mainGraph = new Page_KLine(m_rcMain, this);
@@ -558,7 +562,7 @@ public class HQApplet extends JPanel
 
     /**
      * 
-     * @param sCmd ÏÔÊ¾Ò³ÃæÀàÐÍ
+     * @param sCmd ï¿½ï¿½Ê¾Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     void UserCommand(String sCmd) {
 //        if(sCmd.equals("about") && !bAboutDlgShow) {
@@ -626,7 +630,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÇÐ»»·ÖÊ±Í¼/KÏßÍ¼
+     * ï¿½Ð»ï¿½ï¿½ï¿½Ê±Í¼/Kï¿½ï¿½Í¼
      */
     void OnF5() {
         if(strCurrentCode.length() == 0)
@@ -641,8 +645,8 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÇÐ»»ÊÐ³¡ÓÃ
-     * @param stockCode ÊÐ³¡±êÊ¶
+     * ï¿½Ð»ï¿½ï¿½Ð³ï¿½ï¿½ï¿½
+     * @param stockCode ï¿½Ð³ï¿½ï¿½ï¿½Ê¶
      */
     void showPage(String stockCode){
         if(iCurrentPage == 1){
@@ -653,7 +657,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÏÔÊ¾Ö¸¶¨ÊÐ³¡µÄ·ÖÊ±Í¼
+     * ï¿½ï¿½Ê¾Ö¸ï¿½ï¿½ï¿½Ð³ï¿½ï¿½Ä·ï¿½Ê±Í¼
      * @param stockCode
      */
     void showPageMinLine(String stockCode) {
@@ -664,7 +668,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÏÔÊ¾Ö¸¶¨ÊÐ³¡µÄKÏßÍ¼
+     * ï¿½ï¿½Ê¾Ö¸ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½Kï¿½ï¿½Í¼
      * @param stockCode
      */
     void showPageKLine(String stockCode) {
@@ -675,7 +679,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÏÔÊ¾·ÖÊ±Ïß
+     * ï¿½ï¿½Ê¾ï¿½ï¿½Ê±ï¿½ï¿½
      */
    public void showPageMinLine() {
         mainGraph = new Page_MinLine(m_rcMain, this);
@@ -684,7 +688,7 @@ public class HQApplet extends JPanel
     }
 
     /**
-     * ÏÔÊ¾KÏß
+     * ï¿½ï¿½Ê¾Kï¿½ï¿½
      */
     public void showPageKLine() {
         mainGraph = new Page_KLine(m_rcMain, this);
@@ -693,7 +697,7 @@ public class HQApplet extends JPanel
     }
     
     /**
-     * ÖØ»æµ×²¿ÇøÓò
+     * ï¿½Ø»ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     void repaintBottom() {
 //        if(bottomGraph != null)
@@ -738,7 +742,7 @@ public class HQApplet extends JPanel
     }
 
     public void EndPaint() {
-//        System.out.println("½áÊø»æÍ¼");
+//        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼");
         if(!m_bEndPaint) {
             getGraphics().setPaintMode();
             getGraphics().drawImage(m_img, m_rcMain.x, m_rcMain.y, this);

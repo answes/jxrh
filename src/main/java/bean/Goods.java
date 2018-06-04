@@ -9,6 +9,7 @@ import javafx.beans.property.*;
  * @Modificd :
  */
 public class Goods extends SimpleObjectProperty{
+    private String id;
     private StringProperty commNum;
     private StringProperty commName;
     private DoubleProperty openPrice;
@@ -41,22 +42,13 @@ public class Goods extends SimpleObjectProperty{
         this.comeNumber = new SimpleIntegerProperty();
     }
 
-//    public Goods( String commNum, String commName, double openPrice, double newPrice, int count, double upDown, double extent, double maxPrice, double mixPrice, double yestedayPrice, double comePrice, int comeNumber, double outPrice, int outNumber, int overNumber, double overMoney, double avgPrice, int stockNumber, double numberScale, double trustScale, double exchangeScale) {
-//        this.commNum =new SimpleStringProperty(commNum) ;
-//        this.commName =new SimpleStringProperty( commName);
-//        this.openPrice =new SimpleDoubleProperty( openPrice);
-//        this.newPrice =new SimpleDoubleProperty( newPrice);
-//        this.upDown = new SimpleDoubleProperty(upDown);
-//        this.extent = new SimpleDoubleProperty(extent);
-//        this.maxPrice =new SimpleDoubleProperty( maxPrice);
-//        this.mixPrice = new SimpleDoubleProperty(mixPrice);
-//        this.yestedayPrice = new SimpleDoubleProperty(yestedayPrice);
-//        this.comePrice =new SimpleDoubleProperty( comePrice);
-//        this.outPrice =new SimpleDoubleProperty( outPrice);
-//        this.overNumber = new SimpleIntegerProperty(overNumber);
-//        this.overMoney = new SimpleDoubleProperty(overMoney);
-//    }
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUpDown() {
         return upDown.get();
@@ -230,5 +222,8 @@ public class Goods extends SimpleObjectProperty{
     public void setOverMoney(double overMoney) {
         this.overMoney.set(overMoney);
     }
+
+
+
 
 }

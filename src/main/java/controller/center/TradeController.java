@@ -1,8 +1,10 @@
 package controller.center;
 
+import bean.Goods;
 import bean.TradeOrder;
 import chart.Draw_KLine;
 import chart.HQApplet;
+import chart.util.StringUtil;
 import controller.bottom.OperController;
 import controller.cell.TradeOrderCell;
 import javafx.application.Platform;
@@ -16,10 +18,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+import javafx.scene.paint.Paint;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,6 +65,9 @@ public class TradeController implements Initializable {
     @FXML
     private ListView<TradeOrder> lvTrade;
     private OperController operController;
+
+    @FXML
+    javafx.scene.control.Label cus;
 
     @FXML
     javafx.scene.control.Label currentPrice;
@@ -118,7 +124,10 @@ public class TradeController implements Initializable {
     @FXML
     private AnchorPane kline_root;
 
-
+    /**
+     * 当前商品
+     */
+    private Goods currentGoods;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         init();
@@ -357,5 +366,90 @@ public class TradeController implements Initializable {
 
         showKline();
         jPanel.getPageMain().changeCycle(Draw_KLine.indicators[i]);
+    }
+
+    public void setCurrentGood(Goods goods){
+        if(goods == null){
+            return;
+        }
+        currentGoods = goods;
+        jPanel.marketId = currentGoods.getId();
+
+        setGoodsInfo(currentGoods);
+    }
+
+    public void setLineType(int lineType){
+        jPanel.iCurrentPage = lineType;
+    }
+
+    private void setGoodsInfo(Goods goods){
+        cus.setText(goods.getCommName());
+
+        //最新价
+        currentPrice.setText(String.valueOf(goods.getNewPrice()));
+
+        double changeRadioD = StringUtil.calcChangeRadio(goods);
+        double changeValueD = StringUtil.calcChangeValue(goods);
+        double changeD = StringUtil.calcChange(goods);
+
+        //涨跌幅
+        if(changeRadioD > 0){
+            changeRadio.setTextFill(Paint.valueOf("#EB0000"));
+            changeValue.setTextFill(Paint.valueOf("#EB0000"));
+        }else if(changeRadioD < 0){
+            changeRadio.setTextFill(Paint.valueOf("#00DB00"));
+            changeValue.setTextFill(Paint.valueOf("#00DB00"));
+        }else{
+            changeRadio.setTextFill(Paint.valueOf("#FFFFFF"));
+            changeValue.setTextFill(Paint.valueOf("#FFFFFF"));
+        }
+
+        changeRadio.setText(StringUtil.keepDecimal(changeRadioD,null)+"%");
+        //涨跌值
+        changeValue.setText(StringUtil.keepDecimal(changeValueD,null));
+
+        if(changeD > 0){
+            change.setTextFill(Paint.valueOf("#EB0000"));
+        }else if(changeD < 0){
+            change.setTextFill(Paint.valueOf("#00DB00"));
+        }else{
+            change.setTextFill(Paint.valueOf("#FFFFFF"));
+        }
+
+        //振幅
+        change.setText(StringUtil.keepDecimal(changeD,null) +"%");
+        //收盘价
+        yestodayClose.setText(StringUtil.keepDecimal(goods.getYestedayPrice(),null));
+        //总量
+        count.setText(calcNumber(goods.getOverNumber()));
+        //总金额
+        amount.setText(calcNumber(goods.getOverMoney()));
+        //开盘价
+        open.setText(StringUtil.keepDecimal(goods.getOpenPrice(),null));
+        //高
+        high.setText(StringUtil.keepDecimal(goods.getMaxPrice(),null));
+        //低
+        low.setText(StringUtil.keepDecimal(goods.getMixPrice(),null));
+
+    }
+
+    private String calcNumber(double n){
+        if(n > 10000){
+            return StringUtil.keepDecimal((n / 10000),null) + "万";
+        }else if(n > 10000 * 10000){
+            return StringUtil.keepDecimal((n / (10000 * 10000)),null) + "亿";
+        }else{
+            return  StringUtil.keepDecimal(n,null);
+        }
+
+    }
+
+    public void changeGoods(Goods goods){
+        if(goods == null){
+            return;
+        }
+        setCurrentGood(goods);
+        jPanel.QueryStock(goods.getCommNum());
+
     }
 }

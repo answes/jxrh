@@ -48,7 +48,7 @@ public class GoodActionCell extends TableCell<Goods, String> {
             "-fx-border-style: solid;"+
             "-fx-border-color: #000;" +
             "-fx-background-radius: 1;" +
-            "-fx-font-weight:bold;"+
+            "-fx-font-weight:bolder;"+
             "-fx-padding:0 1;";
 
     /**
@@ -65,7 +65,7 @@ public class GoodActionCell extends TableCell<Goods, String> {
                 "-fx-text-fill: #000;"+
                 "-fx-border-width: 0em;"+
                 "-fx-background-radius: 1;" +
-                "-fx-font-weight:bold;"+
+                "-fx-font-weight:bolder;"+
                 "-fx-padding:0 1;");
         imageView.setFitHeight(16.0);
         imageView.setFitWidth(16.0);

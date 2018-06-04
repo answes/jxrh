@@ -41,8 +41,7 @@
     <HBox fx:id="rightBox" prefWidth="220.0" style="-fx-background-color: #000000" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="1">
         <VBox prefWidth="220.0" style="-fx-border-style: solid;-fx-border-width:0 0 0 1;-fx-border-color: #4E4E4E">
             <HBox alignment="CENTER_LEFT">
-                <Label fx:id="cus" alignment="CENTER_LEFT" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 16px;-fx-font-weight: bold;-fx-padding: 2 2 2 2">测试商品001
-                </Label>
+                <Label fx:id="cus" alignment="CENTER_LEFT" prefWidth="220.0" style="-fx-text-fill: #00FFFF;-fx-font-size: 16px;-fx-font-weight: bold;-fx-padding: 2 2 2 2"></Label>
             </HBox>
             <VBox fx:id="newest" spacing="0" style="-fx-padding: 2 2 2 2 ;-fx-border-style: solid;-fx-border-width:1 0 0 0;-fx-border-color: #4E4E4E">
                 <HBox prefWidth="220.0" style="-fx-padding:  2px 0">

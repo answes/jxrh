@@ -23,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -184,6 +185,7 @@ public class GoodController implements Initializable {
 
         for(int i = 0;i < entities.size();i++){
             Goods goods = new Goods();
+            goods.setId(entities.get(i).getTradeMarket().getId());
 //            goods.setNumber(i);
             //商品编号 600001
             goods.setCommNum(entities.get(i).getTradeMarket().getName());
@@ -196,11 +198,12 @@ public class GoodController implements Initializable {
             //涨跌
             goods.setUpDown(StringUtil.keepDecimal(entities.get(i).getNewest().getClosePrice().subtract(entities.get(i).getNewest().getOpenPrice()),null));
             //涨跌幅
+//            goods.setExtent(Double.parseDouble(StringUtil.keepDecimal(StringUtil.calcChangeRadio(goods),null)));
 
             //最高价
             goods.setMaxPrice(entities.get(i).getNewest().getMaxPrice().doubleValue());
             //最低价
-            goods.setMaxPrice(entities.get(i).getNewest().getMinPrice().doubleValue());
+            goods.setMixPrice(entities.get(i).getNewest().getMinPrice().doubleValue());
             //昨日收盘价
             goods.setYestedayPrice(entities.get(i).getTradeMarket().getClosePrice().doubleValue());
             //
@@ -214,7 +217,20 @@ public class GoodController implements Initializable {
 
         }
 
+        if(markets.size() > 0 && tradeController != null){
+            tradeController.setCurrentGood(markets.get(0));
+        }
+
         tb_goods.setItems(markets);
+    }
+
+    private Goods getGoodByCode(String item){
+        for(Goods g:markets){
+            if(g.getCommNum().equals(item)){
+                return g;
+            }
+        }
+        return null;
     }
 
     private void initGood() {
@@ -224,12 +240,14 @@ public class GoodController implements Initializable {
         commAction.setCellFactory(column -> new GoodActionCell(new GoodActionCell.GoodsActionCellOnClick() {
             @Override
             public void dayLineClick(String item) {
-                System.out.println("日点击："+item);
+                tradeController.setLineType(1);
+                setRowOnTwoClick(getGoodByCode(item));
             }
 
             @Override
             public void klineClick(String item) {
-                System.out.println("分点击："+item);
+                tradeController.setLineType(2);
+                setRowOnTwoClick(getGoodByCode(item));
             }
         },markets));
 
@@ -251,7 +269,7 @@ public class GoodController implements Initializable {
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
                 if(item != null && !empty) {
-                    setText("商品名称");
+                    setText(item);
                 }else{
                     setText(null);
                 }
@@ -259,7 +277,20 @@ public class GoodController implements Initializable {
         });
         openPrice.setCellValueFactory(data -> data.getValue().openPriceProperty().asString());
 
-        newPrice.setCellValueFactory(data -> data.getValue().newPriceProperty().asString());
+        newPrice.setCellValueFactory(data -> data.getValue().commNumProperty());
+        newPrice.setCellFactory(column -> new TableCell<Goods, String>(){
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if(item != null && !empty) {
+                    Goods goods = getGoodByCode(item);
+
+                    setText(StringUtil.keepDecimal(goods.getNewPrice(),null));
+                }else{
+                    setText(null);
+                }
+            }
+        });
 
         upDown.setCellValueFactory(data -> data.getValue().upDownProperty());
         extent.setCellValueFactory(data -> data.getValue().extentProperty().asString());
@@ -313,5 +344,7 @@ public class GoodController implements Initializable {
     public void setRowOnTwoClick(Goods commodity) {
         goods_root.setVisible(false);
         tradeController.setRootVisible(true);
+        tradeController.changeGoods(commodity);
+
     }
 }

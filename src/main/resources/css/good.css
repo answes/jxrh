@@ -75,9 +75,7 @@
     -fx-pref-height:20px;
     -fx-max-height: 20px;
 }
-.table-view{
-    -fx-font-family: "Droid Sans";
-}
+
 .table-row-cell .cell,
 .table-row-cell .label,
 .table-row-cell .button,
@@ -86,6 +84,13 @@
     -fx-text-fill: #FF0000;
     -fx-font-family: Arial;
     -fx-font-size: 14px;
+}
+
+.table-row-cell .button,
+.table-row-cell .cell .button {
+    -fx-font-family: system;
+    -fx-font-weight: bold;
+    -fx-focus-traversable:false;
 }
 .table-row-cell:selected{
     -fx-background-color: #2E2E2E;
