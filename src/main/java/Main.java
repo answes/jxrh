@@ -13,7 +13,7 @@ import java.net.URL;
  * @Author : bigshark
  * @Descripstion :
  * @Date : Create in 14:08 2018/05/21
- * @Modificd :
+ * @Modificd : 锦绣融和交易系统
  */
 public class Main extends Application {
     private StageController stageController;
